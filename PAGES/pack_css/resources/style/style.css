@@ -406,17 +406,18 @@ table{
   --height: 200px;
 }
 
-.flexrow.auto, .flexcolumn.auto {
+.flexrow.auto, .flexcolumn.auto, .flex.auto {
     --height: auto !important;
 }
 
 .flexcolumn{
   flex-direction: column;
+  height: var(--height);
 }
 
 .flexcolumn > *{
-  flex: 1;
-  height: var(--height);
+  flex: 1 1 auto;
+  height: 0;
   margin: 0 !important;
   margin-bottom: var(--grid-gap) !important;
 }
@@ -439,10 +440,12 @@ table{
   flex-wrap: wrap;
   grid-gap: var(--grid-gap);
   --max: 250px;
+  --height: 200px;
 }
 
 .flex > * {
   flex: 1 0 var(--max);
+  height: var(--height);
   margin: 0 !important;
 }
 
@@ -452,6 +455,10 @@ table{
 
 .no-extend{
     flex: 0 0 auto;
+}
+
+.flexcolumn > .no-extend {
+    height: auto;
 }
 
 .extend{
@@ -464,6 +471,10 @@ table{
   margin: var(--mo) 0 0;
   padding: var(--mo);
   border-radius: var(--main-border-radius);
+}
+
+a.simple, button.simple, input.simple, textarea.simple {
+    display: block;
 }
 
 * > .simple:first-child{
