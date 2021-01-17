@@ -1,0 +1,36 @@
+/*- - - - - - GENERAL - - - - - -*/
+
+HTML {
+    --bck-color: #F5F5F5;
+    background: var(--bck-color);
+}
+
+a {
+    color: var(--h4);
+}
+
+
+
+
+
+/*- - - - - - MAIN - - - - - -*/
+
+main {
+}
+
+#main {
+    max-width: 850px !important;
+    width: 90% !important;
+    min-width: 400px !important;
+    margin: auto !important;
+}
+
+#bodylinewidth {
+    height: 100%;
+    padding: 50px;
+}
+
+#bodylinewidth > * {
+    height: 100%;
+    overflow: auto;
+}
