@@ -1,0 +1,316 @@
+body *::-webkit-scrollbar{width: 0px;}
+
+/* nom | durée | fonction | retard */
+HTML *{
+  transition: all var(--transt) ease;
+  -webkit-transition: all var(--transt) ease;
+  -moz-transition: all var(--transt) ease;
+  -ms-transition: all var(--transt) ease;
+  -o-transition: all var(--transt) ease;
+  --transt: .4s;
+}
+
+
+
+
+
+/* - - - - - GENERAL - - - - - */
+
+HTML, HTML *{
+  box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+}
+
+scroll{
+    flex: 1 1 auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+*::-webkit-scrollbar{
+  width: 0px;
+}
+
+[class^=bp_] input.onglet + div, [class^=bp_] input.onglet + label + div{
+  display: none;
+}
+
+[class^=bp_] input.onglet:checked + div, [class^=bp_] input.onglet:checked + label + div{
+  display: block;
+}
+
+
+
+
+
+/* - - - - - MAIN ELEMENTS - - - - - */
+
+a, button, input{
+    cursor: crosshair;
+}
+
+button, input{
+    font-family: var(--main-police);
+}
+
+img{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+button, input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: var(--display);
+  --display: inline-block;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+}
+
+table{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+  color: inherit;
+  text-align: inherit;
+  font-size: inherit;
+}
+
+
+
+
+
+/* - - - - - BLOCKS DIVERS - - - - - */
+
+.column{
+  column-count: 2;
+  column-gap: 25px;
+}
+
+.column.rule{
+  column-gap: 40px;
+  column-rule: 1px solid var(--l4);
+}
+
+.column *{
+  break-inside: avoid;
+}
+
+k{
+  display: block;
+  text-align: center;
+}
+
+k img{
+  max-width: 200px;
+}
+
+.moodboard{
+  width: 100%;
+  column-count: 3;
+  column-gap: var(--gap);
+  --gap: 15px;
+}
+
+.moodboard:hover img{
+  opacity: 1;
+}
+
+.moodboard img{
+  width: 100%;
+  margin-bottom: var(--gap);
+  opacity: .7;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* - - - - - FLEX - - - - - */
+
+.flexrow, .flexcolumn{
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.flexrow.fixed {
+  --height: 200px;
+}
+
+.flexrow.fixed > * {
+  height: var(--height);
+}
+
+.flexcolumn{
+  flex-direction: column;
+  height: var(--height);
+  --height: 200px;
+}
+
+.flexcolumn > * {
+  flex: 1 1 auto;
+  height: 0;
+  margin: 0 !important;
+  margin-bottom: var(--grid-gap) !important;
+}
+
+.flexrow > *{
+  flex: 1;
+  margin: 0 !important;
+  margin-right: var(--grid-gap) !important;
+}
+
+.flexcolumn > *:last-child, .flexrow > *:last-child{
+  margin: 0px !important;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-gap: var(--grid-gap);
+  --max: 250px;
+}
+
+.flex.fixed {
+  --height-flex: 200px;
+}
+
+.flex.fixed > * {
+  height: var(--height-flex);
+}
+
+.flex > * {
+  flex: 1 0 var(--max);
+  margin: 0 !important;
+}
+
+.flex .first{
+  flex: 0 0 100% !important;
+}
+
+.no-extend{
+    flex: 0 0 auto;
+}
+
+.flexcolumn > .no-extend {
+    height: auto;
+}
+
+.extend, fill{
+    flex: 1 1 auto;
+}
+
+
+
+
+
+/* - - - - - BLOCKS - - - - - */
+
+.simple{
+  margin: var(--grid-gap) 0;
+  padding: var(--mo);
+}
+
+.small{
+  padding: var(--sm);
+}
+
+.nomargin{
+  margin: 0 !important;
+}
+
+.nopadding{
+  padding: 0 !important;
+}
+
+.noborder{
+    border: 0 !important;
+}
+
+ul.nobullet{
+    list-style-type: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.light{
+  background: var(--l1);
+}
+
+.middle{
+  background: var(--m1);
+}
+
+.dark{
+  background: var(--d1);
+
+  color: var(--l4);
+}
+
+.h1{
+  background: var(--h1);
+}
+
+.h2{
+  background: var(--h2);
+}
+
+.h3{
+  background: var(--h3);
+}
+
+.h4{
+  background: var(--h4);
+}
+
+.left-align{
+  text-align: left !important;
+}
+
+.center-align{
+  text-align: center !important;
+}
+
+.right-align{
+  text-align: right !important;
+}
+
+.justify-align{
+  text-align: justify !important;
+}
+
+qsdf{
+  display: block;
+  text-align: right;
+}
+
+wxcv{
+  display: block;
+  text-align: center;
+}
+
+.lowercase{
+  text-transform: lowercase;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}

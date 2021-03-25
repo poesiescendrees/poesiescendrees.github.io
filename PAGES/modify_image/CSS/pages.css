@@ -1,0 +1,75 @@
+/*inputs taille fixée*/
+#inputSection input[type="radio"] {
+    display: none;
+}
+
+/*label*/
+#inputSection input:checked + label {
+    background: var(--h3);
+
+    color: var(--l0);
+}
+
+#inputSection label:hover {
+    color: var(--l0);
+}
+
+.input_choice:not(:checked) + label .displayable {
+    display: none;
+}
+
+.displayable input[type="number"] {
+    width: 70px;
+    background: transparent;
+    border-bottom: 1px solid;
+
+    color: var(--l0);
+}
+
+label[for="inputChoiceYes"] input[type="checkbox"] + label:hover {
+    color: var(--d3) !important;
+}
+
+label[for="inputChoiceYes"] input[type="checkbox"]:checked + label:before {
+    content: '✓ ';
+}
+
+label[for="inputChoiceYes"] input[type="checkbox"]:not(:checked) + label:before {
+    content: '(✗ ';
+}
+
+label[for="inputChoiceYes"] input[type="checkbox"]:not(:checked) + label:after {
+    content: ')';
+}
+
+/*textarea */
+#input, #output {
+    display: block;
+    width: 100% !important;
+    height: 200px;
+    border: 0;
+    outline: none;
+}
+
+/*boutons soumettre & copier*/
+#submit, #copy {
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: visible;
+
+    text-align: center;
+}
+
+.tooltip {
+    width: auto;
+    height: auto;
+    background: rgba(20, 20, 20, .8);
+    padding: var(--sm) var(--mo);
+    position: absolute;
+    top: 20%;
+    right: var(--sm);
+
+    color: var(--l0);
+    font-weight: bold;
+}

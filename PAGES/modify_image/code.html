@@ -1,0 +1,108 @@
+<!DOCTYPE>
+<html>
+<head>
+
+    <title>Codes images</title>
+    <link rel="icon" type="image/png" href="../../resources_index/images/IC1.png" />
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-type" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mulish:wght@200&family=Oswald&family=Playfair+Display&family=Rozha+One&display=swap" rel="stylesheet">
+
+
+
+
+    <!-------------------- CSS STYLE IMPORT -------------------->
+    <link href="CSS/overall.css" rel="stylesheet">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/pages.css" rel="stylesheet">
+    <link href="CSS/color.css" rel="stylesheet">
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="JS/header.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <a name="top"></a>
+
+        <!-------------------- VARIABLES -------------------->
+        <div id="var_def">
+            <vr value="vr1">le contenu 1</vr>
+        </div>
+
+        <nav></nav>
+    </header>
+
+    <main id="var_container">
+        <h1>Codes HTML d'images</h1>
+
+        <section class="simple light">
+            Vous pouvez utiliser cette page pour créer un code contenant les images dont les URLs sont copiés ci-dessous, et spécifier si voulu une taille fixe pour toutes ces images.<br/><br/>
+
+            Vous pouvez y placer uniquement les URLs (séparés par un espace ou un retour à la ligne) ou y mettre un code complet (tel que ceux donnés en hébergeant vos images sur ImgBox par exemple, en HTML ou BBcode). Seuls les URLs d'images <u>png</u>, <u>gif</u> et <u>jp(e)g</u> seront détectés.
+        </section>
+
+
+        <section id="inputSection">
+            <div class="simple light flex">
+                <div class="simple middle" style="flex: 6;">
+                    fixer la taille par défaut ?
+                </div>
+                <input type="radio" name="inputChoice" id="inputChoiceNo" checked/>
+                <label class="simple h4" for="inputChoiceNo">
+                    <ro>non</ro>
+                </label>
+
+                <input class="input_choice" type="radio" name="inputChoice" id="inputChoiceYes"/>
+                <label class="simple h4" for="inputChoiceYes">
+                    <ro><span>oui</span></ro>
+                    <span class="displayable"> précisez vos choix :<br/>
+                        <input type="checkbox" id="hasWidth" name="hasWidth" class="input_choice" checked/>
+                        <label for="hasWidth">
+                            <span>largeur fixe</span>
+                            <span class="displayable"> :
+                                <input type="number" id="width" name="width_height" min="0" value="200"/> px
+                            </span>
+                        </label><br/>
+                        <input type="checkbox" id="hasHeight" name="hasHeight" class="input_choice"/>
+                        <label for="hasHeight">
+                            <span>hauteur fixe</span>
+                            <span class="displayable"> :
+                                <input type="number" id="height" name="width_height" min="0"/> px
+                            </span>
+                        </label>
+                    </span>
+                </label>
+            </div>
+
+            <textarea class="simple light" id="input" placeholder="Copier les URLs de vos images dans cet encart."></textarea>
+
+                <button id="submit" class="simple h1"><ro>soumettre</ro></button>
+
+                <button id="copy" class="hidden simple middle"><ro>copier le texte</ro>
+                    <aside class="tooltip hidden">copié !</aside>
+                </button>
+        </section>
+
+
+        <section id="outputSection" class="hidden">
+            <textarea id="output" class="simple light" readonly placeholder="Aucune image ne semble avoir été soumise dans l'encart ci-dessus."></textarea>
+        </section>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script src="JS/toggle_package.js"></script>
+    <script src="JS/overall.js"></script>
+    <script src="./JS/color.js"></script>
+    <script src="JS/pages.js"></script>
+
+    <a name="bottom"></a>
+</body>
+</html>
