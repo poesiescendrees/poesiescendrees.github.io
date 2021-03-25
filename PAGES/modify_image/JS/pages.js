@@ -26,7 +26,7 @@ $(function() {
         var urls = text.match(regex);
 
         for (let url of urls) {
-            newText += '<img src="' + url + '"/>';
+            newText += '<img src="' + url + '"/> ';
         }
 
         // BUILDS THE CHOICE
