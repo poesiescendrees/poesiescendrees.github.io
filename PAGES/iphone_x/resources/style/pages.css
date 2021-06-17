@@ -1,0 +1,41 @@
+/*- - - - - - GENERAL - - - - - -*/
+
+HTML {
+    --bck-color: #E2E2E2;
+    background: var(--bck-color);
+}
+
+a {
+    color: var(--h4);
+}
+
+
+
+
+
+/*- - - - - - HEADER - - - - - -*/
+
+
+
+
+
+/*- - - - - - MAIN - - - - - -*/
+
+main {
+}
+
+#main {
+    max-width: 850px !important;
+    width: 90% !important;
+    min-width: 400px !important;
+    margin: 50px auto !important;
+}
+
+#bodylinewidth {
+    height: 100%;
+}
+
+#bodylinewidth > * {
+    height: 100%;
+    overflow: auto;
+}
