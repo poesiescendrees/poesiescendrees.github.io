@@ -333,7 +333,15 @@ linel > lgn, liner > lgn, linec > lgn {
 
 
 
-/* - - - - - BLOCKS - - - - - */
+/* - - - - - BLOCKS - - - - - */.simple {
+  margin: var(--grid-gap) 0;
+  padding: var(--mo);
+}
+
+.simple.small {
+  margin: var(--sm) 0;
+  padding: var(--sm);
+}
 
 .bck {
   background: var(--bck);
