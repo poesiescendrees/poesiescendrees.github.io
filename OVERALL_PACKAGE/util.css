@@ -1,0 +1,136 @@
+pal{ display: flex; flex-direction: column; width: 20px; height: 500px; position: fixed; top: -8px; left: 8px;}pal p{ flex: 1; margin: 2px 0px;} pal .pp{margin-bottom: 15px;} pal p:nth-child(1){ background: var(--l0);}pal p:nth-child(2){ background: var(--l1);}pal p:nth-child(3){ background: var(--l2);}pal p:nth-child(4){ background: var(--l3);}pal p:nth-child(5){ background: var(--l4);}pal p:nth-child(6){ background: var(--m1);}pal p:nth-child(7){ background: var(--m2);}pal p:nth-child(8){ background: var(--d1);}pal p:nth-child(9){ background: var(--d2);}pal p:nth-child(10){ background: var(--d3);}pal p:nth-child(11){ background: var(--h1);}pal p:nth-child(12){ background: var(--h2);}pal p:nth-child(13){ background: var(--h3);}pal p:nth-child(14){ background: var(--h4);}
+
+
+
+
+
+/* - - - - - COLORS & VARIABLES - - - - - */
+
+:root{
+  --sm: 6px;
+  --mo: 12px;
+  --bg: 25px;
+  --lg: 50px;
+  --gi: 100px;
+
+  --grid-gap: var(--mo);
+}
+
+scroll{
+    flex: 1 1 auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+img {
+    object-fit: cover;
+}
+
+table.centered{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+  color: inherit;
+  text-align: inherit;
+  font-size: inherit;
+}
+
+
+
+
+
+/* - - - - - FLEX - - - - - */
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-gap: var(--grid-gap);
+  --max: 250px;
+}
+
+.flex.small-max {
+  --max: 200px;
+}
+
+.flex.fixed {
+  --height-flex: 200px;
+}
+
+.flex.fixed > * {
+  height: var(--height-flex);
+}
+
+.flex > * {
+  flex: 1 0 var(--max);
+  margin: 0 !important;
+}
+
+.flex .first{
+  flex: 0 0 100% !important;
+}
+
+
+
+
+
+/* - - - - FLEXCOLUMN AND FLEXROW - - - - */
+
+.flexrow, .flexcolumn {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.flexrow.fixed {
+  --height: 200px;
+}
+
+.flexrow.fixed > * {
+  height: var(--height);
+}
+
+.flexcolumn {
+  flex-direction: column;
+}
+
+.flexcolumn.fixed {
+  height: var(--height);
+  --height: 200px;
+}
+
+.flexcolumn > * {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  margin-bottom: var(--grid-gap) !important;
+}
+
+.flexcolumn > * {
+  height: 0;
+}
+
+.flexrow > * {
+  flex: 1;
+  margin: 0 !important;
+  margin-right: var(--grid-gap) !important;
+}
+
+.flexcolumn > *:last-child, .flexrow > *:last-child {
+  margin: 0px !important;
+}
+
+.no-extend {
+    flex: 0 0 auto;
+}
+
+.flexcolumn > .no-extend {
+    height: auto;
+}
+
+.extend, fill {
+    flex: 1 1 auto;
+}
