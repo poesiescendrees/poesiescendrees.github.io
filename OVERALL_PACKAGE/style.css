@@ -39,6 +39,15 @@
     --text-align-main: justify;
 }
 
+HTML *{
+  transition: all var(--transt) ease;
+  -webkit-transition: all var(--transt) ease;
+  -moz-transition: all var(--transt) ease;
+  -ms-transition: all var(--transt) ease;
+  -o-transition: all var(--transt) ease;
+  --transt: .4s;
+}
+
 
 
 
@@ -333,7 +342,9 @@ linel > lgn, liner > lgn, linec > lgn {
 
 
 
-/* - - - - - BLOCKS - - - - - */.simple {
+/* - - - - - BLOCKS - - - - - */
+
+.simple {
   margin: var(--grid-gap) 0;
   padding: var(--mo);
 }
