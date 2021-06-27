@@ -19,6 +19,7 @@ pal{ display: flex; flex-direction: column; width: 20px; height: 500px; position
   --d1: #50665F; /*dark 1*/
   --d2: #384540; /*dark 2*/
   --d3: #242D2A; /*dark 3*/
+  --d4: #E0E0E0; /*dark 4*/
 
   --h1: #CDA871; /*highlight 1: bleu moyen*/
   --h2: #D9BC91; /*highlight 2: bleu clair*/
