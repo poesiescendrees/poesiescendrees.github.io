@@ -6,16 +6,6 @@ pal{ display: flex; flex-direction: column; width: 20px; height: 500px; position
 
 /* - - - - - COLORS & VARIABLES - - - - - */
 
-:root{
-  --sm: 6px;
-  --mo: 12px;
-  --bg: 25px;
-  --lg: 50px;
-  --gi: 100px;
-
-  --grid-gap: var(--mo);
-}
-
 scroll{
     flex: 1 1 auto;
     display: block;
