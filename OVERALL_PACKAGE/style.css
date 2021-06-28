@@ -15,6 +15,11 @@ HTML *{
   --transt: .4s;
 }
 
+::selection{
+  background: var(--m2);
+  color: var(--l2);
+}
+
 
 
 
