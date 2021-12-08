@@ -1,0 +1,5 @@
+/*- - - - - GENERAL - - - - -*/
+
+#wrap {
+    margin: var(--height-header) auto 300px;
+}

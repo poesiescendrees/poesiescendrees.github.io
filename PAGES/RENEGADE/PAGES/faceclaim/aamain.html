@@ -1,0 +1,540 @@
+<!DOCTYPE>
+<html>
+<head>
+
+    <title>FACECLAIM</title>
+    <link rel="icon" href="https://images2.imgbox.com/50/1f/1SSKBVWd_o.png">
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-type" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&family=Oswald&family=Patua+One&family=Playfair+Display&family=Rozha+One&display=swap" rel="stylesheet">
+    <pal><p></p><p></p><p></p><p></p><p class="pp"></p><p></p><p class="pp"></p><p></p><p></p><p class="pp"></p><p></p><p></p><p></p><p></p></pal>
+
+
+
+
+    <!-------------------- CSS STYLE IMPORT -------------------->
+    <link href="../../CSS/FORUM.css" rel="stylesheet">
+    <link href="../../CSS/color.css" rel="stylesheet">
+    <link href="./pages.css" rel="stylesheet">
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="../../JS/TOP/header.js"></script>
+
+</head>
+
+<body>
+
+    <header class="flexrow">
+        <table class="no-extend img_table_header"><tr><td>
+            <div id="avatar_header">
+                <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+            </div>
+        </td></tr></table>
+
+        <table class="no-extend add_table_header"><tr><td>
+            <ro>faceclaim</ro>
+            <mg><a href="https://downthehighway.forumactif.com/" target="_blank">accueil</a></mg>
+            <mg><a href="https://downthehighway.forumactif.com/t44-3-avatars-pseudos" target="_blank">avatars & peudos</a></mg>
+            <mg><a href="https://downthehighway.forumactif.com/t47-1-metiers-logements" target="_blank">métiers & logements</a></mg>
+            <mg><a href="https://downthehighway.forumactif.com/f9-validees" target="_blank">présentations</a></mg>
+            <br>
+            <mg2>(c) codes :: poesiescendrees</mg2>
+        </td></tr></table>
+
+        <fill></fill>
+    </header>
+
+    <main id="wrap">
+
+    <!--<div class="color_picker flexrow">
+        <input type="color" id="inputColorPicker" value="#e0d1d1">
+        <div class="table_js"><label for="inputColorPicker" id="labelColorPicker">#e0d1d1</label></div>
+    </div>-->
+
+
+    <section id="bodylinewidth">
+        <h1 class="lowercase">FACECLAIM DU FORUM</h1>
+
+        <div class="simple nopadding choice_filter sticky">
+
+            <a class="crop_filter a-unset a-circle"><table><tr><td class="center-align">x</td></tr></table></a>
+
+            <div class="filters_filter simple nopadding flex">
+                <section class="button-group simple light left-align" data-filter-group="genre">
+                    <rou class="title_filter">identité de genre</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".f"><input type="checkbox" class="none">
+                        <cv>féminin</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".m"><input type="checkbox" class="none">
+                        <cv>masculin</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".nb"><input type="checkbox" class="none">
+                        <cv>non-binaire</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="origines">
+                    <rou class="title_filter">origines</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".blanc-he"><input type="checkbox" class="none">
+                        <cv>blanches</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".noir-e"><input type="checkbox" class="none">
+                        <cv>noires</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".natif-ve"><input type="checkbox" class="none">
+                        <cv>natives</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".asiatique"><input type="checkbox" class="none">
+                        <cv>asiatiques</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".latinx"><input type="checkbox" class="none">
+                        <cv>latinx</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".arabe"><input type="checkbox" class="none">
+                        <cv>arabes</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".polynesien-ne"><input type="checkbox" class="none">
+                        <cv>polynésiennes</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="orientation">
+                    <rou class="title_filter">orientation</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".hetero"><input type="checkbox" class="none">
+                        <cv>hétéro</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".gay-lesbienne"><input type="checkbox" class="none">
+                        <cv>gay & lesbienne</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".bi-pan-omni"><input type="checkbox" class="none">
+                        <cv>bi & pan & omni</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".aro-ace"><input type="checkbox" class="none">
+                        <cv>aro & ace</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".autre-orientation"><input type="checkbox" class="none">
+                        <cv> autre</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="statut">
+                    <rou class="title_filter">statut marital</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".celibataire"><input type="checkbox" class="none">
+                        <cv>célibataire</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".en-couple"><input type="checkbox" class="none">
+                        <cv>en couple</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".fiance-e"><input type="checkbox" class="none">
+                        <cv>fiancé·e</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".divorce-veuf"><input type="checkbox" class="none">
+                        <cv>divorcé·e & veuf·ve</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".autre-statut"><input type="checkbox" class="none">
+                        <cv>autre</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="groupe">
+                    <rou class="title_filter">groupe</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".group-q1"><input type="checkbox" class="none">
+                        <cv>leading</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".group-q2"><input type="checkbox" class="none">
+                        <cv>shining</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".group-q3"><input type="checkbox" class="none">
+                        <cv>raging</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".group-q4"><input type="checkbox" class="none">
+                        <cv>fading</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="finances">
+                    <rou class="title_filter">finances</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".pauvre"><input type="checkbox" class="none">
+                        <cv>pauvre</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".classe-moyenne"><input type="checkbox" class="none">
+                        <cv>classe moyenne</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".riche"><input type="checkbox" class="none">
+                        <cv>riche</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".tres-riche"><input type="checkbox" class="none">
+                        <cv>très riche</cv>
+                    </label>
+                </section>
+
+                <section class="button-group simple light left-align" data-filter-group="carriere">
+                    <rou class="title_filter">carrière</rou>
+                    <label class="filter-button" data-filter="*"><input type="checkbox" class="none">
+                        <cv>tout</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".art-medias"><input type="checkbox" class="none">
+                        <cv>art, médias</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".commerce-immobilier-finances"><input type="checkbox" class="none">
+                        <cv>commerce, immobilier, finances</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".crime-securite"><input type="checkbox" class="none">
+                        <cv>crime, sécurité</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".droit-politique"><input type="checkbox" class="none">
+                        <cv>droit, politique</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".education-etudes"><input type="checkbox" class="none">
+                        <cv>éducation, étudiant·e·s</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".restauration-hotellerie"><input type="checkbox" class="none">
+                        <cv>restauration, hôtellerie</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".sciences-sante"><input type="checkbox" class="none">
+                        <cv>sciences, santé</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".sport"><input type="checkbox" class="none">
+                        <cv>sport</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".monde-de-la-nuit"><input type="checkbox" class="none">
+                        <cv>monde de la nuit</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".autre-job"><input type="checkbox" class="none">
+                        <cv>autres job</cv>
+                    </label>
+
+                    <label class="filter-button" data-filter=".sans-emploi"><input type="checkbox" class="none">
+                        <cv>sans emploi</cv>
+                    </label>
+                </section>
+
+            </div>
+        </div>
+
+
+
+
+        <!-------------------- DEBUT FACECLAIM -------------------->
+
+        <div class="grid-isotope simple nopadding">
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow nb blanc-he latinx gay-lesbienne en-couple classe-moyenne crime-securite group-q1">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow m asiatique arabe aro-ace autre-statut pauvre sans-emploi group-q3">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow m noir-e hetero celibataire riche droit-politique group-q2">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow f polynesien-ne autre-orientation autre-statut classe-moyene education-etudes group-q4">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow f blanc-he bi-pan-omni aro-ace fiance-e tres-riche monde-de-la-nuit group-q2">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+            <!----- DEBUT MEMBRE ----->
+            <div class=" itm flexrow nb latinx asiatique aro-ace en-couple riche monde-de-la-nuit group-q1">
+                <div class="avatar_itm no-extend">
+                    <img src="https://images2.imgbox.com/52/2f/OcsK9TMQ_o.png">
+
+                    <div class="button_itm simple small small-font qx background center-align">
+                        <cv>avatar</cv><br>
+                        (c) créateurice
+                    </div>
+                </div>
+
+                <div class="infos_itm flexcolumn">
+                    <rou class="no-extend name_itm left-align qx">
+                        prénom nom
+                    </rou>
+                    <linel class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>profil</tag></a>
+                            <a href="#top" target="_blank"><tag>mp</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </linel>
+
+                    <scroll class="resume_itm italic left-align">
+                        <ro>pronoms</ro> — âge<br>
+                        métier, finances, orientation, statut.<br><br>
+
+                        keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes, keywords sur le perso en quelques lignes.
+                    </scroll>
+                    <liner class="contact_itm no-extend a-unset qx">
+                        <span>
+                            <a href="#top" target="_blank"><tag>fiche</tag></a>
+                        </span>
+                        <lgn></lgn>
+                    </liner>
+                </div>
+            </div>
+            <!----- FIN MEMBRE ----->
+
+
+        </div>
+
+    </section>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script src="../../JS/BOTTOM/toggle_package.js"></script>
+    <script src="../../JS/BOTTOM/overall.js"></script>
+    <script src="../../JS/BOTTOM/color.js"></script>
+    <script src="./isotope.js"></script>
+    <script src="./pages.js"></script>
+
+    <a name="bottom"></a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+IDENTITÉ DE GENRE
+
+    f   m   nb
+
+
+
+ORIGINES
+
+    blanc-he            noir-e              natif-ve
+    asiatique           latinx              arabe
+    polynesien-ne
+
+
+
+ORIENTATION
+
+    hetero              gay-lesbienne       bi-pan-omni
+    aro-ace             autre-orientation
+
+
+
+STATUT MARITAL
+
+    celibataire         en-couple           fiance-e
+    divorce-veuf        autre-statut
+    autre-statut
+
+
+
+GROUPE
+
+    leading             shining
+    raging              fading
+
+
+
+FINANCES
+
+    pauvre              classe-moyenne
+    riche               tres-riche
+
+
+
+CARRIERE
+
+    art-medias          commerce-immobilier-finances    crime-securite
+    droit-politique     education-etudes                restauration-hotellerie
+    sciences-sante      sport                           monde-de-la-nuit
+    autre-job           sans-emploi

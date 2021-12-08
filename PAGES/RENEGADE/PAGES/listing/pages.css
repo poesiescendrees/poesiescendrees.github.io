@@ -1,0 +1,41 @@
+/*- - - - - GENERAL - - - - -*/
+
+#wrap {
+    margin: var(--height-header) auto 300px;
+}
+
+
+
+
+
+/*- - - - - XXX - - - - -*/
+
+.name-link {
+    display: block;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    position: relative;
+    top: -200px;
+}
+
+.add_table_header {
+    width: 100%;
+}
+
+input[type="inputbox"] {
+    width: auto;
+    border: 0;
+    padding: var(--sm) var(--mo);
+    border-bottom: 1px solid var(--color) !important;
+    margin-right: 30px;
+    overflow: visible !important;
+    position: relative;
+
+    --color: var(--m2);
+    color: var(--color);
+}
+
+input[type="inputbox"]:active, input[type="inputbox"]:focus {
+    --color: var(--h1);
+}
