@@ -119,7 +119,7 @@ function tagName(name) {
 */
 function verifyNameExists(name) {
     if (name == '') return false;
-    var exists = $('[name*="' + name + '"]');
+    var exists = $('#main [name*="' + name + '"]');
     if (exists.length == 0) return false;
     else return $(exists[0]).attr('name');
 }
