@@ -35,15 +35,85 @@
         <table class="add_table_header">
             <tr>
                 <td>
-                    <ro>faceclaim</ro>
-                    <mg><a href="https://test-renegade.kanak.fr/" target="_blank" id="MAIN_URL">accueil</a></mg>
-                    <mg><a href="https://test-renegade.kanak.fr/c3-avatars" target="_blank">avatars</a></mg>
-                    <mg><a href="https://test-renegade.kanak.fr/c1-autres-creations-graphiques" target="_blank">autres</a></mg>
-                    <br>
-                    <mg2>(c) codes :: poesiescendrees</mg2>
-                </td>
-                <td class="right-align">
-                    <input type="inputbox" placeholder="Chercher une célébrité..." id="INPUTBOX">
+                    <div class="flexrow">
+                        <section class="overflow-hidden">
+                            <ro>faceclaim</ro>
+                            <mg><a href="https://test-renegade.kanak.fr/" target="_blank" id="MAIN_URL">accueil</a></mg>
+                            <mg><a href="https://test-renegade.kanak.fr/c3-avatars" target="_blank">avatars</a></mg>
+                            <mg><a href="https://test-renegade.kanak.fr/c1-autres-creations-graphiques" target="_blank">autres</a></mg>
+                            <br>
+                            <mg2>(c) codes :: poesiescendrees</mg2>
+                        </section>
+
+                        <section class="no-extend flexrow" id="toggle_param">
+                            <section class="bp_options no-extend" id="PARAM">
+                                <btag class="trigger_options">paramètres</btag>
+
+                                <div class="hidden_options hidden simple light">
+
+                                    <div class="visual_param simple nopadding">
+                                        <h1>affichage</h1>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="affichage" id="vignettes_option" opt="vignette_mode_option">
+                                            <btag>vignettes</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="affichage" id="liste_option" opt="liste_mode_option">
+                                            <btag>liste</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="affichage" id="colonnes_option" opt="liste_mode_option column">
+                                            <btag>colonnes</btag>
+                                        </label>
+                                    </div>
+
+                                    <div class="sort_param simple nopadding none">
+                                        <h1>trier la liste selon</h1>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="alpha_option" checked>
+                                            <btag>l'ordre alphabétique</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="anti_alpha_option">
+                                            <btag>l'ordre aphabétique inversé</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="posts_option">
+                                            <btag>nombre de posts</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="anti_posts_option">
+                                            <btag>nombre de posts inversé</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="last_option">
+                                            <btag>dernier sujet posté en premier</btag>
+                                        </label>
+                                        <label>
+                                        <input type="radio" class="input_options none" name="sort" id="anti_last_option">
+                                            <btag>premier sujet posté en premier</btag>
+                                        </label>
+                                    </div>
+
+                                </div>
+
+
+                            </section>
+
+                            <section class="bp_options no-extend none" ID="FILTRES">
+                                <btag class="trigger_options">filtres</btag>
+                                <div class="hidden_options hidden simple light">
+                                    bouh
+                                </div>
+
+                            </section>
+                        </section>
+
+                        <section class="no-extend right-align">
+                            <input type="inputbox" placeholder="Chercher une célébrité..." id="INPUTBOX">
+                        </section>
+                    </div>
+
                 </td>
             </tr>
         </table>
@@ -74,7 +144,7 @@
 
         <!-------------------- DEBUT FACECLAIM -------------------->
 
-        <section class="simple flex" style="--max: 250px;" id="main">
+        <section class="simple flex liste_mode_option column" id="main">
 
         </section>
 

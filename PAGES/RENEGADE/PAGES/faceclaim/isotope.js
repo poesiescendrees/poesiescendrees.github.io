@@ -279,9 +279,5 @@ function increment(input, maxs) {
 
 //////////////////// COMPLEMENTARY ////////////////////
 
-function isChecked(input) {return input.prop('checked');}
-function check(input) {input.prop('checked', true);}
-function uncheck(input) {input.prop('checked', false);}
-
 ///// debug
 function log(txt) {console.log(txt);}

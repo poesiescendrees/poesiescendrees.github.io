@@ -20,3 +20,7 @@ function random(min, max) {
 
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+function isChecked(input) {return input.prop('checked');}
+function check(input) {input.prop('checked', true);}
+function uncheck(input) {input.prop('checked', false);}

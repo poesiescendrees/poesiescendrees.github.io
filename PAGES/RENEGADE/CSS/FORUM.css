@@ -61,7 +61,7 @@
   --padding-header: var(--bg);
 
   --width-wrap: 80%;
-  --min-width-wrap: 900px;
+  --min-width-wrap: 500px;
 
   --width-nav: 60px;
   --padding-nav: var(--mo);
@@ -307,6 +307,10 @@ select { /*dropdowns*/
 ::selection {
   background: var(--selection);
   color: var(--font-selection);
+}
+
+.overflow-hidden {
+    overflow: hidden !important;
 }
 
 .lowercase{

@@ -4,25 +4,6 @@
     margin: var(--height-header) auto 300px;
 }
 
-
-
-
-
-/*- - - - - XXX - - - - -*/
-
-.name-link {
-    display: block;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-    position: relative;
-    top: -200px;
-}
-
-.add_table_header {
-    width: 100%;
-}
-
 input[type="inputbox"] {
     width: auto;
     border: 0;
@@ -34,8 +15,143 @@ input[type="inputbox"] {
 
     --color: var(--m2);
     color: var(--color);
+    cursor: initial !important;
+    text-transform: unset !important;
 }
 
 input[type="inputbox"]:active, input[type="inputbox"]:focus {
     --color: var(--h1);
+}
+
+.add_table_header {
+    width: 100%;
+}
+
+
+
+
+
+/*- - - - - MAIN - - - - -*/
+
+#main {
+    --max: 200px;
+}
+
+.bp_ava {
+    position: relative;
+    text-align: left;
+}
+
+.name_link_ava {
+    display: block;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    top: -200px;
+}
+
+.tagged_ava {
+    background: var(--h2);
+}
+
+.tagged_ava * {
+    color: var(--d4);
+}
+
+
+
+
+
+/*- - - - - OPTIONS - - - - -*/
+
+header.flexrow, header.flexrow .flexrow:not(.overflow-hidden) {
+    overflow: visible;
+}
+
+.bp_options {
+    position: relative;
+}
+
+.hidden_options {
+    display: block;
+    width: 400px;
+    height: 70vh;
+    min-height: 300px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+}
+
+.hidden_options.hidden {
+    display: none;
+}
+
+.hidden_options.light {
+    background: var(--l3);
+}
+
+.hidden_options h1 {
+    margin-bottom: var(--mo);
+}
+
+.hidden_options h1:first-child {
+    margin-top: 0;
+}
+
+.hidden_options btag {
+    margin: 2px var(--sm);
+}
+
+.input_options:checked + btag {
+    background: var(--h2);
+
+    --color-main: var(--d4);
+}
+
+.flex.liste_mode_option:not(.column) {
+    display: inline-block !important;
+    width: auto;
+}
+
+.flex.liste_mode_option.column {
+    display: block !important;
+    column-count: 3;
+}
+
+.flex.liste_mode_option .bp_ava {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-between;
+    grid-gap: var(--mo);
+    background: none !important;
+}
+
+
+.flex.liste_mode_option .bp_ava > * {
+    flex: 1;
+    margin: 0;
+    padding-top: 0;
+    padding-left: 0;
+    width: auto;
+}
+
+
+.flex.liste_mode_option .bp_ava ch {
+    flex: 0 0 auto;
+}
+
+
+.flex.liste_mode_option .bp_ava:hover ch {
+    font-style: italic;
+    border-bottom: 2px dotted var(--m2) !important;
+}
+
+
+.flex.liste_mode_option .bp_ava mg {
+    border: 0 !important;
+}
+
+.sort_param label {
+    display: block;
 }

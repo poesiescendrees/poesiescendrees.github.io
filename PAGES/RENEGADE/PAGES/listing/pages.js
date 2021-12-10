@@ -3,21 +3,32 @@ var main = $("#main");
 var main_url = 'https://test-renegade.kanak.fr';
 
 $(function() {
-    var href_f_ava = $('#ID_F_AVATARS').attr('href');
-    var href_m_ava = $('#ID_M_AVATARS').attr('href');
-    var href_nb_ava = $('#ID_NB_AVATARS').attr('href');
 
-    var hrefs = [href_f_ava, href_m_ava, href_nb_ava];
+    ///////// SET AVATARS LIST
+
+    var hrefs = [
+        $('#ID_F_AVATARS').attr('href'),
+        $('#ID_M_AVATARS').attr('href'),
+        $('#ID_NB_AVATARS').attr('href')];
+
     for (avatars of hrefs) OVERALL(avatars);
-    log(dlength(DICO));
     DICO = sortObjectByKeys(DICO);
-    log(DICO);
-
     createLinks();
     inputbox();
 
+    setParams();
+
 });
 
+
+
+
+
+////////// STEP 0 : GLOBAL FUNCTIONS //////////
+
+/*
+    gets $(infoCSS) from the url page
+*/
 function gip(url, infoCSS) {
     var toreturn;
     $.ajax({
@@ -30,27 +41,16 @@ function gip(url, infoCSS) {
     return toreturn;
 }
 
-function getNextPage(pageContent) {
-    var block = pageContent.find('.pages:first-of-type > span:first-of-type').eq(0);
-    if (block.length == 0) return false;
-    var currentPageStrong = block.find('strong').eq(0);
-    if (currentPageStrong.is(':last-child')) return false;
-    else return main_url + currentPageStrong.next().next('a').attr('href');
-}
 
-function OVERALL(currentPageUrl) {
-    var pageContent = gip(currentPageUrl, '#main-content');
-    getAllTopicInfosFromPage(pageContent);
-    var nextUrl = getNextPage(pageContent);
-    if (nextUrl != false) OVERALL(nextUrl);
-}
 
-function AddOnePage(currentPageUrl) {
-    var pageContent = gip(currentPageUrl, '#main-content');
-    getAllTopicInfosFromPage(pageContent);
-    //var nextUrl = getNextPage(pageContent);
-}
 
+
+////////// STEP 1 : GET ALL INFOS AND PUT THEM IN DICO //////////
+
+/*
+    FA :: from the $(pageContent), fills DICO with
+          all the infos needed on the page
+*/
 function getAllTopicInfosFromPage(pageContent) {
     var topics = pageContent.find('.bp_lsuj');
     for (topic of topics) {
@@ -71,16 +71,78 @@ function getAllTopicInfosFromPage(pageContent) {
     }
 }
 
-//////////////////////////////////////////////////
+/*
+    FA :: gets from the $(pageContent) the url of next page
+          if doesn't exist (current page is last), returns false
+*/
+function getNextPage(pageContent) {
+    var block = pageContent.find('.pages:first-of-type > span:first-of-type').eq(0);
+    if (block.length == 0) return false;
+    var currentPageStrong = block.find('strong').eq(0);
+    if (currentPageStrong.is(':last-child')) return false;
+    else return main_url + currentPageStrong.next().next('a').attr('href');
+}
 
+/*
+    FA :: fills DICO with the infos on current page and all following
+*/
+function OVERALL(currentPageUrl) {
+    var pageContent = gip(currentPageUrl, '#main-content');
+    getAllTopicInfosFromPage(pageContent);
+    var nextUrl = getNextPage(pageContent);
+    if (nextUrl != false) OVERALL(nextUrl);
+}
+
+
+
+
+
+////////// STEP 2 : FILLS MAIN PAGE WITH INFOS //////////
+
+/*
+    SUBGLOBAL function : return normalized name
+*/
+function tagName(name) {
+    return name
+        .trim()
+        .toLowerCase()
+        .replace( /\s/gi, '-')
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+    ;
+}
+
+/*
+    SUBGLOBAL function : verify name is on page
+        - takes the closest match
+        - if no match, returns false
+*/
+function verifyNameExists(name) {
+    if (name == '') return false;
+    var exists = $('[name*="' + name + '"]');
+    if (exists.length == 0) return false;
+    else return $(exists[0]).attr('name');
+}
+
+/*
+    takes all names from dico and put them in main page
+*/
 function createLinks() {
     for (name in DICO) {
-        var nameWithoutSpaces = name.replace( /\s/gi, '-');
+        var nameWithoutSpaces = tagName(name);
+
+        // <a href="url" class="bp_ava display-block simple light unset" target="_blank"></a>
         var bp = createHTML('a')
                     .attr('href', DICO[name]['url'])
-                    .addClass('display-block simple light unset')
+                    .addClass('bp_ava display-block simple light unset')
                     .attr('target', '_blank');
 
+        /*
+            <a...>
+                <ch>name</ch>
+                <mg class="display-block simple small">x postes</mg>
+            </a>
+        */
         bp.append(create('ch').html(name));
         bp.append(
             create('mg')
@@ -89,30 +151,101 @@ function createLinks() {
                     DICO[name]['messages'] + ' postes')
                 );
 
+        /*
+            <a...>
+                ...
+                <!-- invisible -->
+                <a name="formated-name" class="name_link_ava"></a>
+            </a>
+        */
         bp.append(
             create('a')
                 .attr('name', nameWithoutSpaces)
-                .addClass('name-link')
+                .addClass('name_link_ava')
         );
-        // log(name);
-        // log(DICO[name]);
         main.append(bp);
     }
 }
 
+/*
+    search function
+*/
 function inputbox() {
     var ths = $('#INPUTBOX');
-    ths.bind('keyup', function(event) {
-        setTimeout(
-            function() {
-                var name = ths.val();
-                if (name != '')
-                    window.location.hash = '#' + name.replace( /\s/gi, '-');
-            },
-        1000);
+
+    // binds event and triggers search when "enter" is pressed
+    ths.on('keyup', function(event) {
+        if (event.keyCode === 13) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+
+            // takes & verifies if name matches
+            var name = tagName(ths.val());
+            var verifiedName = verifyNameExists(name);
+
+            // changes #url if needed
+            if (verifiedName != false) {
+                window.location.hash = '#' + verifiedName.replace( /\s/gi, '-');
+                var tagged = $('[name="' + verifiedName + '"]').closest('.bp_ava');
+
+                //triggers tagged avatar for .8s
+                tagged.addClass('tagged_ava');
+                setTimeout(
+                    function() {
+                        tagged.removeClass('tagged_ava');
+                    },
+                    800
+                );
+            }
+        }
     });
 }
 
+
+
+
+
+////////// STEP 3 : PARAMS //////////
+
+function setParams() {
+    var bks = $('.hidden_options');
+    bks.addClass('hidden');
+    bks.prev('.trigger_options').click(function() {
+        var bk = $(this).next();
+        var toHide = bk.hasClass('hidden');
+        bks.addClass('hidden');
+
+        if (toHide) bk.removeClass('hidden');
+        else bk.addClass('hidden');
+    });
+    //$('#PARAM .trigger_options').click();
+
+    affichageOption();
+    $('#vignettes_option').click();
+}
+
+function affichageOption() {
+    var vignettes = $('#vignettes_option');
+    var liste = $('#liste_option');
+    var colonnes = $('#colonnes_option');
+
+    $('.visual_param label').click(function() {
+        var inp = $(this).find('.input_options').eq(0);
+
+        $('.visual_param .input_options').each(function() {
+            var cls = $(this).attr('opt');
+            $('#main').removeClass(cls);
+        });
+
+        $('#main').addClass(inp.attr('opt'));
+    });
+}
+
+
+
+
+
+////////// STEP 3 : PARAMS //////////
 
 function log(s) {console.log(s);}
 
