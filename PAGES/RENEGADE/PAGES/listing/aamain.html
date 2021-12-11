@@ -50,60 +50,107 @@
                                 <btag class="trigger_options">paramètres</btag>
 
                                 <div class="hidden_options hidden simple light">
+                                    <scroll>
+                                        <div class="visual_param simple nopadding">
+                                            <h1>affichage</h1>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="affichage" id="vignettes_option" opt="vignette_mode_option">
+                                                <btag>vignettes</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="affichage" id="liste_option" opt="liste_mode_option">
+                                                <btag>liste</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="affichage" id="colonnes_option" opt="liste_mode_option column">
+                                                <btag>colonnes</btag>
+                                            </label>
+                                        </div>
 
-                                    <div class="visual_param simple nopadding">
-                                        <h1>affichage</h1>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="affichage" id="vignettes_option" opt="vignette_mode_option">
-                                            <btag>vignettes</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="affichage" id="liste_option" opt="liste_mode_option">
-                                            <btag>liste</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="affichage" id="colonnes_option" opt="liste_mode_option column">
-                                            <btag>colonnes</btag>
-                                        </label>
-                                    </div>
-
-                                    <div class="sort_param simple nopadding none">
-                                        <h1>trier la liste selon</h1>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="alpha_option" checked>
-                                            <btag>l'ordre alphabétique</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="anti_alpha_option">
-                                            <btag>l'ordre aphabétique inversé</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="posts_option">
-                                            <btag>nombre de posts</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="anti_posts_option">
-                                            <btag>nombre de posts inversé</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="last_option">
-                                            <btag>dernier sujet posté en premier</btag>
-                                        </label>
-                                        <label>
-                                        <input type="radio" class="input_options none" name="sort" id="anti_last_option">
-                                            <btag>premier sujet posté en premier</btag>
-                                        </label>
-                                    </div>
+                                        <div class="sort_param simple nopadding none">
+                                            <h1>trier la liste selon</h1>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="alpha_option" checked>
+                                                <btag>l'ordre alphabétique</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="anti_alpha_option">
+                                                <btag>l'ordre aphabétique inversé</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="posts_option">
+                                                <btag>nombre de posts</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="anti_posts_option">
+                                                <btag>nombre de posts inversé</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="last_option">
+                                                <btag>dernier sujet posté en premier</btag>
+                                            </label>
+                                            <label>
+                                            <input type="radio" class="input_options none" name="sort" id="anti_last_option">
+                                                <btag>premier sujet posté en premier</btag>
+                                            </label>
+                                        </div>
+                                    </scroll>
 
                                 </div>
 
 
                             </section>
 
-                            <section class="bp_options no-extend none" ID="FILTRES">
+                            <section class="bp_options no-extend" ID="FILTRES">
                                 <btag class="trigger_options">filtres</btag>
-                                <div class="hidden_options hidden simple light">
-                                    bouh
+                                <div class="bp_filters hidden_options hidden simple light">
+                                    <scroll>
+                                        <div class="group_filters debug simple nopadding" groupName="gender">
+                                            <h1>genre</h1>
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName="*">
+                                                <btag>tout</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".gender-f">
+                                                <btag>avatars féminins</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".gender-m">
+                                                <btag>avatars masculins</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".gender-nb">
+                                                <btag>avatars non-binaires</btag>
+                                            </label>
+                                        </div>
+
+                                        <div class="group_filters debug simple nopadding" groupName="messages">
+                                            <h1>posts</h1>
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName="*">
+                                                <btag>tout</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".msg-small">
+                                                <btag>peu de posts</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".msg-middle">
+                                                <btag>nombre moyen de posts</btag>
+                                            </label><br>
+
+                                            <label>
+                                            <input type="checkbox" class="input_filters" filterName=".msg-big">
+                                                <btag>nombre important de posts</btag>
+                                            </label>
+                                        </div>
+                                    </scroll>
                                 </div>
 
                             </section>

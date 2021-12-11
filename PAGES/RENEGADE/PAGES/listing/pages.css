@@ -48,7 +48,7 @@ input[type="inputbox"]:active, input[type="inputbox"]:focus {
     width: 1px;
     height: 1px;
     position: absolute;
-    top: -200px;
+    top: calc(-1*var(--height-header));
 }
 
 .tagged_ava {
@@ -76,11 +76,14 @@ header.flexrow, header.flexrow .flexrow:not(.overflow-hidden) {
 .hidden_options {
     display: block;
     width: 400px;
-    height: 70vh;
-    min-height: 300px;
     position: absolute;
     top: 60px;
     right: 0;
+}
+
+.hidden_options scroll {
+    height: auto;
+    max-height: 70vh;
 }
 
 .hidden_options.hidden {
@@ -101,6 +104,10 @@ header.flexrow, header.flexrow .flexrow:not(.overflow-hidden) {
 
 .hidden_options btag {
     margin: 2px var(--sm);
+}
+
+.input_options + btag {
+    cursor: crosshair;
 }
 
 .input_options:checked + btag {
@@ -154,4 +161,28 @@ header.flexrow, header.flexrow .flexrow:not(.overflow-hidden) {
 
 .sort_param label {
     display: block;
+}
+
+.bp_ava.hidden, .flex.liste_mode_option .bp_ava.hidden {
+    display: none !important;
+}
+
+
+
+
+
+/*- - - - - FILTERS - - - - -*/
+
+.input_filters {
+    display: none;
+}
+
+.input_filters + btag {
+    cursor: crosshair;
+}
+
+.input_filters:checked + btag {
+    background: var(--h2);
+
+    --color-main: var(--d4);
 }
