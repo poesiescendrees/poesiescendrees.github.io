@@ -11,7 +11,7 @@ $(function() {
    //
    // }
 
-   var xxx = gip('./templates/general/topic_list_box.html', 'body');
+   var xxx = gip('./templates/general/topics_list_box.html', 'body');
    console.log(xxx);
 });
 
