@@ -7,22 +7,18 @@
 
 
     <div class="flex simple nopadding lowercase" style="--max: 120px; grid-gap: var(--mo);">
-    <div class="simple light">
-      {INBOX}
-    </div>
-    <div class="simple light">
-      {SENTBOX}
-    </div>
-    <div class="simple light">
-      {OUTBOX}
-    </div>
-    <div class="simple light">
-      {SAVEBOX}
-    </div>
-
-    <!-- BEGIN switch_post_reply -->
-      <div class="mp_answer_img_topiclist no-extend">{REPLY_PM_IMG}</div>
-    <!-- END switch_post_reply -->
+      <div class="simple light">
+        {INBOX}
+      </div>
+      <div class="simple light">
+        {SENTBOX}
+      </div>
+      <div class="simple light">
+        {OUTBOX}
+      </div>
+      <div class="simple light">
+        {SAVEBOX}
+      </div>
   </div>
 
 
@@ -72,7 +68,9 @@
   <div class="flexrow simple nopadding">
 
     <!-- BEGIN switch_post_reply -->
-    <div class="mp_answer_img_topiclist no-extend">{REPLY_PM_IMG}</div>
+      <div class="button1">
+        <a href="{REPLY_PM_URL}" rel="nofollow" title="{REPLY_PM_IMG}" style="color: var(--l1);">répondre</a>
+      </div>
     <!-- END switch_post_reply -->
 
     <!-- BEGIN switch_save -->
@@ -99,4 +97,4 @@
 $(resize_images({ 'selector' : '.postbody .content', 'max_width' : {switch_image_resize.IMG_RESIZE_WIDTH}, 'max_height' : {switch_image_resize.IMG_RESIZE_HEIGHT} }));
 //]]>
 </script>
-<!-- END switch_image_resize -->
+<!-- END switch_image_resize -->s
