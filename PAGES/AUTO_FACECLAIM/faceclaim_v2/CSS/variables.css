@@ -1,0 +1,49 @@
+/* - - - - - COLORS & VARIABLES - - - - - */
+
+:root{
+    --l0: #ffffff; /*light 0*/
+    --l1: #f2f2f2; /*light 1*/
+    --l2: #e0e0e0; /*light 2*/
+    --l3: #d5d5d5; /*#light 3*/
+    --l4: #cdcdcd; /*light 4*/
+
+    --m1: #c3c3c3; /*moyen 1*/
+    --m2: #9a9a9a; /*moyen 2*/
+
+    --d1: #31465C; /*dark 1*/
+    --d2: #1B2736; /*dark 2*/
+    --d3: #0F161E; /*dark 3*/
+    --d4: #000000; /*dark 4*/
+
+    --h1: #3E6EAB; /*highlight 1: bleu moyen*/
+    --h2: #7392B5; /*highlight 2: bleu clair*/
+    --h3: #db9641; /*highlight 3: brun moyen*/
+    --h4: #dba058; /*highlight 4: brun clair*/
+
+  --sm: 10px;
+  --mo: 20px;
+  --bg: 35px;
+  --lg: 60px;
+  --gi: 120px;
+
+  --background-body: white;
+
+  --grid-gap-sm: var(--sm);
+  --grid-gap: var(--mo);
+  --grid-gap-lg: var(--lg);
+
+  --lgn-main: var(--m1);
+
+    --color-main: var(--d3);
+    --font-family-main: 'Mulish', 'Verdana', sans-serif;
+    --font-size-main: 14px;
+    --line-height-main: 16px;
+    --text-align-main: justify;
+}
+
+/*@font-face*/
+
+@font-face {
+  font-family: "Befindisa";
+  src: url("https://dl.dropbox.com/s/k8c349srct7qdu0/Befindisa.otf?dl=0");
+}
