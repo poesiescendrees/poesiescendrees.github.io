@@ -1,0 +1,158 @@
+:root {
+    color: var(--color-main);
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-main);
+    line-height: var(--line-height-main);
+    text-align: var(--text-align-main);
+}
+
+
+
+
+
+/* - - - - - FONTS - - - - - */
+
+a{
+  color: var(--h3);
+}
+
+a:hover{
+  border-bottom: 1px solid var(--h2);
+}
+
+a, a:visited{
+  text-decoration: none;
+}
+
+a:hover, input:hover, label:hover{
+  color: var(--h2);
+  cursor: crosshair;
+}
+
+input[type=text]:hover{
+  color: unset;
+}
+
+u, a{
+  text-decoration: none;
+  border-bottom: 1px solid;
+}
+
+::selection{
+  background: var(--m2);
+  color: var(--l2);
+}
+
+
+
+
+
+/*- - - - - H1-2-3-4-5-6 - - - - -*/
+
+
+
+/*----- H4*/
+
+h4 {
+    display: inline-block;
+    padding-bottom: var(--mo);
+    border-bottom: 1px solid;
+
+  color: var(--d4);
+  font-family: var(--font-family-main);
+  font-size: calc(0.8*var(--font-size-main));
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: calc(0.8*var(--line-height-main));
+  text-transform: uppercase;
+}
+
+cv {
+  font-size: var(--font-size-main);
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  color: var(--color-main);
+}
+
+sms{
+  color: grey;
+  font-family: 'Courier New';
+  font-size: calc(0.8 * var(--font-size-main));
+  font-style: normal;
+  letter-spacing: 1px;
+}
+
+qq {
+  color: var(--d1);
+  font-family: 'Arial', 'Verdana', 'Mulish', sans-serif;
+  font-size: calc(0.8 * var(--font-size-main));
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* - - - - AUTRES - - - - */
+
+lgn {
+  display: block;
+  width: 100%;
+  height: 0;
+  margin: var(--sm) 0;
+  border-bottom: 1px solid var(--lgn-main);
+}
+
+
+
+
+
+/* - - - - - BUTTON - - - - - */
+
+.button1 {
+    display: inline-block;
+    border: 0;
+    width: var(--sq);
+    height: var(--sq);
+    --sq: 40px;
+    background: var(--l2);
+    margin: 3px;
+    padding: var(--sm);
+    border-radius: 50%;
+    position: relative;
+
+    --highlight: var(--h2);
+    --highlight-color: var(--l0);
+}
+
+.button1:after {
+    display: none;
+    background: var(--highlight);
+    padding: 2px var(--sm);
+    content: var(--hover);
+    position: absolute;
+    top: 110%;
+    left: 50%;
+
+    color: var(--highlight-color);
+}
+
+.button1:hover:after {
+    display: block;
+}
+
+.button1:hover {
+    background: var(--highlight);
+    color: var(--highlight-color);
+}
+
+.button1:active {
+    background: var(--l4);
+}
