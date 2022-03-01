@@ -1,0 +1,540 @@
+<!DOCTYPE>
+<html>
+<head>
+
+    <!------------------------- FACECLAIM AUTOMATISÉ -------------------------
+                                codes par @poesiescendrees
+                                page du libre service -->
+
+    <title>FACECLAIM :: LIBRE SERVICE</title>
+    <link rel="icon" href="https://img.icons8.com/small/16/000000/small-hearts.png">
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-type" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mulish:wght@200&family=Oswald&family=Playfair+Display&family=Rozha+One&display=swap" rel="stylesheet">
+    <pal><p></p><p></p><p></p><p></p><p class="pp"></p><p></p><p class="pp"></p><p></p><p></p><p class="pp"></p><p></p><p></p><p></p><p></p></pal>
+
+
+
+
+    <!-------------------- CSS STYLE IMPORT -------------------->
+    <link href="https://poesiescendrees.github.io/PAGES/AUTO_FACECLAIM/CSS/overall.css" rel="stylesheet">
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://poesiescendrees.github.io/PAGES/AUTO_FACECLAIM/header.js"></script>
+
+
+    <style>
+        /* ------------------------ MAIN  ------------------------ */
+
+        :root{
+            --m2: #dcc0b8; /*barres de défilement*/
+            --l3: #dcc0b8; /*sélection*/
+
+            --d1: #dd9480; /*couleur titres (pseudos & petites infos) faceclaim à droite*/
+            --m1: #d0d0d0; /*barre soulignement titre*/
+            --d2: #333333; /*couleur texte principal facelcaim à droite*/
+
+            --l1: #8d6458; /*fond navigation à gauche*/
+            --d3: #f0f0f0; /*couleur titre navigation à gauche*/
+            --d4: #f0f0f0; /*couleur texte principal navigation à gauche*/
+            --h3: #dd9480; /*couleur sélection & liens navigation à gauche*/
+
+            --l0: #eeeeee; /*couleur survol texte liens*/
+            --l2: #e0e0e0; /*fond liens*/
+            --h2: #ebab99; /*fond survol liens*/
+
+            --background-body: #f5f5f5;
+
+
+          --sm: 10px;
+          --mo: 20px;
+          --bg: 35px;
+          --lg: 60px;
+          --gi: 120px;
+
+          --grid-gap-sm: var(--sm);
+          --grid-gap: var(--mo);
+          --grid-gap-lg: var(--lg);
+
+          --lgn-main: var(--m1);
+
+            --color-main: var(--d2);
+            --font-family-main: 'Mulish', 'Verdana', sans-serif;
+            --font-size-main: 17px;
+            --line-height-main: 24px;
+            --text-align-main: justify;
+        }
+
+
+        body{
+            width: 100vw;
+            height: 100vh;
+            background: var(--background-body);
+            margin: 0 !important;
+            padding: 0 !important;
+            overflow: auto;
+            --sq-global: 80px;
+            --mg-ver: 10vh;
+        }
+
+        main {
+            scroll-behavior: smooth;
+        }
+
+        main {
+            flex: 1 1 auto;
+        }
+
+        body > *:not(main):not(header) {
+            position: fixed;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        /* ------------------------ HEADER  ------------------------ */
+
+        header {
+            width: 25vw;
+            height: 100vh;
+            max-width: 350px;
+            --sq-global: 130px;
+            background: var(--l1);
+            padding: var(--mg-ver) var(--grid-gap);
+            z-index: 1000;
+            top: 0;
+            left: 0;
+        }
+
+        header .sq {
+            margin: 0 auto;
+        }
+
+        .name_header::before {
+            content: var(--texte1);
+        }
+
+
+
+
+
+
+        /* ------------------------ FILTERS  ------------------------ */
+
+        #bp_filters:not(.ls_filters) > scroll > * {
+            display: block;
+        }
+
+        .ls_filters a {
+            color: inherit;
+            border-bottom: 0;
+        }
+
+        .group_filters, .ls_filters {
+            padding: 0 30px;
+            line-height: 2em;
+        }
+
+        .group_filters label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .input_filters:checked + * {
+            color: var(--h3);
+            border-bottom: 1px solid;
+        }
+
+        #INPUTBOX {
+            background: transparent;
+            padding-bottom: 4px;
+            border-bottom: 1px solid var(--d3);
+            size: 1.1em;
+            color: var(--d3);
+        }
+
+        ::placeholder {
+            color: var(--d3);
+            opacity: 0.5;
+        }
+
+
+
+
+
+
+        /* ------------------------ FACECLAIM  ------------------------ */
+
+        main {
+            padding: var(--mg-ver);
+            overflow: auto;
+        }
+
+        main.flex.fixed > filler {
+            height: 0 !important;
+        }
+
+        #bp_fc {
+            margin: 0 !important;
+            --height-flex: 500px;
+            --grid-gap: 150px;
+        }
+
+        #bp_fc > * > * {
+            --grid-gap: var(--mo);
+        }
+
+        .member_fc {
+            position: relative;
+        }
+
+        .members_fc.tagged_fc {
+            color: var(--h3);
+        }
+
+        .a_name_fc {
+            display: block;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            position: absolute;
+            z-index: -4;
+            top: -100px;
+            left: 0;
+        }
+
+        .member_fc.hidden {
+            display: none !important;
+        }
+
+        .avatar_fc {
+            display: block;
+            margin: auto;
+            --sq: 150px;
+            filter: grayscale(100%);
+        }
+
+        .member_fc:hover .avatar_fc {
+            filter: none;
+        }
+
+        .contact_fc {
+            height: var(--sq-resume) !important;
+            --sq-resume: 35px;
+        }
+
+        .contact_fc a {
+            border: 0;
+        }
+
+        .contact_fc .button1 {
+            --sq: var(--sq-resume);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .resume_fc {
+            height: auto;
+            max-height: 15%;
+        }
+
+
+
+
+
+
+        /* ------------------------ @MEDIA  ------------------------ */
+
+
+        @media only screen and (max-width: 900px) {
+            body {
+                --mg-ver: 5vh;
+            }
+
+            header {
+                width: calc(var(--sq-global) + 2*var(--grid-gap));
+                --sq-global: 100px;
+                --grid-gap: 50px;
+            }
+
+            .name_header::before {
+                content: var(--texte2);
+            }
+
+            #bp_filters, .bp_inputbox {
+             visibility: hidden;
+            }
+        }
+
+
+        @media only screen and (max-width: 600px) {
+            header {
+                --sq-global: 80px;
+                --grid-gap: 30px;
+            }
+        }
+
+
+
+
+
+        /* - - - - - FONTS - - - - - */
+
+        :root {
+            color: var(--color-main);
+            font-family: var(--font-family-main);
+            font-size: var(--font-size-main);
+            line-height: var(--line-height-main);
+            text-align: var(--text-align-main);
+        }
+
+        a{
+          color: var(--h3);
+        }
+
+        a, a:visited{
+          text-decoration: none;
+        }
+
+        a:hover, input:hover, label:hover{
+          color: var(--h2);
+          cursor: crosshair;
+        }
+
+        input[type=text]:hover{
+          color: unset;
+        }
+
+        u, a{
+          text-decoration: none;
+          border-bottom: 1px solid;
+        }
+
+        ::selection{
+          background: var(--l3);
+          color: var(--d2);
+        }
+
+        h4 {
+            display: inline-block;
+            padding-bottom: var(--mo);
+            border-bottom: 1px solid;
+
+          color: var(--d3);
+          font-family: var(--font-family-main);
+          font-size: calc(0.8*var(--font-size-main));
+          font-style: normal;
+          font-weight: bold;
+          letter-spacing: 3px;
+          line-height: calc(0.8*var(--line-height-main));
+          text-transform: uppercase;
+        }
+
+        header {
+            color: var(--d4);
+        }
+
+        cv {
+          font-size: var(--font-size-main);
+          font-weight: bold;
+          font-style: normal;
+          letter-spacing: 1px;
+          text-transform: lowercase;
+          color: var(--d1);
+        }
+
+        sms{
+          color: grey;
+          font-family: 'Courier New';
+          font-size: calc(0.8 * var(--font-size-main));
+          font-style: normal;
+          letter-spacing: 1px;
+        }
+
+        qq {
+          color: var(--d4);
+          font-family: 'Arial', 'Verdana', 'Mulish', sans-serif;
+          font-size: calc(0.8 * var(--font-size-main));
+          font-style: normal;
+          font-weight: normal;
+          letter-spacing: 2px;
+          word-spacing: 1px;
+          text-transform: uppercase;
+        }
+
+        lgn {
+          display: block;
+          width: 100%;
+          height: 0;
+          margin: var(--sm) 0;
+          border-bottom: 1px solid var(--lgn-main);
+        }
+
+        .button1 {
+            display: inline-block;
+            border: 0;
+            width: var(--sq);
+            height: var(--sq);
+            --sq: 40px;
+            background: var(--l2);
+            margin: 3px;
+            padding: var(--sm);
+            border-radius: 50%;
+            position: relative;
+
+            --highlight: var(--h2);
+            --highlight-color: var(--l0);
+        }
+
+        .button1:after {
+            display: none;
+            background: var(--highlight);
+            padding: 2px var(--sm);
+            content: var(--hover);
+            position: absolute;
+            top: 110%;
+            left: 50%;
+
+            color: var(--highlight-color);
+        }
+
+        .button1:hover:after {
+            display: block;
+        }
+
+        .button1:hover {
+            background: var(--highlight);
+            color: var(--highlight-color);
+        }
+
+        .button1:active {
+            background: var(--l4);
+        }
+
+    </style>
+
+</head>
+
+<body class="flexrow">
+    <header class="flexcolumn no-extend">
+        <div class="no-extend">
+            <img src="https://images2.imgbox.com/0e/d1/qc4M9Nsm_o.png" class="round sq display-block">
+        </div>
+
+        <div class="simple nopadding center-align no-extend">
+            <h4 class="name_header center-align" style="
+                --texte1: 'faceclaim';
+                --texte2: 'fc.'"></h4><br>
+
+            <a href="https://poesiescendrees.tumblr.com/" class="button1" style="--hover: 'tumblr';" target="_blank">&#8962;</a>
+            <a href="https://test-renegade.kanak.fr/" class="button1" style="--hover: 'site.personnel';" target="_blank">&#8801;</a>
+
+        </div>
+
+        <section id="bp_filters" class="ls_filters simple nopadding left-align">
+            <scroll>
+
+                    <a href="https://test-renegade.kanak.fr/h2-faceclaim-with-filters" target="_blank">exemple du faceclaim avec filtres</a><br>
+                    <a href="https://github.com/poesiescendrees/poesiescendrees.github.io/blob/main/PAGES/AUTO_FACECLAIM/mainWithIsotope.html" target="_blank">CODES du faceclaim avec filtres</a><br><br>
+                    <a href="https://test-renegade.kanak.fr/h4-faceclaim-without-filters" target="_blank">exemple faceclaim sans filtres</a><br>
+                    <a href="https://github.com/poesiescendrees/poesiescendrees.github.io/blob/main/PAGES/AUTO_FACECLAIM/mainWITHOUTIsotope.html" target="_blank">CODES faceclaim sans filtres</a>
+
+            </scroll>
+        </section>
+    </header>
+
+    <main>
+        <a name="top"></a>
+
+        <h1>faceclaim automatisé :: libre service</h1>
+        <lgn></lgn>
+        <sms>codes par @poesiescendrees</sms>
+        <br><br><br>
+
+
+        <h2>les explications</h2>
+        <p>
+            Bonjour ! Je vous présente ici un code pour un faceclaim FA qui fonctionne de manière totalement automatisée ; une fois installé, il n'y a aucun entretien à réaliser si ce n'est peut-être le changement des couleurs sur la page une fois toutes les MAJ. L'affichage des membres et de leurs informations est réalisée de manière automatique. En effet, le faceclaim affiche automatiquement tous les membres du forum. Il est cependant possible d'indiquer manuellement certains profils à ne pas afficher (typiquement, ceux des PNJ et du compte fondateur). À noter que les membres non validés seront également affichés.
+        </p>
+
+        <p>
+            L'installation est un peu contraignante car elle vous demande possiblement de modifier légèrement vos tempates (sans impact sur leur apparence) et d'ajouter un peu de CSS et de JavaScript. Je vous explique plus bas sur cette page comment opérer ces changements simultanément à la modification des codes par défaut du faceclaim. Ce dernier s'héberge sur une page HTML annexe de votre forum (ou n'importe où d'autre si vous préférez ; Tumblr, Github.io, etc.).
+        </p>
+
+        <p>
+            Le faceclaim est compatible avec n'importe quelle version de Forumactif (PHPbb2, ModernBB, etc.). En fonction de la <u>lourdeur</u> des codes de votre forum (ceux de vos profils et de votre liste des membres) la page mettra plus ou moins longtemps à se charger. En effet, le code parcourt les pages précédemment citées et les traite une par une. J'ai testé ce code sur des forums comprenant entre 10 et 300 membres avec des codes divers et variés et cela ne posait pas de problème, cela dit je ne garantis rien si vous gérez une industrie entière avec plus de 800 comptes à son actif ahah.
+        </p>
+        <br><lgn></lgn><br>
+
+
+        <h2>les conditions d'usage</h2>
+        <p>
+            Le code a besoin que :
+                <ul>
+                    <li>La liste des membres soit ouverte aux <u>invités</u></li>
+                    <li>Les profils des membres soit ouverts aux <u>invités</u></li>
+                </ul>
+        </p>
+        <p>
+            De plus, <cv>merci de ne pas supprimer le crédit du faceclaim</cv> ou alors de le déplacer sur votre PA / vos crédits généraux.
+        </p>
+        <br><lgn></lgn><br>
+
+
+        <h2>l'installation étape par étape <br><sms>à lire attentivement !!</sms></h2>
+        <p>
+            Il faudra modifier.
+        </p>
+
+<!--
+        Ce faceclaim est prévu pour qu'une fois installé, vous n'ayez pas
+        à le maintenir à jour au fil des va et viens des membres;
+        sa complétion est en effet automatisée.
+        Son apparence n'est pas ou peu modifiable, en revanche
+        vous pourrez sélectionner les informations à afficher
+        qui vous intéressent.
+        Le faceclaim est compatible avec n'importe quelle version
+        de forumactif (PHPbb2, ModernBB, etc.).
+
+        L'installation est un peu contraignante car elle vous demandera
+        possiblement de modifier légèrement vos templates (sans impact
+        sur leur apparence) et d'ajouter un peu de CSS et de JavaScript.
+
+        Lisez bien les étapes d'installation sur la page principale
+        du libre service du faceclaim pour que tout cela fonctionne correctement !!
+        Elles vous permettront de réaliser les modifications nécessaires
+        dans votre forum pour que le code du faceclaim bénéficie de toutes les
+        informations dont il a besoin pour fonctionner.
+        Ensuite, il ne vous restera plus qu'à héberger ce faceclaim
+        dans les pages annexes de votre forum (ou n'importe où d'autre si vous préférez)
+        et modifier les informations en bas de cette page.
+
+        Cette version du faceclaim comprend l'usage de filtres,
+        leur fonctionnement est expliqué sur la page principale du LS.
+        Une version sans filter du faceclaim est également disponible.-->
+
+
+
+        <a name="bottom"></a>
+    </main>
+
+    <footer>
+
+    </footer>
+
+
+
+    <!-------------------- SCRIPT IMPORT -------------------->
+    <script>
+    </script>
+
+</body>
+</html>
