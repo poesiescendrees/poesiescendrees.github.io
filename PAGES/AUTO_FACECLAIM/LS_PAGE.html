@@ -485,9 +485,14 @@
             <p>
                 Bonjour ! Je vous présente ici un code pour un faceclaim FA qui fonctionne de manière totalement automatisée ; une fois installé, il n'y a aucun entretien à réaliser si ce n'est peut-être le changement des couleurs sur la page une fois toutes les MAJ. Le faceclaim affiche automatiquement tous les personnages du forum (validés ou non) avec leurs informations personnelles. Ces dernières sont gérées par les membres eux-mêmes via leur profil. Il est possible d'indiquer manuellement certains profils à ne pas afficher (typiquement, ceux des PNJ et du compte fondateur).
             </p>
-
             <p>
-                L'installation est un peu contraignante car pour utiliser la plupart des fonctionnalités du Faceclaim cela vous demande de modifier légèrement vos templates (sans impact sur leur apparence) et d'ajouter un peu de CSS et de JavaScript. Je vous explique plus bas sur cette page comment opérer ces changements et la modification des codes par défaut du faceclaim. Ce dernier s'héberge sur une page HTML annexe de votre forum (ou n'importe où d'autre si vous préférez ; Tumblr, Github.io, etc.).
+                L'installation est un peu contraignante car pour utiliser la plupart des fonctionnalités du Faceclaim cela vous demande de modifier légèrement vos templates (sans impact sur leur apparence) et d'ajouter un peu de CSS et de JavaScript. Ces changements ne se font pas en cinq minutes, pas plus que la lecture de ce sujet d'ailleurs (toutes mes excuses ahah), je vous conseille donc d'attendre une MAJ pour installer le FC ou le mettre en place dès l'ouverture de votre forum !
+            </p>
+            <p>
+                Je pense qu'une personne ayant de bonnes bases en CSS et HTML et connaissant les MDP du compte fondateur saura installer le code, il ne faut pas connaître de JavaScript pour pouvoir installer le Faceclaim.
+            </p>
+            <p>
+                Le reste de cette page est consacrée à vous expliquer comment opérer les changements dans votre forum et la modification des codes par défaut du Faceclaim. Ce dernier s'héberge sur une page HTML annexe de votre forum (ou n'importe où d'autre si vous préférez ; Tumblr, Github.io, etc.).
             </p>
 
             <p>
@@ -562,7 +567,7 @@
 
             <h5>2. templates</h5>
             <p>
-                Vous avez dorénavant encodé toutes les informations nécessaires au Faceclaim que vos membres pourront compléter mais certaines sont totalement inutiles dans le profil comme dans le spoiler ci-dessous une fois que toutes les informations sont remplies par le membre; on va maintenant s'atteler à les cacher.
+                Vous avez dorénavant encodé toutes les informations nécessaires au Faceclaim que vos membres pourront compléter mais certaines sont totalement inutiles dans le profil comme dans le spoiler ci-dessous; on va maintenant s'atteler à les cacher.
                 <div class="spoiler"><img src="https://images2.imgbox.com/92/38/hJPjTF0c_o.png"></div>
             </p>
 
@@ -637,12 +642,12 @@ function norm(s) {
             <p>
                 Cliquer sur "prévisualisation" maintenant ne vous mènerait à rien car il faut modifier les informations se trouvant dans le script en bas de page.
                 <div class="spoiler">
-                    <img src="https://images2.imgbox.com/da/25/HaQmSlpO_o.png"><br>
-                    Il ne faudra modifier que certaines des informations en jaune, laissez le bleu intact.
+                    Il ne faudra modifier que certaines des informations en jaune, <u>laissez le bleu intact</u>.<br><br>
+                    <img src="https://images2.imgbox.com/da/25/HaQmSlpO_o.png">
                 </div>
             </p>
             <p>
-                Voici les informations (à droite, pas à gauche !) à modifier :
+                Toutes les informations à modifier (à droite, pas à gauche !) se trouvent dans le template du profil ; vous pouvez aller vérifier dans le template directement ou ouvrir le profil d'un membre (n'importe lequel fera l'affaire) et inspecter la page. Voici la liste des choses à aller récupérer et modifier dans le code du Faceclaim :
                     <ul>
                         <li>
                             <cv>'URL'</cv> : changez l'adresse avec celle de l'index de votre forum<br><br>

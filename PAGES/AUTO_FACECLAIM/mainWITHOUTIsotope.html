@@ -5,30 +5,16 @@
     <!------------------------- FACECLAIM AUTOMATISÉ -------------------------
                                 codes par @poesiescendrees
                                 version sans filtres
+                                https://poesiescendrees.github.io/PAGES/AUTO_FACECLAIM/LS_PAGE.html
 
 
             INFORMATIONS GÉNÉRALES - - - -
-            Ce faceclaim est prévu pour qu'une fois installé, vous n'ayez pas
-            à le maintenir à jour au fil des va et viens des membres;
-            sa complétion est en effet automatisée.
-            Son apparence n'est pas ou peu modifiable, en revanche
-            vous pourrez sélectionner les informations à afficher
-            qui vous intéressent.
-            Le faceclaim est compatible avec n'importe quelle version
-            de forumactif (PHPbb2, ModernBB, etc.).
-
-            L'installation est un peu contraignante car elle vous demandera
-            possiblement de modifier légèrement vos templates (sans impact
-            sur leur apparence) et d'ajouter un peu de CSS et de JavaScript.
-
-            Lisez bien les étapes d'installation sur la page principale
-            du libre service du faceclaim pour que tout cela fonctionne correctement !!
-            Elles vous permettront de réaliser les modifications nécessaires
-            dans votre forum pour que le code du faceclaim bénéficie de toutes les
-            informations dont il a besoin pour fonctionner.
-            Ensuite, il ne vous restera plus qu'à héberger ce faceclaim
-            dans les pages annexes de votre forum (ou n'importe où d'autre si vous préférez)
-            et modifier les informations en bas de cette page
+            Il est absolument nécessaire de lire les étapes d'installation une à une
+            sur la page principale du lbre service du faceclaim afin que tout fonctionne
+            correctement ! De plus, l'installation ne se fera pas en 5 minutes car elle
+            requiert quelques changements dans la structure de votre forum,
+            je vous conseille donc d'attendre une MAJ ou d'installer le FC dès l'ouverture
+            de votre forum !
 
             Une autre version du faceclaim comprend l'usage de filtres,
             elle est disponible sur la apge principale du LS.
@@ -36,6 +22,7 @@
 
     -------------------------->
 
+    <!-- TITRE DE VOTRE PAGE -->
     <title>Faceclaim</title>
     <link rel="icon" href="https://img.icons8.com/small/16/000000/small-hearts.png">
     <meta content="text/html;charset=UTF-8" http-equiv="Content-type" />
@@ -107,18 +94,6 @@
             --mg-ver: 10vh;
         }
 
-        main {
-            scroll-behavior: smooth;
-        }
-
-        main {
-            flex: 1 1 auto;
-        }
-
-        body > *:not(main):not(header) {
-            position: fixed;
-        }
-
 
 
 
@@ -131,6 +106,18 @@
 
 
         /* ------------------------ HEADER  ------------------------ */
+
+        main {
+            scroll-behavior: smooth;
+        }
+
+        main {
+            flex: 1 1 auto;
+        }
+
+        body > *:not(main):not(header) {
+            position: fixed;
+        }
 
         header {
             width: 25vw;
@@ -458,6 +445,7 @@
 <body class="flexrow">
     <header class="flexcolumn no-extend">
         <div class="no-extend">
+            <!-- IMAGE EN HAUT A GAUCHE -->
             <img src="https://images2.imgbox.com/e1/4e/EF8NKksJ_o.png" class="round sq display-block">
         </div>
 
@@ -466,14 +454,17 @@
                 --texte1: 'faceclaim';
                 --texte2: 'fc.'"></h4><br>
 
+            <!-- LIEN DU FORUM AUTOMATIQUEMENT REMPLACÉ, pas besoin de modifier -->
             <a href="" class="button1 forum" style="--hover: 'forum';" target="_blank">&#8962;</a>
+
+            <!-- AUTRES LIENS rapides, supprimer ou en rajouter comme vous voulez -->
             <a href="" class="button1" style="--hover: 'présentations';" target="_blank">&#8801;</a>
 
         </div>
 
         <section class="extend"></section>
 
-
+        <!-- CREDIT, merci de ne pas l'enlever ou d'éventuellement le déplacer dans votre PA / vos crédits généraux, merci ! -->
         <footer class="no-extend">
             codes @poesiescendrees
         </footer>
@@ -481,6 +472,9 @@
 
     <main>
         <a name="top"></a>
+
+
+        <!-------------------- TEMPLATE DE MEMBRE, ne surtout pas supprimer ni modifier !!! -------------------->
         <div id="bp_fc" class="simple nopadding flex fixed">
             <div class="member_fc flexcolumn simple nopadding none">
                 <div class="no-extend">
@@ -511,13 +505,9 @@
         </div>
 
 
-
+            <!-------------------- FIN TEMPLATE DE MEMBRE -------------------->
         <a name="bottom"></a>
     </main>
-
-    <footer>
-
-    </footer>
 
 
 
@@ -529,31 +519,40 @@
             'URL' : 'https://ghostlydazecendres.forumactif.com/',
             'pseudo' : 'h3',
             'avatar' : '.avatar_profil img',
-            'champUtile' : '.faceclaim_hidden',
-            'separateurEfface': ' : ',
             'separateurAffiche': ' ',
 
             'grandeDescription' : 'résumé',
-            'supprime' : ['supprimé', 'oui'],
             'utiles' : ["pseudo", "avatar", "âge", "quartier", "occupation"],
             'contact' : [
                 ['liens', '&#9788;'],
                 ['présentation', '&#9790;']
-            ]
+            ],
+
+
+
+            'champUtile' : '.faceclaim_hidden',
+            'supprime' : ['supprimé', 'oui'],
+            'separateurEfface': ' : ',
         }
+
+        // MODIFIER : 'URL', 'pseudo', 'avatar', 'grandeDescription', 'utiles', 'contact'
+        // MODIFIER EVENTUELLEMENT : 'separateurAffiche'
+        // NE PAS MODIFIER : 'champUtile', 'filtres', 'supprime'
+        // lire les commentaires ci-dessous et la pge principale du LS pour savoir comment modifier exactement
+        // https://poesiescendrees.github.io/PAGES/AUTO_FACECLAIM/LS_PAGE.html
 
         /*
             EXPLICATIONS DES INFORMATIONS A REMPLIR :
-                vous devrez remplir la partie à droite de chaque ligne
+                Vous devrez remplir la partie à droite de chaque ligne
                 (donc laisser les infos à gauche intactes : 'URL', 'pseudo', 'utile' etc.)
                 afin que le code puisse aller rechercher les informations
                 adéquates dans votre forum.
 
-                ouvrez une page de profil (n'importe lequel fera l'affaire)
+                Ouvrez une page de profil (n'importe lequel fera l'affaire)
                 ou le template directement, toutes les informations à aller récupérer
                 s'y trouvent.
 
-                les informations à retrouver sont placées dans des balises précises
+                Les informations à retrouver sont placées dans des balises précises
                 (par exemple celle de votre pseudo), aussi n'hésitez pas à aller
                 modifier les templates pour que cela soit plus facile en rajoutant
                 simplement une class à l'élément recherché, cela n'influencera
@@ -571,63 +570,8 @@
                 profil à inspecter, cliquer sur 'inspecter', et chercher le nom du sélecteur CSS :
                 https://images2.imgbox.com/50/14/b7Phajkz_o.png
 
-                voici ce que vous devrez changer en prenant les infos dans vos templates :
-                    - 'URL'                 url de l'INDEX de votre forum
-
-                    - 'pseudo'              sélecteur CSS du pseudo du membre :
-                                            ex : https://images2.imgbox.com/39/52/fdQumN0L_o.png
-                                                 -> 'h3' ou 'h3 strong'
-
-                    - 'avatar'              sélecteur CSS de l'IMAGE de l'avatar du membre
-                                            --> faites attention à bien sélectionner l'images
-                                                et non pas le bloc contenant l'image;
-                                                comme vous n'avez pas accès à l'image en elle-même
-                                                sur forumactif pensez pas à mentionner '.avatar img'
-                                            ex : https://images2.imgbox.com/a8/6f/LAZHkgQf_o.png
-                                                 -> '.avatar_profil img'
-
-                    - champUtile            sélecteur CSS d'une ligne ENTIÈRE dans les infos générales
-                                            du membre dans le profil ; la valeur par défaut écrite [id^=field_id]
-                                            est celle de forumactif donc à priori vous ne devrez pas y toucher
-                                            mais si vous avez recours à un template qui modifie ce champ-là,
-                                            vous devrez modifier dans le faceclaim
-                                            ex : https://images2.imgbox.com/50/14/b7Phajkz_o.png
-                                                 -> [id^=field_id]     (on prend tous les éléments dont l'id commence par "field_id")
-
-                    - 'separateurEfface'    TEXTE qui sépare l'intitulé de l'info générale et l'information en elle-même
-                                            la valeur par défaut écrite ici ' : ' est celle de forumactif donc
-                                            à priori vous ne devrez pas y toucher sauf modification du template de votre part
-                                            (attention, même si vos informations sont affichées en tableau il y a ce ' : ')
-
-
-
-                le reste des informations à changer (listées ci-dessous) ne sont pas à aller rechercher dans les templates.
-                il s'agit d'informations du profil à aller rechercher, celles que vous désirez. attention que certaines
-                sont à ajouter pour fonctionner (les liens des contacts et les filtres) mais peuvent être cachées;
-                explications sur la page du libre service du faceclaim.
-
-                    - 'separateurAffiche'   dans le faceclaim, texte qui va séparer les informations entre elles
-                                            (par défaut juste un espace)
-                                            correspond à : https://images2.imgbox.com/05/c0/N3mwdrr8_o.png
-
-                    - 'grandeDescription'   intitulé l'info de profil affichée en grand dans le faceclaim
-                                            -> elle peut être cachée ou non, rajoutez-la ou sélectionnez-en une préexistante
-                                            correspond à : https://images2.imgbox.com/ed/49/aoBSWss9_o.png
-
-                    - 'utiles'              liste des intitulés d'infos dans le profil profil
-                                            qui apparaissent dans le faceclaim, spécifiez-en autant que vous le désire
-                                            -> les infos seront normalement toutes visibles, ce sont celles du profil
-                                               normal des membres que vous voudrez voir apparaître dans le faceclaim
-                                            correspond à : https://images2.imgbox.com/1c/fc/q8yFqrGS_o.png
-
-                    - 'contact'            liste des contacts qui se trouvent dans les informations générales du profil
-                                           (PAS dans les champs de contact normaux ! cf explications dans le LS général du faceclaim)
-                                           spécifiez-en autant que vous voulez ; le lien du profil et vers les mps sont d'office ajoutés
-                                           correspond à : https://images2.imgbox.com/10/28/sFELZzmt_o.png
-
-                                           ['liens', '☼'],            --> 'liens' et 'présentation' : intitulé des infos de profil
-                                                                            contenant l'URL de la fiche de lien & fiche de présentation
-                                           ['présentation', '☾']      --> '☼' et '☾' : ce qui sera affiché dans le faceclaim
+                La liste détaillée des informations à retrouver sont
+                données dans la page générale du libre service en bas de page.
 
         */
     </script>
