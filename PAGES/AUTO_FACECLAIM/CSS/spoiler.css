@@ -1,0 +1,31 @@
+.parent-spoiler {
+    display: block;
+    margin: var(--grid-gap) auto 0;
+    background: var(--l2);
+    padding: var(--sm) var(--mo);
+}
+
+.spoiler {
+    display: block;
+    margin-top: var(--grid-gap);
+}
+
+.label-spoiler {
+    display: block;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.code {
+    display: block;
+    width: 100% !important;
+    min-height: 100px;
+    height: auto;
+    max-height: 600px;
+    background: var(--l2);
+    padding: var(--grid-gap);
+    border: 0;
+    outline: none;
+
+    font-size: var(--font-size-main);
+}
