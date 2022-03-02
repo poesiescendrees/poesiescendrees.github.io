@@ -61,23 +61,31 @@ function setMembers() {
     var limit = 50;
     var l = 0;
 
+
     /*goes through the memberlist*/
     while (going) {
         var profiles = gip(URL, 'a[href^="/u"]');
+        var c = 0;
         if (profiles.length == 0) going = false;
         else {
-            URLnumber += profiles.length;
+
             for (var pseudo of profiles) {
-                mbrs[$(pseudo).attr('href')] = {};
-                membersLength += 1;
+                var hrf = $(pseudo).attr('href');
+                if (mbrs[hrf] == undefined) {
+                    mbrs[hrf] = {};
+                    URLnumber += 1;
+                }
             }
+
             URL = INFOSLIST["URL"] + URLpage + URLstart + URLnumber + URLusername;
 
             if (limit == 0) going = false;
             else limit--;
         }
     }
+    membersLength = URLnumber;
     console.log(mbrs);
+    console.log("members length : " + membersLength);
     return mbrs;
 }
 
@@ -124,7 +132,7 @@ function setFaceclaim() {
                     var txt = norm($(info).text());
 
                     // VERIFIES IF SHOULD DELETE
-                    rgx = new RegExp('^' + INFOSLIST['supprime'][0] + '\ ?\*?' + INFOSLIST['separateurEfface'] + '(.+)');
+                    rgx = new RegExp('^' + INFOSLIST['supprime'][0] + '\\s?\\*?' + INFOSLIST['separateurEfface'] + '(.+)');
                     var deleted = txt.match(rgx);
                     if (deleted != null) {
                         if (strip(deleted[1]) == strip(INFOSLIST['supprime'][1])) return;
@@ -132,7 +140,7 @@ function setFaceclaim() {
 
                     // FINDS SMALL INFOS
                     for (var displayed of INFOSLIST["utiles"]) {
-                        rgx = new RegExp('^' + displayed + '\ ?\*?' + INFOSLIST['separateurEfface']);
+                        rgx = new RegExp('^' + displayed + '\\s?\\*?' + INFOSLIST['separateurEfface']);
                         if (txt.match(rgx) != null) {
                             members[profile]["infos"][displayed] = txt.replace(rgx, '');
                             break;
@@ -142,7 +150,7 @@ function setFaceclaim() {
                     // FINDS CONTACT FIELDS
                     for (var contact of INFOSLIST["contact"]) {
                         var name = contact[0];
-                        rgx = new RegExp('^' + name + '\ ?\*?' + INFOSLIST['separateurEfface']);
+                        rgx = new RegExp('^' + name + '\\s?\\*?' + INFOSLIST['separateurEfface']);
                         if (txt.match(rgx) != null) {
                             members[profile]["contact"][name] = [txt.replace(rgx, ''), contact[1]];
                             break;
@@ -150,11 +158,11 @@ function setFaceclaim() {
                     }
 
                     // finds and stores the big info on the character
-                    rgx = new RegExp('^' + INFOSLIST['grandeDescription'] + '\ ?\*?' + INFOSLIST['separateurEfface']);
+                    rgx = new RegExp('^' + INFOSLIST['grandeDescription'] + '\\s?\\*?' + INFOSLIST['separateurEfface']);
                     if (txt.match(rgx) != null) members[profile]["grandeDescription"] = txt.replace(rgx, '');
 
                     // finds and stores all the classes
-                    rgx = new RegExp('^' + INFOSLIST['filtres'] + '\ ?\*?' + INFOSLIST['separateurEfface']);
+                    rgx = new RegExp('^' + INFOSLIST['filtres'] + '\\s?\\*?' + INFOSLIST['separateurEfface']);
                     if (txt.match(rgx) != null) {
                         txt = txt.replace(rgx, '');
                         txt = txt.replace(/[\\\/\.\>\<\#\[\]\{\}]/gm, '');
@@ -179,7 +187,7 @@ function setFaceclaim() {
 
                 //////////////////// CLONE ////////////////////
                 var cloned = setCloned(base.clone(), profile);
-
+                console.log("ajax call ok");
             }
         });
     }
