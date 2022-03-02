@@ -124,7 +124,7 @@ function setFaceclaim() {
                     var txt = norm($(info).text());
 
                     // VERIFIES IF SHOULD DELETE
-                    rgx = new RegExp('^' + INFOSLIST['supprime'][0] + '\ ?\*? ' + INFOSLIST['separateurEfface'] + '(.+)');
+                    rgx = new RegExp('^' + INFOSLIST['supprime'][0] + '\ ?\*?' + INFOSLIST['separateurEfface'] + '(.+)');
                     var deleted = txt.match(rgx);
                     if (deleted != null) {
                         if (strip(deleted[1]) == strip(INFOSLIST['supprime'][1])) return;
@@ -132,7 +132,7 @@ function setFaceclaim() {
 
                     // FINDS SMALL INFOS
                     for (var displayed of INFOSLIST["utiles"]) {
-                        rgx = new RegExp('^' + displayed + '\ ?\*? ' + INFOSLIST['separateurEfface']);
+                        rgx = new RegExp('^' + displayed + '\ ?\*?' + INFOSLIST['separateurEfface']);
                         if (txt.match(rgx) != null) {
                             members[profile]["infos"][displayed] = txt.replace(rgx, '');
                             break;
@@ -142,7 +142,7 @@ function setFaceclaim() {
                     // FINDS CONTACT FIELDS
                     for (var contact of INFOSLIST["contact"]) {
                         var name = contact[0];
-                        rgx = new RegExp('^' + name + '\ ?\*? ' + INFOSLIST['separateurEfface']);
+                        rgx = new RegExp('^' + name + '\ ?\*?' + INFOSLIST['separateurEfface']);
                         if (txt.match(rgx) != null) {
                             members[profile]["contact"][name] = [txt.replace(rgx, ''), contact[1]];
                             break;
@@ -150,11 +150,11 @@ function setFaceclaim() {
                     }
 
                     // finds and stores the big info on the character
-                    rgx = new RegExp('^' + INFOSLIST['grandeDescription'] + '\ ?\*? ' + INFOSLIST['separateurEfface']);
+                    rgx = new RegExp('^' + INFOSLIST['grandeDescription'] + '\ ?\*?' + INFOSLIST['separateurEfface']);
                     if (txt.match(rgx) != null) members[profile]["grandeDescription"] = txt.replace(rgx, '');
 
                     // finds and stores all the classes
-                    rgx = new RegExp('^' + INFOSLIST['filtres'] + '\ ?\*? ' + INFOSLIST['separateurEfface']);
+                    rgx = new RegExp('^' + INFOSLIST['filtres'] + '\ ?\*?' + INFOSLIST['separateurEfface']);
                     if (txt.match(rgx) != null) {
                         txt = txt.replace(rgx, '');
                         txt = txt.replace(/[\\\/\.\>\<\#\[\]\{\}]/gm, '');
