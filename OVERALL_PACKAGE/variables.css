@@ -1,57 +1,61 @@
 /*
 
-    -------------------- DISCLAIMER --------------------
-    -------------------- by @poesiescendrees
-                            tumblr :   https://poesiescendrees.tumblr.com/
-                            site :     https://test-renegade.kanak.fr/
+      -------------------- DISCLAIMER --------------------
+      -------------------- by @poesiescendrees
+                                      tumblr :     https://poesiescendrees.tumblr.com/
+                                      site :       https://test-renegade.kanak.fr/
 
-    -------------------- css gallery : list of the variables used in the
-                                       other css files of the package.
-                                       you will normaly replace all the
-                                       variables for your design and rewrite
-                                       all of them at the beginning
-                                       of your main css file but if
-                                       you wanna leave the default theme
-                                       this way, just use this gallery.
-                                       you can always replace it or take the
-                                       default gallery at any moment.
+      -------------------- css gallery : list of the variables used in the
+                                                     other css files of the package.
+                                                     you will normaly replace all the
+                                                     variables for your design and rewrite
+                                                     all of them at the beginning
+                                                     of your main css file but if
+                                                     you wanna leave the default theme
+                                                     this way, just use this gallery.
+                                                     you can always replace it or take the
+                                                     default gallery at any moment.
 
-                                       +++ INFOS ON LAST PROPERTY ON DEMO PAGE
+                                                     +++ INFOS ON LAST PROPERTY ON DEMO PAGE
 
-                         COMPLEMENT of all the other galleries of the package
-                         INFOS on main demo page
+                                 COMPLEMENT of all the other galleries of the package
+                                 INFOS on main demo page
 
-    -------------------- last update : 15.04.2022
+      -------------------- last update : 15.04.2022
 */
 
 :root {
-  --l0: #ffffff; /*light 0*/
-  --l1: #FAFAFA; /*light 1*/
-  --l2: #F6F6F6; /*light 2*/
-  --l3: #F1F1F1; /*#light 3*/
-  --l4: #EBEBEB; /*light 4*/
 
-  --m1: #E4E4E4; /*moyen 1*/
-  --m2: #CACACA; /*moyen 2*/
+    /* - - - - - GLOBAL COLORS - - - - - */
+    --l0: #ffffff; /*light 0*/
+    --l1: #FAFAFA; /*light 1*/
+    --l2: #F6F6F6; /*light 2*/
+    --l3: #F1F1F1; /*#light 3*/
+    --l4: #EBEBEB; /*light 4*/
 
-  --d1: #50665F; /*dark 1*/
-  --d2: #384540; /*dark 2*/
-  --d3: #242D2A; /*dark 3*/
-  --d4: #E0E0E0; /*dark 4*/
+    --m1: #E4E4E4; /*moyen 1*/
+    --m2: #CACACA; /*moyen 2*/
 
-  --h1: #CDA871; /*highlight 1*/
-  --h2: #D9BC91; /*highlight 2*/
-  --h3: #81AEA9; /*highlight 3*/
-  --h4: #A0BBBB; /*highlight 4*/
+    --d1: #50665F; /*dark 1*/
+    --d2: #384540; /*dark 2*/
+    --d3: #242D2A; /*dark 3*/
+    --d4: #E0E0E0; /*dark 4*/
 
-  --sm: 6px;
-  --mo: 12px;
-  --bg: 25px;
-  --lg: 50px;
-  --gi: 100px;
+    --h1: #CDA871; /*highlight 1*/
+    --h2: #D9BC91; /*highlight 2*/
+    --h3: #81AEA9; /*highlight 3*/
+    --h4: #A0BBBB; /*highlight 4*/
 
-  --grid-gap: var(--mo);
+    /* - - - - - GLOBAL MARGIN (& PADDING) VALUES - - - - - */
+    --sm: 6px;
+    --mo: 12px;
+    --bg: 25px;
+    --lg: 50px;
+    --gi: 100px;
 
+    --grid-gap: var(--mo);
+
+    /* - - - - - GLOBAL FONT VALUES - - - - - */
     --color-main: var(--d3);
     --font-family-main: 'Mulish', 'Verdana', sans-serif;
     --font-size-main: 14px;
@@ -59,6 +63,11 @@
     --text-align-main: justify;
 }
 
-HTML, HTML *{
-  box-sizing: border-box;
+/* - - - - - all paddings will be counted in the width
+             WARNING : will surely impact a lot of your html elements,
+                       use it carefuly or at least choose the ones
+                       you use it on
+ - - - - - */
+HTML, HTML * {
+    box-sizing: border-box;
 }

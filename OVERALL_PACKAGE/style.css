@@ -1,19 +1,19 @@
 /*
 
-    -------------------- DISCLAIMER --------------------
-    -------------------- by @poesiescendrees
-                            tumblr :   https://poesiescendrees.tumblr.com/
-                            site :     https://test-renegade.kanak.fr/
+      -------------------- DISCLAIMER --------------------
+      -------------------- by @poesiescendrees
+                                      tumblr :     https://poesiescendrees.tumblr.com/
+                                      site :       https://test-renegade.kanak.fr/
 
-    -------------------- css gallery : styling properties gallery
-                                       (mostly fonts and visual elements)
-                                       that shouldn't conflict any other
-                                       preexisting css sheet
+      -------------------- css gallery : styling properties gallery
+                                                     (mostly fonts and visual elements)
+                                                     that shouldn't conflict any other
+                                                     preexisting css sheet
 
-                         NEEDS the other styling gallery with the variables
-                         INFOS on main demo page
+                                 NEEDS the other styling gallery with the variables
+                                 INFOS on main demo page
 
-    -------------------- last update : 15.04.2022
+      -------------------- last update : 15.04.2022
 */
 
 
@@ -23,84 +23,90 @@
 /*- - - - - ROZHA ONE - - - - -*/
 
 ro, rou {
-  font-family: 'Rozha One', 'Abril Fatface', serif;
-  font-weight: normal !important;
-  font-style: normal;
+    font-family: 'Rozha One', 'Abril Fatface', serif;
+    font-weight: normal !important;
+    font-style: normal;
 }
 
 ro {
-  color: var(--d2);
-  font-size: calc(1.1 * var(--font-size-main));
-  text-transform: lowercase;
+    color: var(--d2);
+    font-size: calc(1.1 * var(--font-size-main));
+    text-transform: lowercase;
 }
 
 rou {
-  color: var(--d1);
-  font-size: calc(0.9 * var(--font-size-main));
-  letter-spacing: 1px;
-  word-spacing: 1px;
-  text-transform: uppercase;
+    color: var(--d1);
+    font-size: calc(0.9 * var(--font-size-main));
+    letter-spacing: 1px;
+    word-spacing: 1px;
+    text-transform: uppercase;
 }
 
 
 
 
 
-/* - - - - MG, MG2, CV, CH, VH - - - - */
+/* - - - - MG, MG2 - - - - */
 
 mg, mg2 {
-  margin: 0px 10px;
-  font-style: normal;
-  text-transform: lowercase;
+    margin: 0px 10px;
+    font-style: normal;
+    text-transform: lowercase;
 }
 
 mg {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 mg2 {
-  font-weight: normal;
+    font-weight: normal;
 }
 
 * > mg:first-child, * > mg2:first-child, br + mg, br + mg2 {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 * > mg:last-child, * > mg2:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 mg a {
-  box-shadow: none !important;
+    box-shadow: none !important;
 }
 
 mg:hover, mg2:hover {
-  font-style: italic;
+    font-style: italic;
 }
 
 mg:hover a, a:hover > mg, mg2:hover a, a:hover > mg2, mg.dotted:hover {
-  border-bottom: 2px dotted var(--m2) !important;
+    border-bottom: 2px dotted var(--m2) !important;
 }
 
+
+
+
+
+/* - - - - CV, CH, VH - - - - */
+
 ch, vh, cv {
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-main);
-  font-weight: bold;
-  font-style: normal;
-  letter-spacing: 1px;
-  text-transform: lowercase;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-main);
+    font-weight: bold;
+    font-style: normal;
+    letter-spacing: 1px;
+    text-transform: lowercase;
 }
 
 ch {
-  color: var(--h1);
+    color: var(--h1);
 }
 
 vh {
-  color: var(--h3);
+    color: var(--h3);
 }
 
 cv {
-  color: var(--color-main);
+    color: var(--color-main);
 }
 
 
@@ -110,72 +116,72 @@ cv {
 /* - - - - TAG, BTAG, DTAG - - - - */
 
 tag, btag, dtag {
-  display: inline-block;
+    display: inline-block;
 
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-main);
-  font-size
-  font-style: normal;
-  font-weight: normal;
-  text-transform: lowercase;
+    font-family: var(--font-family-main);
+    font-size: var(--font-size-main);
+    font-size
+    font-style: normal;
+    font-weight: normal;
+    text-transform: lowercase;
 }
 
 tag {
-  margin: 0 var(--sm);
-  padding: 0px var(--mo);
+    margin: 0 var(--sm);
+    padding: 0px var(--mo);
 }
 
 btag, dtag {
-  margin: 2px var(--mo);
-  padding: 4px var(--mo);
+    margin: 2px var(--mo);
+    padding: 4px var(--mo);
 }
 
 tag, btag {
-  background: var(--normal-tag);
-  --normal-tag: var(--l1);
-  --highlight-tag: var(--h1);
-  --light-tag: var(--d3);
+    background: var(--normal-tag);
+    --normal-tag: var(--l1);
+    --highlight-tag: var(--h1);
+    --light-tag: var(--d3);
 
-  color: var(--color-main);
+    color: var(--color-main);
 }
 
 .content_suj .light tag, .content_suj .light btag {
-  --normal-tag: var(--l3);
-  --highlight-tag: var(--h1);
-  --light-tag: var(--d4);
+    --normal-tag: var(--l3);
+    --highlight-tag: var(--h1);
+    --light-tag: var(--d4);
 }
 
 .content_suj btag, .content_suj tag {
-  --normal-tag: var(--l2);
+    --normal-tag: var(--l2);
 }
 
 dtag {
-  background: var(--normal-tag);
-  --normal-tag: var(--d3);
-  --highlight-tag: var(--h1);
-  --light-tag: var(--l0);
+    background: var(--normal-tag);
+    --normal-tag: var(--d3);
+    --highlight-tag: var(--h1);
+    --light-tag: var(--l0);
 
-  --color-main: var(--light-tag);
-  color: var(--color-main);
+    --color-main: var(--light-tag);
+    color: var(--color-main);
 }
 
 a tag, a btag, a dtag {
-  color: var(--highlight-tag);
+    color: var(--highlight-tag);
 }
 
 a tag:hover, a btag:hover, a dtag:hover {
-  background: var(--highlight-tag);
+    background: var(--highlight-tag);
 
-  color: var(--light-tag);
+    color: var(--light-tag);
 }
 
 * > tag:first-child, * > btag:first-child, * > dtag:first-child,
 br + tag, br + btag, br + dtag {
-  margin-left: 0;
+    margin-left: 0;
 }
 
 * > tag:last-child, * > btag:last-child, * > dtag:last-child {
-  margin-right: 0;
+    margin-right: 0;
 }
 
 
@@ -184,289 +190,275 @@ br + tag, br + btag, br + dtag {
 
 /* - - - - AUTRES POLICES - - - - */
 
-.gensmall{
-  color: var(--m2);
-  font-size: calc(0.8 * var(--font-size-main));
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.gensmall {
+    color: var(--m2);
+    font-size: calc(0.8 * var(--font-size-main));
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-sms{
-  color: grey;
-  font-family: 'Courier New';
-  font-size: calc(0.8 * var(--font-size-main));
-  font-style: normal;
-  letter-spacing: 1px;
+sms {
+    color: grey;
+    font-family: 'Courier New';
+    font-size: calc(0.8 * var(--font-size-main));
+    font-style: normal;
+    letter-spacing: 1px;
 }
 
 qq {
-  color: var(--d1);
-  font-family: 'Arial', 'Verdana', 'Mulish', sans-serif;
-  font-size: calc(0.8 * var(--font-size-main));
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 2px;
-  word-spacing: 1px;
-  text-transform: uppercase;
+    color: var(--d1);
+    font-family: 'Arial', 'Verdana', 'Mulish', sans-serif;
+    font-size: calc(0.8 * var(--font-size-main));
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: 2px;
+    word-spacing: 1px;
+    text-transform: uppercase;
 }
 
 
 
 
 
-/* - - - - AUTRES POLICES - - - - */
+/* - - - - QT, LGN - - - - */
 
 qt {
-  display: block;
-  margin: var(--grid-gap) 0 var(--grid-gap) var(--grid-gap);
-  padding: var(--small) 0 var(--small) var(--grid-gap);
-  border-left: var(--border);
-  --border: 1px solid var(--l4);
-  --small: var(--sm);
+    display: block;
+    margin: var(--grid-gap) 0 var(--grid-gap) var(--grid-gap);
+    padding: var(--small) 0 var(--small) var(--grid-gap);
+    border-left: var(--border);
+    --border: 1px solid var(--l4);
+    --small: var(--sm);
 }
 
 qt.light, qt.midlight, qt.dark, qt.hi1, qt.hi2, qt.hi3, qt.hi4 {
-  margin: var(--grid-gap) 0 !important;
-  padding: var(--grid-gap) !important;
+    margin: var(--grid-gap) 0 !important;
+    padding: var(--grid-gap) !important;
 }
 
 qt.right {
-  margin: var(--grid-gap) var(--grid-gap) var(--grid-gap) 0;
-  padding: var(--small) var(--grid-gap) var(--small) 0 !important;
-  border-right: var(--border);
-  border-left: 0px !important;
+    margin: var(--grid-gap) var(--grid-gap) var(--grid-gap) 0;
+    padding: var(--small) var(--grid-gap) var(--small) 0 !important;
+    border-right: var(--border);
+    border-left: 0px !important;
 }
 
 lgn {
-  display: block;
-  width: 100%;
-  height: 0;
-  margin: var(--sm) 0;
-  border-bottom: 1px solid var(--lgn-main);
+    display: block;
+    width: 100%;
+    height: 0;
+    margin: var(--sm) 0;
+    border-bottom: 1px solid var(--lgn-main);
 }
 
 
 
 
 
-/* - - - - LINEG LINED LINEC - - - - */
+/* - - - - LINEL LINER LINEC - - - - */
 
 linel, liner, linec {
-  display: grid;
-  grid-gap: var(--grid-gap);
-  position: relative;
-  height: auto;
-  --top: 50%;
+    display: grid;
+    grid-gap: var(--grid-gap);
+    position: relative;
+    height: auto;
+    --top: 50%;
 }
 
 .line-lgn lgn {
-  position: relative;
-  top: var(--top);
-  --top: 50%;
+    position: relative;
+    top: var(--top);
+    --top: 50%;
 }
 
 .flexcolumn > linel,
 .flexcolumn > liner,
 .flexcolumn > linec {
-  flex: 0 0 auto;
-  height: auto;
+    flex: 0 0 auto;
+    height: auto;
 }
 
 .big-line linel:not(:last-child), .big-line liner:not(:last-child), .big-line linec:not(:last-child) {
-  margin-bottom: var(--grid-gap);
+    margin-bottom: var(--grid-gap);
 }
 
 linel {
-  grid-template: "main lgn" auto / auto 1fr;
-  text-align: left;
+    grid-template: "main lgn" auto / auto 1fr;
+    text-align: left;
 }
 
 liner {
-  grid-template: "lgn main" auto / 1fr auto;
-  text-align: right;
+    grid-template: "lgn main" auto / 1fr auto;
+    text-align: right;
 }
 
 linec {
-  grid-template: "lgn1 main lgn2 " auto / 1fr auto 1fr;
-  text-align: justify;
+    grid-template: "lgn1 main lgn2 " auto / 1fr auto 1fr;
+    text-align: justify;
 }
 
 linel > *, liner > *, linec > * {
-  margin: 0;
+    margin: 0;
 }
 
 linel > lgn, liner > lgn {
-  grid-area: lgn;
+    grid-area: lgn;
 }
 
 linel > *:not(lgn), liner > *:not(lgn), linec > *:not(lgn) {
-  grid-area: main;
+    grid-area: main;
 }
 
 linec > lgn:first-of-type {
-  grid-area: lgn1;
+    grid-area: lgn1;
 }
 
 linec > lgn:nth-of-type(2) {
-  grid-area: lgn2;
+    grid-area: lgn2;
 }
 
 linel > lgn, liner > lgn, linec > lgn {
-  position: relative;
-  top: var(--top);
+    position: relative;
+    top: var(--top);
 }
 
 
 
 
 
-/* - - - - - BLOCKS - - - - - */
-
-.simple {
-  margin: var(--grid-gap) 0;
-  padding: var(--mo);
-}
-
-.simple.small {
-  margin: var(--sm) 0;
-  padding: var(--sm);
-}
-
-.bck {
-  background: var(--bck);
-}
+/* - - - - - COLOR BLOCKS - - - - - */
 
 .midlight {
-  background: var(--l1);
+    background: var(--l1);
 }
 
 .light {
-  background: var(--l2);
+    background: var(--l2);
 
-  color: var(--color-main);
+    color: var(--color-main);
 }
 
 .light .light {
-  background: var(--l3);
+    background: var(--l3);
 }
 
 .light .light .light {
-  background: var(--l4);
+    background: var(--l4);
 }
 
 .light .light .light .light {
-  background: var(--m1);
+    background: var(--m1);
 }
 
 .middle {
-  background: var(--m2);
+    background: var(--m2);
 
-  color: var(--color-main);
+    color: var(--color-main);
 }
 
 .dark {
-  background: var(--d1);
+    background: var(--d1);
 
-  color: var(--d4);
+    color: var(--d4);
 }
 
 /*light*/
 
 .li0 {
-  --color: var(--l0);
+    --color: var(--l0);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .li1 {
-  --color: var(--l1);
+    --color: var(--l1);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .li2 {
-  --color: var(--l2);
+    --color: var(--l2);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .li3 {
-  --color: var(--l3);
+    --color: var(--l3);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .li4 {
-  --color: var(--l4);
+    --color: var(--l4);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 /*middle*/
 
 .mo1 {
-  --color: var(--m1);
+    --color: var(--m1);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .mo2 {
-  --color: var(--m2);
+    --color: var(--m2);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 /*dark*/
 
 .da1 {
-  --color: var(--d1);
+    --color: var(--d1);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 .da2 {
-  --color: var(--d2);
+    --color: var(--d2);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 .da3 {
-  --color: var(--d3);
+    --color: var(--d3);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 .da4 {
-  --color: var(--d4);
+    --color: var(--d4);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 /*highlight*/
 
 .hi1 {
-  --color: var(--h1);
+    --color: var(--h1);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .hi2 {
-  --color: var(--h2);
+    --color: var(--h2);
 
-  --highlight: var(--d3);
+    --highlight: var(--d3);
 }
 
 .hi3 {
-  --color: var(--h3);
+    --color: var(--h3);
 
-  --highlight: var(--l2);
+    --highlight: var(--l2);
 }
 
 .hi4 {
-  --color: var(--h4);
+    --color: var(--h4);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 /*effective*/
@@ -475,17 +467,17 @@ linel > lgn, liner > lgn, linec > lgn {
 .mo1:not(.background), .mo2:not(.background),
 .da1:not(.background), .da2:not(.background), .da3:not(.background), .da4:not(.background),
 .hi1:not(.background), .hi2:not(.background), .hi3:not(.background), .hi4:not(.background) {
-  color: var(--color) !important;
+    color: var(--color) !important;
 }
 
 .li0.background, .li1.background, .li2.background, .li3.background, .li4.background,
 .mo1.background, .mo2.background,
 .da1.background, .da2.background, .da3.background, .da4.background,
 .hi1.background, .hi2.background, .hi3.background, .hi4.background {
-  background: var(--color) !important;
+    background: var(--color) !important;
 
-  color: var(--color-main) !important;
-  --color-main: var(--highlight);
+    color: var(--color-main) !important;
+    --color-main: var(--highlight);
 }
 
 lgn.li0, lgn.li1, lgn.li2, lgn.li3, lgn.li4,
@@ -493,42 +485,42 @@ lgn.mo1, lgn.mo2,
 lgn.da1, lgn.da2, lgn.da3, lgn.da4,
 lgn.hi1, lgn.hi2, lgn.hi3, lgn.hi4,
 lgn.q1, lgn.q2, lgn.q3, lgn.q4 {
-  border-color: var(--color);
+    border-color: var(--color);
 }
 
 /*colors from groups*/
 
 .q1 {
-  --color: var(--q1);
+    --color: var(--q1);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .q2 {
-  --color: var(--q2);
+    --color: var(--q2);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 .q3 {
-  --color: var(--q3);
+    --color: var(--q3);
 
-  --highlight: var(--d4);
+    --highlight: var(--d4);
 }
 
 .q4 {
-  --color: var(--q4);
+    --color: var(--q4);
 
-  --highlight: var(--l1);
+    --highlight: var(--l1);
 }
 
 .q1:not(.background), .q2:not(.background), .q3:not(.background), .q4:not(.background) {
-  color: var(--color) !important;
+    color: var(--color) !important;
 }
 
 .q1.background, .q2.background, .q3.background, .q4.background {
-  background: var(--color) !important;
+    background: var(--color) !important;
 
-  color: var(--color-main) !important;
-  --color-main: var(--highlight);
+    color: var(--color-main) !important;
+    --color-main: var(--highlight);
 }
