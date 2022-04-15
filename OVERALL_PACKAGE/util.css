@@ -1,4 +1,21 @@
-pal{ display: flex; flex-direction: column; width: 20px; height: 500px; position: fixed; top: -8px; left: 8px;}pal p{ flex: 1; margin: 2px 0px;} pal .pp{margin-bottom: 15px;} pal p:nth-child(1){ background: var(--l0);}pal p:nth-child(2){ background: var(--l1);}pal p:nth-child(3){ background: var(--l2);}pal p:nth-child(4){ background: var(--l3);}pal p:nth-child(5){ background: var(--l4);}pal p:nth-child(6){ background: var(--m1);}pal p:nth-child(7){ background: var(--m2);}pal p:nth-child(8){ background: var(--d1);}pal p:nth-child(9){ background: var(--d2);}pal p:nth-child(10){ background: var(--d3);}pal p:nth-child(11){ background: var(--h1);}pal p:nth-child(12){ background: var(--h2);}pal p:nth-child(13){ background: var(--h3);}pal p:nth-child(14){ background: var(--h4);}
+/*
+
+    -------------------- DISCLAIMER --------------------
+    -------------------- by @poesiescendrees
+                            tumblr :   https://poesiescendrees.tumblr.com/
+                            site :     https://test-renegade.kanak.fr/
+
+    -------------------- css gallery : util properties gallery
+                                       (mostly placement properties
+                                       such has flexes, columns, margins, etc.)
+                                       that shouldn't conflict any other
+                                       preexisting css sheet
+
+                         NEEDS the other styling gallery with the variables
+                         INFOS on main demo page
+
+    -------------------- last update : 15.04.2022
+*/
 
 
 
@@ -32,7 +49,7 @@ table.centered, .centered-table table{
 
 
 
-/* - - - - - FLEX - - - - - */
+/* - - - - FLEX - - - - */
 
 .flex {
   display: flex;
@@ -129,7 +146,203 @@ table.centered, .centered-table table{
 
 
 
-/* - - - - - BLOCKS - - - - - */
+/*- - - - - SQUARE GRID - - - - -*/
+
+.heightsquaregrid {
+  height: var(--height);
+  --height: 250px;
+}
+
+.heightsquaregrid .squaregrid {
+  --width: var(--height);
+}
+
+.squaregrid {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  /*grid-template:
+    10px 10px / 10px 10px;*/
+  width: var(--width);
+  height: var(--width);
+  --width: 250px;
+  --rows: 2;
+  grid-template:
+    repeat(var(--rows), var(--calculated)) /
+    repeat(var(--rows), var(--calculated));
+
+  --calculated: calc(var(--width)/var(--rows) - ((var(--rows) - 1) / var(--rows)) * var(--grid-gap));
+    /* calculates the exact size of each image in the grid,
+       given the total width of the grid and the gaps between each image
+       the class may bug but honestly, i don't know why
+       if so, give refreshing the page a try because i'm done playing with the formula
+
+  (the formula being : )
+
+         w      (r - 1)
+        ———  *  ———————  *  g  =  width-image
+         r         r
+
+  (w = total width; r = number of rows; g = gap between images)
+    */
+}
+
+.squaregrid.three {
+  --rows: 3;
+}
+
+.squaregrid.four {
+  --rows: 4;
+}
+
+.squaregrid > * {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/*- - - - - SPOTIFY - - - - -*/
+
+.bp_spotify {
+  max-width: 650px;
+  margin: auto;
+}
+
+.left_spotify {
+  width: var(--width);
+  --width: 220px;
+}
+
+.img_spotify {
+  display: block;
+  --sq: calc(0.8*var(--width));
+  width: var(--sq);
+  height:var(--sq);
+  margin: 0 0 var(--mo);
+}
+
+.link_spotify {
+  border-radius: 15px;
+}
+
+.list_spotify scroll {
+  max-height: 400px;
+  padding-left: 25px;
+}
+
+.list_spotify ol {
+  list-style-type: decimal;
+}
+
+* > .element_spotify:not(:last-child) {
+  padding: var(--mo);
+  border-bottom: 1px solid;
+}
+
+* > .element_spotify:last-child {
+  padding: var(--mo) var(--mo) 0;
+}
+
+
+
+
+
+    /*- - - - - JAUGE - - - - -*/
+
+jauge {
+  display: block;
+  padding: 0 var(--sm) var(--sm);
+  position: relative;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+jauge.right, .right jauge, .right-align jauge {
+  text-align: right;
+}
+
+* > jauge:not(:last-child) {
+  margin: 0 auto var(--mo);
+}
+
+barre {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--l0);
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+}
+
+barre:before {
+  display: block;
+  content: '';
+  width: var(--width);
+  height: 100%;
+  background: var(--h1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right barre:before, .right-align barre:before {
+  left: unset !important;
+  right: 0;
+}
+
+
+
+
+
+/* - - - - - IMAGES - - - - - */
+
+/*for simple 400*640 avatars posts*/
+
+k {
+    display: block;
+    text-align: center;
+}
+
+k img {
+    max-width: 200px !important;
+}
+
+k a {
+    box-shadow: none !important;
+    border: 0px !important;
+    background: transparent !important;
+}
+
+/*moodboards*/
+
+.moodboard {
+  width: 100%;
+  column-count: 3;
+  column-gap: var(--grid-gap);
+}
+
+.moodboard:hover img {
+  opacity: 1;
+}
+
+.moodboard img {
+  width: 100%;
+  margin-bottom: var(--grid-gap);
+  opacity: .7;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* - - - - - STYLING BLOCKS - - - - - */
 
 .margin {
     margin: var(--grid-gap) auto !important;
@@ -230,22 +443,6 @@ ul.nobullet{
   color: var(--l4);
 }
 
-.h1{
-  background: var(--h1);
-}
-
-.h2{
-  background: var(--h2);
-}
-
-.h3{
-  background: var(--h3);
-}
-
-.h4{
-  background: var(--h4);
-}
-
 .left-align{
   text-align: left !important;
 }
@@ -294,10 +491,26 @@ wxcv{
   --scale2: 1.2;
 }
 
+/*----- SQ ROUND*/
+
+.sq, .img-sq {
+  --sq: var(--sq-global);
+  overflow: hidden;
+}
+
+.sq > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .sq, .img-sq img {
   width: var(--sq);
   height: var(--sq);
-  --sq: var(--sq-global);
+}
+
+.sq.round, .sq.round > img, .img-sq.round img {
+  border-radius: 50%;
 }
 
 .img-sq.bk img {
@@ -306,6 +519,23 @@ wxcv{
 
 .round {
   border-radius: 50%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-100-100 {
+  width: 100%;
+  height: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+img.width-100, img.width-100-100, img.height-100 {
+  display: block;
 }
 
 .grayscale, .grayscale-inner img {
@@ -320,4 +550,12 @@ wxcv{
 
 .crosshair {
   cursor: crosshair;
+}
+
+.no-first-br br:first-child {
+  display: none;
+}
+
+.no-first-br br:first-child + br:nth-child(2) {
+  display: none;
 }

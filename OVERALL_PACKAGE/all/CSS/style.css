@@ -98,133 +98,7 @@ u, a{
 
 
 
-/*- - - - - H1-2-3-4-5-6 - - - - -*/
-
-
-
-/*----- H1*/
-
-h1 {
-  display: block;
-  padding: 5px 20px;
-  border-bottom: 1px solid var(--text-shadow);
-  position: relative;
-
-  color: var(--color);
-  font-size: calc(2* var(--font-size-main));
-  font-family: 'Rozha One';
-  font-style: normal;
-  font-weight: normal;
-  letter-pacing: 2px;
-  line-height: calc(2* var(--font-size-main));
-  text-align: left;
-  text-shadow: 2px 0 0 var(--text-shadow);
-}
-
-h1:not(.right-align)::before {
-  content: '— ';
-}
-
-h1.right-align::after {
-  content:' —';
-}
-
-h1:nth-of-type(4n + 1) {
-  --color: var(--d4);
-  --text-shadow: var(--h1);
-}
-
-h1:nth-of-type(4n + 2) {
-  --color: var(--d4);
-  --text-shadow: var(--h2);
-}
-
-h1:nth-of-type(4n + 3) {
-  --color: var(--d4);
-  --text-shadow: var(--h3-rgba);
-}
-
-h1:nth-of-type(4n + 4) {
-  --color: var(--d4);
-  --text-shadow: var(--h4);
-}
-
-h1:nth-of-type(4n + 1) + h2 + .forabg btag {
-  --highlight-tag: var(--h1);
-}
-
-h1:nth-of-type(4n + 2) + h2 + .forabg btag {
-  --highlight-tag: var(--h2);
-}
-
-h1:nth-of-type(4n + 3) + h2 + .forabg btag {
-  --highlight-tag: var(--h3);
-  --light-tag: var(--l0);
-}
-
-h1:nth-of-type(4n + 4) + h2 + .forabg btag {
-  --highlight-tag: var(--h4);
-}
-
-/*grey h1*/
-
-h1.grey {
-  --color: var(--d4);
-  --text-shadow: var(--l4);
-}
-
-
-
-/*----- H2*/
-
-h2 {
-  margin: var(--grid-gap) 0 var(--grid-gap) var(--grid-gap);
-  padding: 0 var(--grid-gap);
-  border-left: 1px solid;
-
-  font-family: 'Rozha One';
-  font-size: calc(1.8*var(--font-size-main));
-  font-style: normal;
-  font-weight: normal;
-  letter-spacing: 2px;
-  line-height: calc(1.8*var(--line-height-main));
-  text-transform: uppercase;
-}
-
-
-
-/*----- H3*/
-
-h3 {
-  margin: var(--bg) 0 var(--sm);
-  border: 0;
-
-  font-size: 1.3em;
-  font-weight: bold;
-}
-
-h3::after {
-  content: ' —';
-}
-
-* h3:first-child {
-  margin-top: 0;
-}
-
-
-
-/*----- H4*/
-
-h4 {
-  color: var(--d4);
-  font-family: var(--font-family-main);
-  font-size: calc(0.8*var(--font-size-main));
-  font-style: normal;
-  font-weight: bold;
-  letter-spacing: 3px;
-  line-height: calc(0.8*var(--line-height-main));
-  text-transform: uppercase;
-}
+/*_______________________________ AFTER :: ../style.css*/
 
 
 
@@ -293,6 +167,7 @@ mg:hover a, a:hover > mg, mg2:hover a, a:hover > mg2, mg.dotted:hover {
 }
 
 ch, vh, cv {
+  font-family: var(--font-family-main);
   font-size: var(--font-size-main);
   font-weight: bold;
   font-style: normal;
@@ -321,6 +196,9 @@ cv {
 tag, btag, dtag {
   display: inline-block;
 
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-main);
+  font-size
   font-style: normal;
   font-weight: normal;
   text-transform: lowercase;
@@ -328,7 +206,7 @@ tag, btag, dtag {
 
 tag {
   margin: 0 var(--sm);
-  padding: 1px var(--sm);
+  padding: 0px var(--mo);
 }
 
 btag, dtag {
@@ -345,6 +223,12 @@ tag, btag {
   color: var(--color-main);
 }
 
+.content_suj .light tag, .content_suj .light btag {
+  --normal-tag: var(--l3);
+  --highlight-tag: var(--h1);
+  --light-tag: var(--d4);
+}
+
 .content_suj btag, .content_suj tag {
   --normal-tag: var(--l2);
 }
@@ -355,7 +239,8 @@ dtag {
   --highlight-tag: var(--h1);
   --light-tag: var(--l0);
 
-  color: var(--light-tag);
+  --color-main: var(--light-tag);
+  color: var(--color-main);
 }
 
 a tag, a btag, a dtag {
@@ -570,17 +455,79 @@ linel > lgn, liner > lgn, linec > lgn {
   color: var(--d4);
 }
 
-/*colors from palette*/
+/*light*/
 
-.light-font {
-  color: var(--color-main);
-  --color-main: var(--d4);
+.li0 {
+  --color: var(--l0);
+
+  --highlight: var(--d4);
 }
 
-.dark-font {
-  color: var(--color-main);
-  --color-main: var(--l1);
+.li1 {
+  --color: var(--l1);
+
+  --highlight: var(--d4);
 }
+
+.li2 {
+  --color: var(--l2);
+
+  --highlight: var(--d4);
+}
+
+.li3 {
+  --color: var(--l3);
+
+  --highlight: var(--d4);
+}
+
+.li4 {
+  --color: var(--l4);
+
+  --highlight: var(--d4);
+}
+
+/*middle*/
+
+.mo1 {
+  --color: var(--m1);
+
+  --highlight: var(--d4);
+}
+
+.mo2 {
+  --color: var(--m2);
+
+  --highlight: var(--d4);
+}
+
+/*dark*/
+
+.da1 {
+  --color: var(--d1);
+
+  --highlight: var(--l1);
+}
+
+.da2 {
+  --color: var(--d2);
+
+  --highlight: var(--l1);
+}
+
+.da3 {
+  --color: var(--d3);
+
+  --highlight: var(--l1);
+}
+
+.da4 {
+  --color: var(--d4);
+
+  --highlight: var(--l1);
+}
+
+/*highlight*/
 
 .hi1 {
   --color: var(--h1);
@@ -606,16 +553,66 @@ linel > lgn, liner > lgn, linec > lgn {
   --highlight: var(--d4);
 }
 
+/*effective*/
+
+.li0:not(.background), .li1:not(.background), .li2:not(.background), .li3:not(.background), .li4:not(.background),
+.mo1:not(.background), .mo2:not(.background),
+.da1:not(.background), .da2:not(.background), .da3:not(.background), .da4:not(.background),
 .hi1:not(.background), .hi2:not(.background), .hi3:not(.background), .hi4:not(.background) {
   color: var(--color) !important;
 }
 
+.li0.background, .li1.background, .li2.background, .li3.background, .li4.background,
+.mo1.background, .mo2.background,
+.da1.background, .da2.background, .da3.background, .da4.background,
 .hi1.background, .hi2.background, .hi3.background, .hi4.background {
   background: var(--color) !important;
 
-  color: var(--highlight) !important;
+  color: var(--color-main) !important;
+  --color-main: var(--highlight);
 }
 
-lgn.hi1, lgn.hi2, lgn.hi3, lgn.hi4 {
+lgn.li0, lgn.li1, lgn.li2, lgn.li3, lgn.li4,
+lgn.mo1, lgn.mo2,
+lgn.da1, lgn.da2, lgn.da3, lgn.da4,
+lgn.hi1, lgn.hi2, lgn.hi3, lgn.hi4,
+lgn.q1, lgn.q2, lgn.q3, lgn.q4 {
   border-color: var(--color);
+}
+
+/*colors from groups*/
+
+.q1 {
+  --color: var(--q1);
+
+  --highlight: var(--d4);
+}
+
+.q2 {
+  --color: var(--q2);
+
+  --highlight: var(--l1);
+}
+
+.q3 {
+  --color: var(--q3);
+
+  --highlight: var(--d4);
+}
+
+.q4 {
+  --color: var(--q4);
+
+  --highlight: var(--l1);
+}
+
+.q1:not(.background), .q2:not(.background), .q3:not(.background), .q4:not(.background) {
+  color: var(--color) !important;
+}
+
+.q1.background, .q2.background, .q3.background, .q4.background {
+  background: var(--color) !important;
+
+  color: var(--color-main) !important;
+  --color-main: var(--highlight);
 }

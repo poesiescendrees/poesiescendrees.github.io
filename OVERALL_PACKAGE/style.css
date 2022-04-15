@@ -1,26 +1,20 @@
-HTML {
-  color: var(--color-main);
-  font-family: var(--font-family-main);
-  font-size: var(--font-size-main);
-  line-height: var(--line-height-main);
-  text-align: var(--text-align-main);
-}
+/*
 
-HTML *{
-  transition: all var(--transt) ease;
-  -webkit-transition: all var(--transt) ease;
-  -moz-transition: all var(--transt) ease;
-  -ms-transition: all var(--transt) ease;
-  -o-transition: all var(--transt) ease;
-  --transt: .4s;
+    -------------------- DISCLAIMER --------------------
+    -------------------- by @poesiescendrees
+                            tumblr :   https://poesiescendrees.tumblr.com/
+                            site :     https://test-renegade.kanak.fr/
 
-  box-sizing: border-box;
-}
+    -------------------- css gallery : styling properties gallery
+                                       (mostly fonts and visual elements)
+                                       that shouldn't conflict any other
+                                       preexisting css sheet
 
-::selection{
-  background: var(--m2);
-  color: var(--l2);
-}
+                         NEEDS the other styling gallery with the variables
+                         INFOS on main demo page
+
+    -------------------- last update : 15.04.2022
+*/
 
 
 
@@ -89,6 +83,7 @@ mg:hover a, a:hover > mg, mg2:hover a, a:hover > mg2, mg.dotted:hover {
 }
 
 ch, vh, cv {
+  font-family: var(--font-family-main);
   font-size: var(--font-size-main);
   font-weight: bold;
   font-style: normal;
@@ -117,6 +112,9 @@ cv {
 tag, btag, dtag {
   display: inline-block;
 
+  font-family: var(--font-family-main);
+  font-size: var(--font-size-main);
+  font-size
   font-style: normal;
   font-weight: normal;
   text-transform: lowercase;
@@ -124,7 +122,7 @@ tag, btag, dtag {
 
 tag {
   margin: 0 var(--sm);
-  padding: 1px var(--sm);
+  padding: 0px var(--mo);
 }
 
 btag, dtag {
@@ -141,6 +139,12 @@ tag, btag {
   color: var(--color-main);
 }
 
+.content_suj .light tag, .content_suj .light btag {
+  --normal-tag: var(--l3);
+  --highlight-tag: var(--h1);
+  --light-tag: var(--d4);
+}
+
 .content_suj btag, .content_suj tag {
   --normal-tag: var(--l2);
 }
@@ -151,7 +155,8 @@ dtag {
   --highlight-tag: var(--h1);
   --light-tag: var(--l0);
 
-  color: var(--light-tag);
+  --color-main: var(--light-tag);
+  color: var(--color-main);
 }
 
 a tag, a btag, a dtag {
@@ -366,17 +371,79 @@ linel > lgn, liner > lgn, linec > lgn {
   color: var(--d4);
 }
 
-/*colors from palette*/
+/*light*/
 
-.light-font {
-  color: var(--color-main);
-  --color-main: var(--d4);
+.li0 {
+  --color: var(--l0);
+
+  --highlight: var(--d4);
 }
 
-.dark-font {
-  color: var(--color-main);
-  --color-main: var(--l1);
+.li1 {
+  --color: var(--l1);
+
+  --highlight: var(--d4);
 }
+
+.li2 {
+  --color: var(--l2);
+
+  --highlight: var(--d4);
+}
+
+.li3 {
+  --color: var(--l3);
+
+  --highlight: var(--d4);
+}
+
+.li4 {
+  --color: var(--l4);
+
+  --highlight: var(--d4);
+}
+
+/*middle*/
+
+.mo1 {
+  --color: var(--m1);
+
+  --highlight: var(--d4);
+}
+
+.mo2 {
+  --color: var(--m2);
+
+  --highlight: var(--d4);
+}
+
+/*dark*/
+
+.da1 {
+  --color: var(--d1);
+
+  --highlight: var(--l1);
+}
+
+.da2 {
+  --color: var(--d2);
+
+  --highlight: var(--l1);
+}
+
+.da3 {
+  --color: var(--d3);
+
+  --highlight: var(--l1);
+}
+
+.da4 {
+  --color: var(--d4);
+
+  --highlight: var(--l1);
+}
+
+/*highlight*/
 
 .hi1 {
   --color: var(--h1);
@@ -402,16 +469,66 @@ linel > lgn, liner > lgn, linec > lgn {
   --highlight: var(--d4);
 }
 
+/*effective*/
+
+.li0:not(.background), .li1:not(.background), .li2:not(.background), .li3:not(.background), .li4:not(.background),
+.mo1:not(.background), .mo2:not(.background),
+.da1:not(.background), .da2:not(.background), .da3:not(.background), .da4:not(.background),
 .hi1:not(.background), .hi2:not(.background), .hi3:not(.background), .hi4:not(.background) {
   color: var(--color) !important;
 }
 
+.li0.background, .li1.background, .li2.background, .li3.background, .li4.background,
+.mo1.background, .mo2.background,
+.da1.background, .da2.background, .da3.background, .da4.background,
 .hi1.background, .hi2.background, .hi3.background, .hi4.background {
   background: var(--color) !important;
 
-  color: var(--highlight) !important;
+  color: var(--color-main) !important;
+  --color-main: var(--highlight);
 }
 
-lgn.hi1, lgn.hi2, lgn.hi3, lgn.hi4 {
+lgn.li0, lgn.li1, lgn.li2, lgn.li3, lgn.li4,
+lgn.mo1, lgn.mo2,
+lgn.da1, lgn.da2, lgn.da3, lgn.da4,
+lgn.hi1, lgn.hi2, lgn.hi3, lgn.hi4,
+lgn.q1, lgn.q2, lgn.q3, lgn.q4 {
   border-color: var(--color);
+}
+
+/*colors from groups*/
+
+.q1 {
+  --color: var(--q1);
+
+  --highlight: var(--d4);
+}
+
+.q2 {
+  --color: var(--q2);
+
+  --highlight: var(--l1);
+}
+
+.q3 {
+  --color: var(--q3);
+
+  --highlight: var(--d4);
+}
+
+.q4 {
+  --color: var(--q4);
+
+  --highlight: var(--l1);
+}
+
+.q1:not(.background), .q2:not(.background), .q3:not(.background), .q4:not(.background) {
+  color: var(--color) !important;
+}
+
+.q1.background, .q2.background, .q3.background, .q4.background {
+  background: var(--color) !important;
+
+  color: var(--color-main) !important;
+  --color-main: var(--highlight);
 }

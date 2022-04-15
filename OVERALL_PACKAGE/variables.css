@@ -1,3 +1,29 @@
+/*
+
+    -------------------- DISCLAIMER --------------------
+    -------------------- by @poesiescendrees
+                            tumblr :   https://poesiescendrees.tumblr.com/
+                            site :     https://test-renegade.kanak.fr/
+
+    -------------------- css gallery : list of the variables used in the
+                                       other css files of the package.
+                                       you will normaly replace all the
+                                       variables for your design and rewrite
+                                       all of them at the beginning
+                                       of your main css file but if
+                                       you wanna leave the default theme
+                                       this way, just use this gallery.
+                                       you can always replace it or take the
+                                       default gallery at any moment.
+
+                                       +++ INFOS ON LAST PROPERTY ON DEMO PAGE
+
+                         COMPLEMENT of all the other galleries of the package
+                         INFOS on main demo page
+
+    -------------------- last update : 15.04.2022
+*/
+
 :root {
   --l0: #ffffff; /*light 0*/
   --l1: #FAFAFA; /*light 1*/
@@ -24,13 +50,15 @@
   --lg: 50px;
   --gi: 100px;
 
-  --grid-gap-sm: var(--sm);
   --grid-gap: var(--mo);
-  --grid-gap-lg: var(--lg);
 
     --color-main: var(--d3);
     --font-family-main: 'Mulish', 'Verdana', sans-serif;
     --font-size-main: 14px;
     --line-height-main: 16px;
     --text-align-main: justify;
+}
+
+HTML, HTML *{
+  box-sizing: border-box;
 }
