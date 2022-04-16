@@ -6,60 +6,63 @@
                                       site :       https://test-renegade.kanak.fr/
 
       -------------------- css gallery : list of the variables used in the
-                                                     other css files of the package.
-                                                     you will normaly replace all the
-                                                     variables for your design and rewrite
-                                                     all of them at the beginning
-                                                     of your main css file but if
-                                                     you wanna leave the default theme
-                                                     this way, just use this gallery.
-                                                     you can always replace it or take the
-                                                     default gallery at any moment.
+                                         other css files of the package.
+                                         you will normaly replace all the
+                                         variables for your design and rewrite
+                                         all of them at the beginning
+                                         of your main css file but if
+                                         you wanna leave the default theme
+                                         this way, just use this gallery.
+                                         you can always replace it or take the
+                                         default gallery at any moment.
 
-                                                     +++ INFOS ON LAST PROPERTY ON DEMO PAGE
+                            +++ INFOS ON LAST PROPERTY ON DEMO PAGE
 
-                                 COMPLEMENT of all the other galleries of the package
-                                 INFOS on main demo page
+                            COMPLEMENT of all the other galleries of the package
+                            INFOS on main demo page
 
       -------------------- last update : 15.04.2022
 */
 
-:root {
+HTML {
 
     /* - - - - - GLOBAL COLORS - - - - - */
-    --l0: #ffffff; /*light 0*/
-    --l1: #FAFAFA; /*light 1*/
-    --l2: #F6F6F6; /*light 2*/
-    --l3: #F1F1F1; /*#light 3*/
-    --l4: #EBEBEB; /*light 4*/
 
-    --m1: #E4E4E4; /*moyen 1*/
-    --m2: #CACACA; /*moyen 2*/
+    --l0: #f6f6f6; /*light 0*/
+    --l1: #eaeaea; /*light 1*/
+    --l2: #e1e1e1; /*light 2*/
+    --l3: #d4d4d4; /*#light 3*/
+    --l4: #bebebe; /*light 4*/
 
-    --d1: #50665F; /*dark 1*/
-    --d2: #384540; /*dark 2*/
-    --d3: #242D2A; /*dark 3*/
-    --d4: #E0E0E0; /*dark 4*/
+    --m1: #8c8c8c; /*moyen 1*/
+    --m2: #737373; /*moyen 2*/
 
-    --h1: #CDA871; /*highlight 1*/
-    --h2: #D9BC91; /*highlight 2*/
-    --h3: #81AEA9; /*highlight 3*/
-    --h4: #A0BBBB; /*highlight 4*/
+    --d1: #696969; /*dark 1*/
+    --d2: #505050; /*dark 2*/
+    --d3: #3b3b3b; /*dark 3*/
+    --d4: #322929; /*dark 4*/
+
+    --h1: #c76942; /*highlight 1*/
+    --h2: #688a43; /*highlight 2*/
+    --h3: #974240; /*highlight 3*/
+    --h4: #947533; /*highlight 4*/
+
+    --body-background: #f6f6f6;
 
     /* - - - - - GLOBAL MARGIN (& PADDING) VALUES - - - - - */
-    --sm: 6px;
-    --mo: 12px;
-    --bg: 25px;
-    --lg: 50px;
-    --gi: 100px;
+    --sm: 16px;
+    --mo: 25px;
+    --bg: 35px;
+    --lg: 60px;
+    --gi: 120px;
 
-    --grid-gap: var(--mo);
+    --grid-gap: var(--sm);
 
     /* - - - - - GLOBAL FONT VALUES - - - - - */
-    --color-main: var(--d3);
+    --color-main: var(--d4);
     --font-family-main: 'Mulish', 'Verdana', sans-serif;
     --font-size-main: 14px;
-    --line-height-main: 16px;
+    --line-height-main: calc(1.4*var(--font-size-main));
     --text-align-main: justify;
 }
 

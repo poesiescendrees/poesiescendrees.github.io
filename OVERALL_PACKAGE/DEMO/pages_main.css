@@ -1,0 +1,6 @@
+body{
+    padding: 50px;
+    background: var(--body-background);
+
+    --sq-global: 80px;
+}

@@ -6,12 +6,12 @@
                                       site :       https://test-renegade.kanak.fr/
 
       -------------------- css gallery : styling properties gallery
-                                                     (mostly fonts and visual elements)
-                                                     that shouldn't conflict any other
-                                                     preexisting css sheet
+                                         (mostly fonts and visual elements)
+                                         that shouldn't conflict any other
+                                         preexisting css sheet
 
-                                 NEEDS the other styling gallery with the variables
-                                 INFOS on main demo page
+                            NEEDS the other styling gallery with the variables
+                            INFOS on main demo page
 
       -------------------- last update : 15.04.2022
 */
@@ -23,7 +23,7 @@
 /*- - - - - ROZHA ONE - - - - -*/
 
 ro, rou {
-    font-family: 'Rozha One', 'Abril Fatface', serif;
+    font-family: 'Patua One', 'Abril Fatface', serif;
     font-weight: normal !important;
     font-style: normal;
 }
@@ -36,50 +36,14 @@ ro {
 
 rou {
     color: var(--d1);
-    font-size: calc(0.9 * var(--font-size-main));
+    font-size: calc(1.1 * var(--font-size-main));
     letter-spacing: 1px;
     word-spacing: 1px;
     text-transform: uppercase;
 }
 
-
-
-
-
-/* - - - - MG, MG2 - - - - */
-
-mg, mg2 {
-    margin: 0px 10px;
-    font-style: normal;
-    text-transform: lowercase;
-}
-
-mg {
-    font-weight: bold;
-}
-
-mg2 {
-    font-weight: normal;
-}
-
-* > mg:first-child, * > mg2:first-child, br + mg, br + mg2 {
-    margin-left: 0;
-}
-
-* > mg:last-child, * > mg2:last-child {
-    margin-right: 0;
-}
-
-mg a {
-    box-shadow: none !important;
-}
-
-mg:hover, mg2:hover {
-    font-style: italic;
-}
-
-mg:hover a, a:hover > mg, mg2:hover a, a:hover > mg2, mg.dotted:hover {
-    border-bottom: 2px dotted var(--m2) !important;
+dtag rou {
+    color: var(--l1);
 }
 
 
@@ -199,7 +163,7 @@ br + tag, br + btag, br + dtag {
 }
 
 sms {
-    color: grey;
+    color: var(--m2);
     font-family: 'Courier New';
     font-size: calc(0.8 * var(--font-size-main));
     font-style: normal;
@@ -248,8 +212,9 @@ lgn {
     display: block;
     width: 100%;
     height: 0;
-    margin: var(--sm) 0;
-    border-bottom: 1px solid var(--lgn-main);
+    margin: var(--grid-gap) 0;
+    border-bottom: 1px solid var(--color);
+    --color: var(--l3);
 }
 
 
@@ -440,25 +405,25 @@ linel > lgn, liner > lgn, linec > lgn {
 .hi1 {
     --color: var(--h1);
 
-    --highlight: var(--d4);
+    --highlight: var(--l1);
 }
 
 .hi2 {
     --color: var(--h2);
 
-    --highlight: var(--d3);
+    --highlight: var(--l1);
 }
 
 .hi3 {
     --color: var(--h3);
 
-    --highlight: var(--l2);
+    --highlight: var(--l1);
 }
 
 .hi4 {
     --color: var(--h4);
 
-    --highlight: var(--d4);
+    --highlight: var(--l1);
 }
 
 /*effective*/

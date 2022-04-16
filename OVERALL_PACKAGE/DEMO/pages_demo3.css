@@ -1,0 +1,96 @@
+:root {
+    --l0: #ffffff;
+    --l1: #f9f9f9;
+    --l2: #eeeeee;
+    --l3: #dfdfdf;
+    --body-background: white;
+    --border-radius: 5px;
+
+    --h1: #ded3ee;
+    --h2: #c8b8de;
+    --h3: #c4d3c8;
+    --h4: #74957e;
+
+    --sm: 20px;
+    --mo: 40px;
+    --bg: 60px;
+
+    --font-size-main: 18px;
+}
+
+body{
+    padding: 50px;
+    background: var(--body-background);
+
+    --sq-global: 80px;
+}
+
+body {}
+
+body > script {
+    display: none;
+}
+
+header {
+    width: 300px;
+    padding: var(--border-radius) 0 !important;
+}
+
+header .sq {
+    --sq: 120px;
+}
+
+main {
+    height: 100%;
+    width: 510px;
+    --grid-gap: 10px;
+}
+
+.links_tumblr a {
+    margin: 0 var(--sm) var(--sm) 0 !important;
+    --sm: 10px;
+}
+
+.desc_tumblr {
+    max-height: 120px;
+    height: auto;
+}
+
+.main_scroll.simple {
+    margin: 0 !important;
+    padding: var(--border-radius);
+}
+
+.main_scroll .flex {
+    --max: 120px;
+}
+
+.hour_tumblr, .tags_tumblr {
+    --font-size-main: 14px;
+}
+
+.tags_tumblr tag {
+    margin: 0 0 var(--sm) var(--sm);
+    padding: 0 var(--sm);
+}
+
+
+
+/*UTIL STYLING*/
+
+.simple {
+    border-radius: var(--border-radius);
+}
+
+.light, .hi1.background, .hi2.background, .hi3.background, .hi4.background {
+    box-shadow: 0 0 8px var(--l2);
+    border: 1px solid var(--l0);
+}
+
+.hi1, .hi2, .hi3, .hi4 {
+    --highlight: white;
+}
+
+lgn {
+    --color: var(--d1);
+}

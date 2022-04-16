@@ -6,13 +6,13 @@
                           site :     https://test-renegade.kanak.fr/
 
     -------------------- css gallery : util properties gallery
-                                     (mostly placement properties
-                                     such has flexes, columns, margins, etc.)
-                                     that shouldn't conflict any other
-                                     preexisting css sheet
+                                      (mostly placement properties
+                                      such has flexes, columns, margins, etc.)
+                                      that shouldn't conflict any other
+                                      preexisting css sheet
 
-                       NEEDS the other styling gallery with the variables
-                       INFOS on main demo page
+                        NEEDS the other styling gallery with the variables
+                        INFOS on main demo page
 
     -------------------- last update : 15.04.2022
 */
@@ -356,6 +356,14 @@ k a {
     padding: var(--sm);
 }
 
+.simple > *:first-child {
+    margin-top: 0 !important;
+}
+
+.simple > *:last-child {
+    margin-bottom: 0 !important;
+}
+
 .margin {
     margin: var(--grid-gap) auto !important;
 }
@@ -497,6 +505,27 @@ wxcv {
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.style-italic, .italic {
+  font-style: italic !important;
+}
+
+.style-normal {
+  font-style: normal !important;
+}
+
+.weight-bold, .bold {
+  font-weight: bold !important;
+}
+
+.weight-normal, .weight-normal * {
+  font-weight: normal !important;
+}
+
+.font-normal {
+  font-weight: normal !important;
+  font-style: normal !important;
 }
 
 /*----- font-size */
