@@ -21,11 +21,8 @@
 body{
     padding: 50px;
     background: var(--body-background);
-
     --sq-global: 80px;
 }
-
-body {}
 
 body > script {
     display: none;

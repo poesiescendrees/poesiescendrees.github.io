@@ -1,0 +1,160 @@
+:root {
+    --l0: #ffffff;
+    --l1: #f8f8f8;
+    --l2: #f2f2f2;
+    --l3: #e6e6e6;
+    --l4: #d7d7d7;
+    --m1: #a6a6a6;
+    --m2: #8a8a8a;
+    --d1: #696969;
+    --d2: #505050;
+    --d3: #3b3b3b;
+    --d4: #322929;
+    --h1: #d8cde5;
+    --h2: #bed5c2;
+    --h3: #d8e4ec;
+    --h4: #f2e2bd;
+}
+
+body{
+    box-sizing: border-box;
+    height: 100vh;
+    width: 100vw;
+    background: var(--body-background);
+    --body-background: var(--h3);
+    --sq-global: 80px;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    --height-header: 100px;
+    --main-padd: var(--lg);
+}
+
+/*header*/
+
+header {
+    width: calc(100% - var(--height-header) - var(--main-padd));
+    height: var(--height-header);
+    position: absolute;
+    top: 0;
+    left: var(--height-header);
+}
+
+header td > * {
+    display: inline-block;
+    margin-top: 0;
+    margin-left: 0;
+}
+
+header td > *:not(:last-child) {
+    margin-right: var(--mo);
+}
+
+/*footer*/
+
+footer {
+    width: var(--height-header);
+    height: calc(100% - var(--height-header) - 2 * var(--main-padd));
+    overflow: visible;
+    position: absolute;
+    z-index: 999;
+    top: calc(var(--height-header) + var(--main-padd));
+    left: calc(0.5*var(--height-header));
+}
+
+.ic_footer.sq {
+    --sq: var(--height-header);
+    padding: calc(0.5*var(--sm));
+}
+
+footer a.sq {
+    --sq: var(--bg);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+}
+
+footer a.background:hover {
+    background: var(--d3) !important;
+}
+
+footer .tooltip_footer {
+    display: none;
+    background: var(--h2);
+    position: absolute;
+    top: 10px;
+    left: 100%;
+
+    color: var(--d3);
+}
+
+footer a:hover .tooltip_footer {
+    display: block;
+}
+
+/*main*/
+
+main {
+    width: calc(100% - var(--height-header));
+    height: calc(100% - var(--height-header));
+    padding: var(--main-padd) var(--main-padd) var(--main-padd) var(--main-left-padd) !important;
+    --main-left-padd: calc(0.5* var(--height-header) + var(--main-padd));
+    border-top-left-radius: 40px;
+    --grid-gap: var(--main-padd);
+    overflow: auto;
+    position: absolute;
+    z-index: 900;
+    bottom: 0;
+    right: 0;
+}
+
+main > * > * {
+    --grid-gap: var(--mo);
+}
+
+@media only screen and (max-width: 1500px) {
+  /*- - - - - MPS - - - - -*/
+
+    main.column.three {
+        column-count: 2;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+  /*- - - - - MPS - - - - -*/
+
+    main.column.three {
+        column-count: 1;
+    }
+}
+
+/*elements*/
+
+.bp_spotify {
+}
+
+.left_spotify {
+    --width: 120px;
+}
+
+.list_spotify scroll {
+    padding-left: 0;
+}
+
+.ic_main.flexrow {
+    --height: 90px;
+}
+
+/*util stying*/
+
+.hi1, .hi2, .hi3, .hi4 {
+    --highlight: var(--d4);
+}
+
+.light, .hi1, .hi2, .hi3, .hi4 {
+    border-radius: 9px;
+}

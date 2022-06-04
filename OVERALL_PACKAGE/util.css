@@ -146,6 +146,34 @@ table.centered, .centered-table table {
 
 
 
+/*- - - - - COLUMN - - - - -*/
+
+.column {
+  column-count: 2;
+  column-gap: var(--grid-gap);
+}
+
+.column.three {
+    column-count: 3;
+}
+
+.column.four {
+    column-count: 4;
+}
+
+.column.rule {
+  column-gap: 40px;
+  column-rule: 1px solid var(--l4);
+}
+
+.column * {
+  break-inside: avoid;
+}
+
+
+
+
+
 /*- - - - - SQUARE GRID - - - - -*/
 
 .heightsquaregrid {
@@ -380,19 +408,19 @@ k a {
     margin: 0 !important;
 }
 
-.noleftm {
+.noleftm, .nomarginl {
     margin-left: 0 !important;
 }
 
-.norightm {
+.norightm, .nomarginr {
     margin-right: 0 !important;
 }
 
-.notopm {
+.notopm, .nomargint {
     margin-top: 0 !important;
 }
 
-.nobottomm {
+.nobottomm, .nomarginb {
     margin-bottom: 0 !important;
 }
 
@@ -400,19 +428,19 @@ k a {
     padding: 0 !important;
 }
 
-.noleftp {
+.noleftp, .nopaddingl {
     padding-left: 0 !important;
 }
 
-.norightp {
+.norightp, .nopaddingr {
     padding-right: 0 !important;
 }
 
-.notopp {
+.notopp, .nopaddingt {
     padding-top: 0 !important;
 }
 
-.nobottomp {
+.nobottomp, .nopaddingb {
     padding-bottom: 0 !important;
 }
 

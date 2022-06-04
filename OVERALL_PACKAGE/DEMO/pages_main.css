@@ -1,6 +1,13 @@
-body{
-    padding: 50px;
+:root {
+
+    --font-size-main: 17px;
+    --line-height-main: 24px;
+}
+
+body {
+    padding: 150px;
     background: var(--body-background);
 
     --sq-global: 80px;
+
 }
