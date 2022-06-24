@@ -1,0 +1,36 @@
+body{
+    padding: 150px;
+    background: var(--body-background);
+
+    --sq-global: 80px;
+}
+
+#var_container_demo {
+    width: 850px;
+    margin: auto;
+
+    background: var(--l1);
+}
+
+#var_container_demo > lgn {
+    margin: var(--mo) auto var(--lg);
+}
+
+.left_suj {
+    width: 230px;
+}
+
+/*fiche*/
+.flexrow.fixed.ic_pres {
+    --height: 100px;
+}
+
+#x {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+}
