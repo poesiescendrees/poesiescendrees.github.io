@@ -1,0 +1,648 @@
+/*
+    NOT FIT TO USE IN ANOTHER PROJECT
+*/
+
+body *::-webkit-scrollbar{width: 0px;}
+
+/* nom | durée | fonction | retard */
+HTML *{
+  transition: all var(--transt) ease;
+  -webkit-transition: all var(--transt) ease;
+  -moz-transition: all var(--transt) ease;
+  -ms-transition: all var(--transt) ease;
+  -o-transition: all var(--transt) ease;
+  --transt: .4s;
+}
+
+
+
+
+
+/* - - - - - GENERAL - - - - - */
+
+HTML, HTML *{
+  box-sizing: border-box;
+}
+
+body{
+    padding: 50px;
+    background: var(--background-body);
+    --background-body: #f5f5f5;
+
+    --sq-global: 80px;
+}
+
+*::-webkit-scrollbar{
+  width: 0px;
+}
+
+input.onglet + div, input.onglet + label + div{
+  display: none;
+}
+
+input.onglet:checked + div, input.onglet:checked + label + div{
+  display: block;
+}
+
+
+
+
+
+/* - - - - - MAIN ELEMENTS - - - - - */
+
+a, button, input{
+    cursor: crosshair;
+}
+
+button, input{
+    font-family: var(--font-family-main);
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+button, input{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: var(--display);
+  --display: inline-block;
+  margin: 0px;
+  box-sizing: border-box;
+  outline: none;
+  border: 0;
+}
+
+table{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+  color: inherit;
+  text-align: inherit;
+  font-size: inherit;
+}
+
+
+
+
+
+/*_______________________________ AFTER :: ../util.css*/
+
+
+
+
+
+/* - - - - - COLORS & VARIABLES - - - - - */
+
+scroll{
+    flex: 1 1 auto;
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+img {
+    object-fit: cover;
+}
+
+table.centered, .centered-table table{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+
+  color: inherit;
+  text-align: inherit;
+  font-size: inherit;
+}
+
+
+
+
+
+/* - - - - FLEX - - - - */
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  grid-gap: var(--grid-gap);
+  --max: 250px;
+}
+
+.flex.small-max {
+  --max: 200px;
+}
+
+.flex.fixed {
+  --height-flex: 200px;
+}
+
+.flex.fixed > * {
+  height: var(--height-flex);
+}
+
+.flex > * {
+  flex: 1 0 var(--max);
+  margin: 0 !important;
+}
+
+.flex .first{
+  flex: 0 0 100% !important;
+}
+
+
+
+
+
+/* - - - - FLEXCOLUMN AND FLEXROW - - - - */
+
+.flexrow, .flexcolumn {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.flexrow.fixed {
+  --height: 200px;
+}
+
+.flexrow.fixed > * {
+  height: var(--height);
+}
+
+.flexcolumn {
+  flex-direction: column;
+}
+
+.flexcolumn.fixed {
+  height: var(--height);
+  --height: 200px;
+}
+
+.flexcolumn > * {
+  flex: 1 1 auto;
+  margin: 0 !important;
+  margin-bottom: var(--grid-gap) !important;
+}
+
+.flexcolumn > * {
+  height: 0;
+}
+
+.flexrow > * {
+  flex: 1;
+  margin: 0 !important;
+  margin-right: var(--grid-gap) !important;
+}
+
+.flexcolumn > *:last-child, .flexrow > *:last-child {
+  margin: 0px !important;
+}
+
+.no-extend {
+    flex: 0 0 auto;
+}
+
+.flexcolumn > .no-extend {
+    height: auto;
+}
+
+.extend, fill {
+    flex: 1 1 auto;
+}
+
+.columns {
+    column-count: 3;
+    column-gap: var(--grid-gap);
+}
+
+.columns > *:first-child {
+    margin-top: 0 !important;
+}
+
+.columns > *:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+
+
+
+/*- - - - - SQUARE GRID - - - - -*/
+
+.heightsquaregrid {
+  height: var(--height);
+  --height: 250px;
+}
+
+.heightsquaregrid .squaregrid {
+  --width: var(--height);
+}
+
+.squaregrid {
+  display: grid;
+  grid-gap: var(--grid-gap);
+  /*grid-template:
+    10px 10px / 10px 10px;*/
+  width: var(--width);
+  height: var(--width);
+  --width: 250px;
+  --rows: 2;
+  grid-template:
+    repeat(var(--rows), var(--calculated)) /
+    repeat(var(--rows), var(--calculated));
+
+  --calculated: calc(var(--width)/var(--rows) - ((var(--rows) - 1) / var(--rows)) * var(--grid-gap));
+    /* calculates the exact size of each image in the grid,
+       given the total width of the grid and the gaps between each image
+       the class may bug but honestly, i don't know why
+       if so, give refreshing the page a try because i'm done playing with the formula
+
+  (the formula being : )
+
+         w      (r - 1)
+        ———  *  ———————  *  g  =  width-image
+         r         r
+
+  (w = total width; r = number of rows; g = gap between images)
+    */
+}
+
+.squaregrid.three {
+  --rows: 3;
+}
+
+.squaregrid.four {
+  --rows: 4;
+}
+
+.squaregrid > * {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/*- - - - - SPOTIFY - - - - -*/
+
+.bp_spotify {
+  max-width: 650px;
+  margin: auto;
+}
+
+.left_spotify {
+  width: var(--width);
+  --width: 220px;
+}
+
+.img_spotify {
+  display: block;
+  --sq: calc(0.8*var(--width));
+  width: var(--sq);
+  height:var(--sq);
+  margin: 0 0 var(--mo);
+}
+
+.link_spotify {
+  border-radius: 15px;
+}
+
+.list_spotify scroll {
+  max-height: 400px;
+  padding-left: 25px;
+}
+
+.list_spotify ol {
+  list-style-type: decimal;
+}
+
+* > .element_spotify:not(:last-child) {
+  padding: var(--mo);
+  border-bottom: 1px solid;
+}
+
+* > .element_spotify:last-child {
+  padding: var(--mo) var(--mo) 0;
+}
+
+
+
+
+
+    /*- - - - - JAUGE - - - - -*/
+
+jauge {
+  display: block;
+  padding: 0 var(--sm) var(--sm);
+  position: relative;
+
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+jauge.right, .right jauge, .right-align jauge {
+  text-align: right;
+}
+
+* > jauge:not(:last-child) {
+  margin: 0 auto var(--mo);
+}
+
+barre {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: var(--l0);
+  position: absolute;
+  bottom: 1px;
+  left: 0;
+}
+
+barre:before {
+  display: block;
+  content: '';
+  width: var(--width);
+  height: 100%;
+  background: var(--h1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.right barre:before, .right-align barre:before {
+  left: unset !important;
+  right: 0;
+}
+
+
+
+
+
+/* - - - - - IMAGES - - - - - */
+
+/*for simple 400*640 avatars posts*/
+
+k {
+    display: block;
+    text-align: center;
+}
+
+k img {
+    max-width: 200px !important;
+}
+
+k a {
+    box-shadow: none !important;
+    border: 0px !important;
+    background: transparent !important;
+}
+
+/*moodboards*/
+
+.moodboard {
+  width: 100%;
+  column-count: 3;
+  column-gap: var(--grid-gap);
+}
+
+.moodboard:hover img {
+  opacity: 1;
+}
+
+.moodboard img {
+  width: 100%;
+  margin-bottom: var(--grid-gap);
+  opacity: .7;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* - - - - - STYLING BLOCKS - - - - - */
+
+.margin {
+    margin: var(--grid-gap) auto !important;
+}
+
+.margin.all {
+    margin: var(--grid-gap) var(--grid-gap) !important;
+}
+
+.padding {
+    padding: var(--mo) !important;
+}
+
+.nomargin{
+  margin: 0 !important;
+}
+
+.noleftm {
+  margin-left: 0 !important;
+}
+
+.norightm {
+  margin-right: 0 !important;
+}
+
+.notopm {
+  margin-top: 0 !important;
+}
+
+.nobottomm {
+  margin-bottom: 0 !important;
+}
+
+.nopadding{
+  padding: 0 !important;
+}
+
+.noleftp {
+  padding-left: 0 !important;
+}
+
+.norightp {
+  padding-right: 0 !important;
+}
+
+.notopp {
+  padding-top: 0 !important;
+}
+
+.nobottomp {
+  padding-bottom: 0 !important;
+}
+
+.noborder{
+    border: 0 !important;
+}
+
+ul.nobullet{
+    list-style-type: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.nocolor {
+    color: unset !important;
+}
+
+.display-none, .none {
+    display: none;
+}
+
+.display-block {
+  display: block !important;
+  --display: block;
+}
+
+.display-inline-block {
+  display: inline-block !important;
+  --display: inline-block;
+}
+
+.display-inline {
+  display: inline !important;
+  --display: inline;
+}
+
+.light{
+  background: var(--l1);
+}
+
+.middle{
+  background: var(--m1);
+}
+
+.dark{
+  background: var(--d1);
+
+  color: var(--l4);
+}
+
+.left-align{
+  text-align: left !important;
+}
+
+.center-align{
+  text-align: center !important;
+}
+
+.right-align{
+  text-align: right !important;
+}
+
+.justify-align{
+  text-align: justify !important;
+}
+
+qsdf{
+  display: block;
+  text-align: right;
+}
+
+wxcv{
+  display: block;
+  text-align: center;
+}
+
+.lowercase{
+  text-transform: lowercase;
+}
+
+.uppercase{
+  text-transform: uppercase;
+}
+
+.small-font {
+  font-size: calc(var(--scale1)*var(--font-size-main));
+  line-height: calc(var(--scale2)*var(--line-height-main));
+  --scale1: .8;
+  --scale2: .9;
+}
+
+.middle-font {
+  font-size: calc(var(--scale1)*var(--font-size-main));
+  line-height: calc(var(--scale2)*var(--line-height-main));
+  --scale1: 1.2;
+  --scale2: 1.2;
+}
+
+/*----- SQ ROUND*/
+
+.sq, .img-sq {
+  --sq: var(--sq-global);
+  overflow: hidden;
+}
+
+.sq > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.sq, .img-sq img {
+  width: var(--sq);
+  height: var(--sq);
+}
+
+.sq.round, .sq.round > img, .img-sq.round img {
+  border-radius: 50%;
+}
+
+.img-sq.bk img {
+  display: block;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.width-100-100 {
+  width: 100%;
+  height: 100%;
+}
+
+.height-100 {
+  height: 100%;
+}
+
+img.width-100, img.width-100-100, img.height-100 {
+  display: block;
+}
+
+.grayscale, .grayscale-inner img {
+  filter: grayscale(100%);
+}
+
+.spacer {
+  display: inline-block;
+  width: var(--width);
+  --width: 20px;
+}
+
+.crosshair {
+  cursor: crosshair;
+}
+
+.no-first-br br:first-child {
+  display: none;
+}
+
+.no-first-br br:first-child + br:nth-child(2) {
+  display: none;
+}

@@ -1,0 +1,59 @@
+body {
+    background: #e1e8e9;
+}
+
+.bp_character {
+    width: var(--width);
+    position: relative;
+    border-radius: var(--mo);
+    overflow: hidden;
+    --width: 200px;
+    --infos-height: 250px;
+    --basics-height: 90px;
+}
+
+.avatar_character {
+    width: var(--width);
+    height: var(--width);
+}
+
+.contacts_character {
+    width: var(--width);
+    height: auto;
+    max-height: var(--width);
+    overflow: auto;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.contacts_character tag {
+    border-radius: var(--sm);
+}
+
+.bp_character:hover .contacts_character {
+    opacity: 1;
+}
+
+.contacts_character {
+
+}
+
+input[name="characters"]:checked + label {
+    background: var(--l3) !important;
+}
+
+.infos_characters {
+    height: 0;
+    overflow: hidden;
+}
+
+input[name="characters"]:checked + label + .infos_characters {
+    height: var(--infos-height);
+    padding: var(--grid-gap);
+}
+
+.basics_characters {
+    height: var(--basics-height);
+}

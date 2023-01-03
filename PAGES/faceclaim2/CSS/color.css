@@ -1,0 +1,28 @@
+/*
+    NOT FIT TO USE IN ANOTHER PROJECT
+*/
+
+/*- - - - - COLOR PICKER - - - - -*/
+
+.color_picker {
+    position: fixed;
+    z-index: 100;
+    bottom: 20px;
+    left: 20px;
+}
+
+.color_picker input {
+    width: 100px;
+    height: 40px;
+    background: transparent;
+    padding: 0;
+    border: 0 20px 0 0;
+    border-radius: 0;
+    outline: none;
+
+    border: 0 !important;
+}
+
+.color_picker table {
+    height: 100%;
+}
