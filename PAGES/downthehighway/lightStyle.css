@@ -52,3 +52,7 @@
 body {
   --color-main: #383838;
 }
+
+.postbody {
+    color: var(--color-main);
+}

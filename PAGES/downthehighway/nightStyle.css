@@ -38,8 +38,8 @@
 
   /*- - - - - IMAGES - - - - -*/
 
-  --fill-header: url(https://images2.imgbox.com/72/b4/rpqXc4Nc_o.png) repeat fixed;
-  --fill-header-notfixed: url(https://images2.imgbox.com/72/b4/rpqXc4Nc_o.png) repeat;
+    --fill-header: url(https://images2.imgbox.com/fd/0c/zsW1iCTZ_o.png) repeat fixed;
+    --fill-header-notfixed: url(https://images2.imgbox.com/fd/0c/zsW1iCTZ_o.png) repeat;
 
   /*EN BLANC : https://images2.imgbox.com/2b/af/Qx2EHEsi_o.png*/
 }
@@ -50,5 +50,9 @@
 
 /*- - - - - FONT - - - - -*/
 body {
-  --color-main: #f1f1f1;
+  --color-main: #d4d4d4;
+}
+
+label {
+    color: var(--d3);
 }
