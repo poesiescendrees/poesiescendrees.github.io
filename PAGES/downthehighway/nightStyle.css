@@ -55,3 +55,7 @@ label {
 h3 {
     color: unset;
 }
+
+#tabs *:not(h1) {
+  color: inherit;
+}
