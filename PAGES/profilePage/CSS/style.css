@@ -1,0 +1,182 @@
+/* ------------------------- MAIN TEMPLATE -------------------------
+   ---------------------------------------------------------------- */
+
+
+
+
+
+/*---------- SECTION & CONTAINER MAIN ----------*/
+
+.TEMPLATE--MAIN {
+    min-height: 100vh;
+    position: relative;
+}
+
+.TEMPLATE--MAIN::before {
+    display: block;
+    content: '';
+    width: var(--width);
+    background: url('https://images2.imgbox.com/c1/2a/3FGOYXRr_o.png') 50% 100% / cover;
+    position: sticky;
+    z-index: -10;
+    left: calc(100vw - var(--width));
+    border-top-left-radius: 100%;
+
+    height: var(--height);
+    margin-top: calc(-1 * var(--height));
+    position: sticky;
+    top: calc(1.5 * var(--gap-section));
+    
+    --height: calc(100vh - 1.5 * var(--gap-section));
+    --width: 60vw;
+}
+
+.container--main {
+    display: grid;
+    gap: var(--gap);
+    grid-template:
+        "nav intro slider" auto
+        / var(--nav-width) var(--intro-width) var(--slider-width);
+    --nav-width: minmax(auto, calc(300 / 16 * 1rem));
+    --intro-width: minmax(auto, 30%);
+    --slider-width: 1fr;
+    height: 100%;
+    padding: 0 0 0 var(--gap-container);
+}
+
+@media all and (max-width: 1200px) {
+    .container--main {
+        --nav-width: minmax(auto, calc(200 / 16 * 1rem));
+        --intro-width: minmax(auto, 25%);
+    }
+}
+
+@media all and (max-width: 750px) {
+    .container--main {
+        grid-template:
+        "intro slider" 3fr
+        "nav   slider" 2fr
+        / var(--intro-width) var(--slider-width);
+    }
+}
+
+.container--main > * {
+    margin: 0 !important;
+}
+
+
+
+
+
+/*---------- MAINNAV ----------*/
+
+.mainnav {
+    grid-area: nav;
+    max-height: calc(100vh - 2 * var(--gap-section));
+}
+
+.mainnav__links .sq {
+    --sq: clamp(40px, calc(40px + 0.7vw), 70px);
+    color: var(--l4);
+}
+
+.mainnav__links a .sq:hover {
+    color: var(--h1);
+}
+
+
+
+
+
+/*---------- INTRO ----------*/
+
+.intro {
+    grid-area: intro;
+}
+
+.intro__context scroll {
+    max-height: calc(300 / 16 * 1rem);
+}
+
+
+
+
+
+/*---------- SLIDER ----------*/
+
+.slider {
+    grid-area: slider;
+    position: relative;
+    height: calc(100vh - 2 * var(--gap-section));
+}
+
+.slider__grid {
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    height: 90%;
+    position: relative;
+    z-index: 300;
+}
+
+.slider::after {
+    display: block;
+    content: '';
+    width: 80%;
+    height: 100%;
+    background: var(--h1);
+    border-bottom-left-radius: var(--border-radius-main);
+    position: absolute;
+    z-index: -4;
+    bottom: 0;
+    right: 0;
+}
+
+.slider__imgs.grid-autofit {
+    --max: 10vw;
+    --gap: var(--gap-small);
+}
+
+@media all and (max-width: 1800px) {
+    .slider__imgs.grid-autofit {
+}
+}
+
+.slider__imgs.grid-autofit img {
+    height: var(--max);
+}
+
+.slider.simple {
+    --section: var(--gap);
+    --container: calc(1.5 * var(--gap));
+}/* ------------------------- MAIN TEMPLATE -------------------------
+   ---------------------------------------------------------------- */
+
+
+
+
+
+/*---------- TEMPLATE TEXT ----------*/
+
+.TEMPLATE--TEXT {
+    min-height: var(--height-template-text);
+    position: relative;
+
+    --height-template-text: calc(100vh - var(--gap-section));
+}
+
+.TEMPLATE--TEXT::before {
+    display: block;
+    content: '';
+    width: 60vw;
+    background: url('https://images2.imgbox.com/c1/2a/3FGOYXRr_o.png') 50% 0% / cover;
+    position: sticky;
+    z-index: -10;
+    right: 0;
+    border-bottom-left-radius: 100%;
+
+    height: var(--height);
+    position: absolute;
+    top: 0;
+    
+    --height: calc(100vh - 2 * var(--gap-section));
+}
