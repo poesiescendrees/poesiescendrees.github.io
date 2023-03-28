@@ -9,6 +9,12 @@ Array.prototype.insert = function ( index, ...items ) {
   this.splice( index, 0, ...items );
 };
 
+function randomBool() {
+  if (Math.floor(Math.random() * 2)) return true;
+  else return false;
+}
+function strip(s){return ( s || '' ).replace( /^\s+|\s+$/g, '' );}
+
 /*
 var arr = [ 'A', 'B', 'E' ];
 arr.insert(2, 'C', 'D');
@@ -27,4 +33,16 @@ function random(min, max) {
   }
   
   return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function tagName(name) {
+  return name
+      .trim()
+      .toLowerCase()
+      .replace( /\s/gi, '-')
+      .replace( /[^\w-]+/gi, '')
+      .replace( /(^-+)|(-+$)/gi, '')
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+  ;
 }

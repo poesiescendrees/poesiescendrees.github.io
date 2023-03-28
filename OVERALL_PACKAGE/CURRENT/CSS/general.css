@@ -290,13 +290,19 @@ span.sq, i.sq, b.sq, s.sq {
     display: inline-block;
 }
 
-.sq.round {
-    border-radius: 50%;
-    overflow: hidden;
+.sq img {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-.sq.border {
-    border: 2px solid;
+img.sq {
+    display: block;
+}
+
+.sq.round, .sq.round img {
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 
@@ -599,6 +605,18 @@ a:not(.unset):hover {
 
 
 
+/* ----- UTILITY */
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+
+
 
 
 
@@ -652,6 +670,10 @@ a:not(.unset):hover {
 
 .section--border {
     border-top: 1px solid;
+}
+
+.section + .section {
+    margin-top: var(--gap-section);
 }
 
 

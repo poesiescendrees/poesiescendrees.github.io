@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACECLAIM</title>
+
+    <link rel="icon" href="https://2img.net/i/fa/favicon/discussion.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mulish:wght@200&family=Oswald&family=Playfair+Display&family=Rozha+One&display=swap" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="./CSS/general.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script src="./JS/head.js"></script>
+</head>
+<body class="header-sticky filters-open">
+    
+    <header class="">
+        <div class="section nopadding--bottom">
+            <div class="container">
+                <nav>
+                    <ul class="header unset flexrow align-end">
+                        <li class="no-extend">
+                            <button class="js-filters-toggle unset smalltitle header__button button--filters trans">
+                                Filtres
+                            </button>
+                        </li>
+                        <li class="no-extend">
+                            <input type="search" class="js-search unset" placeholder="Rechercher">
+                        </li>
+                        <li>
+                            <span class="header__title">
+                                <img src="https://images2.imgbox.com/78/21/pG7zA1yn_o.png" alt="" class="header__icon sq round">
+                                <span class="title">
+                                    Nom du forum
+                                </span>
+                            </span> <br>
+                            <span class="header__subtitle smalltitle">
+                                Faceclaim
+                            </span>
+                        </li>
+                        <li class="no-extend">
+                            <button class="js-navigation-toggle unset smalltitle header__button button--navigation trans">
+                                Navigation
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main name="top">
+
+
+
+        <div class="section">
+            <div class="container">
+                <article class="main-splitter">
+
+
+
+                    <article class="js-slider-button filters slider trans">
+                        <scroll>
+                            <div class="slider__title title big">
+                                Filtres
+                            </div>
+                            <article class="filters-list">
+                                <article class="filters-list__group slider__group" data-name="gender">
+                                    <div class="filters-list__title slider__subtitle thintitle big">
+                                        Genre
+                                    </div>
+                                    <ul class="filters-list__list unset slider__list">
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset selected" data-filter="*">
+                                                Tout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="f">
+                                                Femmes
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="m">
+                                                Hommes
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="nb">
+                                                Personnes non-binaires
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </article>
+                            
+                                <article class="filters-list__group slider__group" data-name="age">
+                                    <div class="filters-list__title slider__subtitle thintitle big">
+                                        Âge
+                                    </div>
+                                    <ul class="filters-list__list unset slider__list">
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset selected" data-filter="*">
+                                                Tout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="age-18moins">
+                                                - 18 ans
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="age-18-28">
+                                                18 - 28 ans
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="age-29-40">
+                                                29 - 40 ans
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="age-41-50">
+                                                41 - 50 ans
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="age-50plus">
+                                                + 50 ans
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </article>
+                                <article class="filters-list__group slider__group" data-name="occupation">
+                                    <div class="filters-list__title slider__subtitle thintitle big">
+                                        Occupation
+                                    </div>
+                                    <ul class="filters-list__list unset slider__list">
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset selected" data-filter="*">
+                                                Tout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-art">
+                                                Arts, médias
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-commerce">
+                                                Commerce, immobilier, finances
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-crime">
+                                                Crime & sécurité
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-droit">
+                                                Droit, politique
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-education">
+                                                Éducation, étudiant.e.s
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-restauration">
+                                                Restauration, hôtellerie
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-sciences">
+                                                Sciences & santé
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-sport">
+                                                Sport
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-nuit">
+                                                Monde de la nuit
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-sansemploi">
+                                                Sans emploi
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="occupation-autre">
+                                                Autres jobs
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </article>
+                            
+                                <article class="filters-list__group slider__group" data-name="finances">
+                                    <div class="filters-list__title slider__subtitle thintitle big">
+                                        Finances
+                                    </div>
+                                    <ul class="filters-list__list unset slider__list">
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset selected" data-filter="*">
+                                                Tout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="finances-precaire">
+                                                Situation précaire
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="finances-moyen">
+                                                Classe moyenne
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="finances-riche">
+                                                Riche
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="finances-tres-riche">
+                                                Très riche
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </article>
+                            
+                                <article class="filters-list__group slider__group" data-name="statut">
+                                    <div class="filters-list__title slider__subtitle thintitle big">
+                                        Statut
+                                    </div>
+                                    <ul class="filters-list__list unset slider__list">
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset selected" data-filter="*">
+                                                Tout
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-celib">
+                                                Célibataire
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-couple">
+                                                En couple
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-fiance">
+                                                Fiancé.e
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-marie">
+                                                Marié.e
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-divorce">
+                                                Divorcé.e
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button class="filters-list__filter slider__item unset" data-filter="situation-autre">
+                                                Autre
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </article>
+                            </article>
+                        </scroll>
+                    </article>
+
+
+
+                    <article class="js-slider-button navigation slider trans">
+
+                        <button class="unset slider__item js-order-alphabetical">Ordre alphabétique</button>
+                        <button class="unset slider__item js-order-alphabetical-reversed">Ordre alphabétique (Inversé)</button>
+                        <button class="unset slider__item js-order-digital-reversed">Ordre d'ancienneté</button>
+                        <button class="unset slider__item js-order-digital">Ordre d'ancienneté (Inversé)</button>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. At accusantium eaque quod sit minus beatae saepe quasi esse itaque quos molestias harum eveniet, quas sapiente reprehenderit, nihil, natus explicabo molestiae.
+                    </article>
+
+
+
+
+
+                    <ul class="mainlist unset">
+                        <li class="item item--00 item--filtered" data-filters="">
+                            <article class="mainlist__item trans">
+                                <div class="item__elem item__head">
+                                    <img src="https://images2.imgbox.com/f6/6e/xRoR3dw5_o.png" alt="" class="item__avatar">
+                                    <nav>
+                                        <ul class="item__contact trans unset flexrow">
+                                            <li>
+                                                <a href="#top" class="buttonlink">
+                                                    Profil
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#top" class="buttonlink">
+                                                    MPotter
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <ul class="item__elem item__intro unset">
+                                    <li>
+                                        <div class="item__name smalltitle uppercase center-align">
+                                            Aaa
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item__subtitle center-align thininfo">
+                                            ft. andy blossom
+                                        </div>
+                                    </li>
+                                </ul>
+                                <article class="item__elem item__listBlock item__infos item__text flexcolumn">
+                                    <span class="thintitle no-extend">
+                                        Informations générales
+                                    </span>
+                                    <scroll>
+                                        <div class="item__list unset infos">
+                                        </div>
+                                    </scroll>
+                                </article>
+                                <article class="item__elem item__detailsBlock item__text flexcolumn">
+                                    <span class="thintitle no-extend">
+                                        Informations générales
+                                    </span>
+                                    <scroll class="item__details">
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. A nulla assumenda odio, atque aut itaque minima obcaecati odit deleniti vitae, soluta consectetur animi placeat officia, eum laborum! Necessitatibus, quidem molestias!
+                                    </scroll>
+                                </article>
+                            </article>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+
+    </main>
+
+    <footer name="bottom">
+        <script src="./JS/bottom.js"></script>
+        <script src="./JS/togglePackage.js"></script>
+    </footer>
+
+</body>
+</html>
