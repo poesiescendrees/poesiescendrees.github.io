@@ -55,6 +55,7 @@ const FA_MEMBERLIST = {
     // forumURL: 'https://ghostlydazecendres.forumactif.com',
     // forumURL: 'https://whatliesahead.forumactif.com',
     forumURL: 'https://beginagain.forumactif.com',
+    // forumURL: 'https://dmthbegins.forumactif.org',
 
 
     memberlistTAG: '/memberlist?mode=joined&order',
@@ -98,13 +99,15 @@ const FA_MEMBERLIST = {
 
         let profileURL = this.forumURL + index;
 
-        // console.log(url);
+        console.log(profileURL);
+        
 
         $.ajax({
             url: profileURL,
             async: true,
             type: 'GET',
             dataType: 'html',
+            cache: false,
             success: function (data) {
                 let test = $('.h_member', $(data)).text();
                 console.log(test, count);
@@ -135,21 +138,25 @@ const FA_MEMBERLIST = {
             let gips = gip(url, 'a[href^="/u"]' + this.memberClass);
             
             console.log(url);
+            // console.log(gips);
 
             if (gips.length == 0) allRetrieved = true;
-
-            for (let link of gips) {
-                let u = $(link).attr('href');
-                if (this.indexesList[u] == undefined) {
-                    let newMember = this.newMember(u, pageCount);
-                    this.indexesList[u] = false;
-                    pageCount++;
-                    console.log(pageCount, u);
+            else {
+                for (let link of gips) {
+                    let u = $(link).attr('href');
+                    if (this.indexesList[u] == undefined) {
+                        this.indexesList[u] = false;
+                        // this.newMember(u, pageCount);
+                        pageCount++;
+                        // console.log(pageCount, u);
+                    }
                 }
+    
+                errorCount--;
+                if (errorCount <= 0) allRetrieved = true;
             }
 
-            errorCount--;
-            if (errorCount <= 0) allRetrieved = true;
+            
 
         }
 
@@ -157,6 +164,15 @@ const FA_MEMBERLIST = {
 
         console.log(this.indexesList);
         console.log(this.indexesCount());
+
+        let count = 0;
+
+        for (member in this.indexesList) {
+            this.newMember(member, count);
+            
+            count ++;
+            
+        }
     }
 
 }

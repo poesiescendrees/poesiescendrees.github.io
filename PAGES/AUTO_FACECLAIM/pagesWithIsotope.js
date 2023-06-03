@@ -113,6 +113,7 @@ function gip(url, infoCSS) {
 ////////// STEP 1 : GET URLS AND NAMES //////////
 function setFaceclaim() {
     for (var profile in members) {
+        console.log(INFOSLIST["URL"] + profile);
         $.ajax({
             url : INFOSLIST["URL"] + profile,
             async: true,
