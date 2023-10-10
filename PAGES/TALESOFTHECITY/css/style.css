@@ -1,0 +1,2121 @@
+
+/*------------------------- INFOS GENERALES -------------------------
+    - breakpoints : [ 300 - 600 ; 600 - 1080 ; 1080 +
+    - makes general variables and fonts
+  -------------------------------------------------------------------
+*/
+
+:root {
+    /*-------------------- COLORS CHART --------------------*/
+    --colored11: #578f8d;
+    --colored12: #bde9e7;
+    --colored13: #226765;
+    
+    --colored21: #e29237;
+    --colored22: #f4c48f;
+    --colored23: #9a5b12;
+    
+    --colored31: #f2bd31;
+    --colored32: #f4d47f;
+    --colored33: #936a00;
+
+    --light1: #e0f5f3;
+    --light2: #c8dbd8;
+    --light3: #aec4bf;
+    --light4: #8ca19e;
+
+    --dark1: #556663;
+    --dark2: #4b5453;
+    --dark3: #303d3b;
+    --dark4: #131717;
+
+    --light1a: rgb(245, 245, 245, 0.7);
+    --light2a: rgb(209, 209, 209, 0.7);
+    --light3a: rgb(175, 175, 175, 0.7);
+    --light4a: rgb(129, 129, 129, 0.7);
+
+    --dark1a: rgb(18, 18, 18, 0.7);
+    --dark2a: rgb(48, 48, 48, 0.7);
+    --dark3a: rgb(69, 69, 69, 0.7);
+    --dark4a: rgb(91, 91, 91, 0.7);
+
+
+
+    /*-------------------- COLORS CODES --------------------*/
+
+    --color-text-main: var(--dark1);
+    --color-text-main-invert: var(--light3);
+
+    --color-background-main: var(--light1a);
+    --color-background-main-invert: var(--dark2a);
+    --background-body: url(../assets/img/background2.jpg) fixed 50% 50% / cover;
+
+    /* used to blur the main background */
+    --filter-background-body: blur(15px) grayscale(25%) brightness(110%);
+
+    /* used in the section linear gradient backgrounds */
+    --linear-gradient1: linear-gradient(70deg, var(--colored11), var(--colored22), var(--colored32));
+
+    /* box shadows (not used a lot) */
+    --box-shadow-light: 0px 0px 8px var(--light1);
+    --box-shadow-light-small: 0px 0px 3px var(--light1);
+
+
+
+    /*-------------------- GAP CODES --------------------*/
+
+    --gap-small1: calc(5 / 16 * 1rem);
+    --gap-small2: calc(15 / 16 * 1rem);
+    --gap-small3: calc(25 / 16 * 1rem);
+
+    --gap-big1: calc(50 / 16 * 1rem);
+    --gap-big2: calc(80 / 16 * 1rem);
+    --gap-big3: calc(100 / 16 * 1rem);
+    --gap-big4: calc(200 / 16 * 1rem);
+    --gap-big5: calc(250 / 16 * 1rem);
+
+    /* gaps for section and containers */
+    --gap-section: clamp(var(--gap-big1), 10vw, calc(0.8 * var(--gap-big4)));
+    --gap-container: clamp(var(--gap-small2), 12vw, calc(2*var(--gap-big4)));
+
+    /* mostly used throughout the code */
+    --gap-inner: var(--gap-small3);
+    --gap-inner-small: var(--gap-small2);
+    --gap-inner-big: var(--gap-big2);
+
+    --border-radius-main: 15px;
+
+
+
+    /*-------------------- FONT CODES --------------------*/
+
+    /* main fonts */
+    --fontstack-main: 'Inter', 'Helvetica', 'Arial', system-ui, sans-serif;
+
+    /* title fonts */
+    --fontstack-stroke: 'Bebas Neue', 'Open Sans', 'Helvetica', system-ui, sans-serif;
+
+    /* quote fonts */
+    --fontstack-code: 'Cascadia Code', 'Courier New', ui-monospace, monospace;
+}
+
+/* changes general margins at 800px breakpoint */
+@media all and (max-width: 800px) {
+    :root {
+        --gap-section: clamp(var(--gap-big1), clamp(12vw, 6vh, var(--gap-big3)), calc(1 * var(--gap-big4)));
+
+
+        --gap-inner-small: var(--gap-small2);
+        --gap-inner: var(--gap-small3);
+        --gap-inner-big: var(--gap-big1);
+    }
+}
+
+@font-face {
+    font-family: 'Inter';
+
+    /*format woff2 etc. : nouvelle convention plus rapide*/
+    src: url(../assets/fonts/inter-variable.woff2) format("woff2-variations");
+
+    /*peut aller de 100 à 900*/
+    font-weight: 100 900;
+
+    /*comment gère comment navigateur charge police :
+      - affiche rien tant qu'elle est pas chargée ?
+      - affiche avec police temporaire le temps que ça charge ?
+        (cad fonts sur la fonstack) -> swap*/
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url(../assets/fonts/OpenSans-VariableFont_wdth\,wght.ttf) format("woff2-variations");
+    font-weight: 300 900;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../assets/fonts/BebasNeue-Regular.ttf) format("woff2-variations");
+    font-weight: 400;
+    font-display: block;
+}
+
+@font-face {
+    font-family: 'Bebas Neue';
+    src: url(../assets/fonts/BebasNeue\ Bold.ttf) format("woff2-variations");
+    font-weight: bold;
+    font-display: block;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- MAIN -------------------------
+    sets basic rules throughout the code
+--------------------------------------------------------*/
+
+html {
+    background: var(--background-main);
+    min-width: calc(400 / 16 * 1 rem);
+
+
+
+    /* ---------- DEFINES BASIC FONT ---------- */
+    color: var(--color-dark1);
+    font-family: var(--fontstack-main);
+    font-size: 100%;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* basic transitions */
+.trans {
+    transition: var(--global-trans-property) var(--global-trans-time) var(--global-trans-ease);
+    --global-trans-ease: ease-in-out;
+    --global-trans-time: .25s;
+    --global-trans-property: all;
+}
+
+html * {
+    box-sizing: border-box;
+    margin-top: 0;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+body {
+    background: var(--color-background-main);
+    position: relative;
+    margin: 0;
+    padding: 0;
+    --body-blur: 40px;
+}
+
+body::before {
+    display: block;
+    content: '';
+    background: var(--background-body);
+    position: fixed;
+    z-index: -80;
+    filter: var(--filter-background-body);
+    top: calc(-1 * var(--body-blur));
+    left: calc(-1 * var(--body-blur));
+    right: calc(-1 * var(--body-blur));
+    bottom: 0;
+}
+
+/*dark mode, unused for now*/
+@media all and (prefers-color-scheme: dark) {
+    :root {
+        --color-background-main: var(--color-background-invert);
+        --color-text: var(--color-text-invert);
+    }
+}
+
+/* scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  background: transparent !important;
+}
+
+::-webkit-scrollbar-thumb {
+  box-sizing: border-box;
+  background: var(--colored31);
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- GENERAL TEMPLATE CLASSES -------------------------
+----------------------------------------------------------------------------*/
+
+
+
+
+
+/*---------- LINEART BOX ----------
+    with the box ::before */
+
+/* defines main linebox */
+.linebox {
+    display: grid;
+    --linebox-gap: var(--gap-inner-big);
+    --color: var(--light1);
+    --background: var(--colored21);
+    position: relative;
+}
+
+@media all and (max-width: 800px) {
+    .linebox {
+        --linebog-gap: var(--gap-inner);
+    }
+}
+
+.linebox:not(:first-child) {
+    margin-top: var(--gap-inner);
+}
+
+.linebox > * {
+    margin: 0;
+}
+
+/* lineart made by ::before component */
+
+.linebox::before {
+    display: block;
+    content: '';
+    border: 2px solid var(--color);
+    border-radius: var(--border-radius-main);
+    position: relative;
+    z-index: 100;
+}
+
+/* linebox variations (size) */
+.linebox--small {
+    --linebox-gap: calc(2 * var(--gap-inner-small));
+}
+
+/* principal linebox children : text */
+.linebox__text {
+    grid-area: text;
+    position: relative;
+    z-index: 500;
+
+    font-size: clamp(100%, calc(100% + 3vw), 120%);    
+}
+
+/* principal linebox children : title */
+.linebox__title {
+    grid-area: title;
+    padding-bottom: calc(0.5 * var(--linebox-gap));
+}
+
+.linebox__title.nomargin, .linebox__title.nopadding {
+    padding: 0;
+}
+
+.linebox__title > * {
+    margin: 0 !important;
+}
+
+/* principal linebox children : quote */
+.linebox__quote {
+    grid-area: quote;
+    position: relative;
+    z-index: 500;
+}
+
+/* principal linebox children : img */
+.linebox__img {
+    grid-area: img;
+    position: relative;
+    z-index: 500;
+    border-radius: var(--border-radius-main);
+    overflow: hidden;
+}
+
+.linebox__img img, .linebox__video > * {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+/*----- LINEBOX VARIATION : left text*/
+
+.linebox--lefttext {
+    grid-template:
+    ".    .    title ." minmax(var(--linebox-gap), auto)
+    "text text text  ."   1fr
+    ".    .    .     ." var(--linebox-gap)
+   / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr var(--linebox-gap);
+}
+
+.linebox--lefttext::before {
+    margin-top: calc(0.5 * var(--linebox-gap));
+    grid-row: 1 / -1;
+    grid-column: 2 / -1;
+}
+
+.linebox--small.linebox--lefttext::before {
+    margin-top: calc(1 * var(--linebox-gap));
+}
+
+
+
+/*----- LINEBOX VARIATION : right text*/
+
+.linebox--righttext {
+    grid-template:
+    ". title  .    ." minmax(var(--linebox-gap), auto)
+    ". text   text text "   1fr
+    ". .      .    .    " var(--linebox-gap)
+    / var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap)) var(--linebox-gap);
+}
+
+.linebox--righttext::before {
+    margin-top: calc(0.5 * var(--linebox-gap));
+    grid-row: 1 / -1;
+    grid-column: 1 / -2;
+}
+
+.linebox--righttext .linebox__title {
+    text-align: right;
+}
+
+.linebox--righttext .linebox__title .h3--after::after {
+    margin-left: auto;
+}
+
+
+
+/*----- LINEBOX VARIATION : upper image*/
+
+.linebox--upperimage {
+    /*grid-template:
+    ".    .    title ." minmax(var(--linebox-gap), auto)
+    "text text text  ."   auto
+    ".    .    .     ." var(--linebox-gap)
+   / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr var(--linebox-gap);*/
+
+
+    grid-template:
+        "img img img  img img" minmax(auto, var(--value-image))
+        ".   .   .    .   ."   calc(0.5 * var(--linebox-gap))
+        ".   .   text .   ."   var(--value-text)
+        ".   .   .    .   ."   calc(0.5 * var(--linebox-gap))
+       / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr calc(0.5 * var(--linebox-gap)) var(--linebox-gap);
+    --value-image: 1fr;
+    --value-text: auto;
+}
+
+.linebox--upperimage::before {
+    margin-top: calc(0.5 * var(--linebox-gap));
+    grid-row: 1 / -1;
+    grid-column: 2 / -2;
+}
+
+
+
+/*----- LINEBOX VARIATION : upper image*/
+
+.linebox--image {
+    --linebox-gap: var(--intro-gap);
+}
+
+.linebox--image .linebox__img {
+    height: clamp(calc(200 / 16 * 1rem), calc(200px + 12vw), calc(500 / 16 * 1rem));
+}
+
+/* top left */
+
+.linebox--image.linebox--topleft {
+    grid-template:
+        "img img img   ." var(--linebox-gap)
+        "img img img   ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   quote ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+       / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr var(--linebox-gap);
+}
+
+.linebox--image.linebox--topleft::before {
+    grid-row: 2 / -1;
+    grid-column: 2 / -1;
+}
+
+/* top right */
+
+.linebox--image.linebox--topright {
+    grid-template:
+        ".   img img img" var(--linebox-gap)
+        ".   img img img" auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+        ".   quote .   ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+       / var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap)) var(--linebox-gap);
+}
+
+.linebox--image.linebox--topright::before {
+    grid-row: 2 / -1;
+    grid-column: 1 / -2;
+}
+
+/* bottom left */
+
+.linebox--image.linebox--bottomleft {
+    grid-template:
+    ".   .   .     ." calc(0.5 * var(--linebox-gap))
+    ".   .   quote ." auto
+    ".   .   .     ." calc(0.5 * var(--linebox-gap))
+    "img img img   ." auto
+    "img img img   ." var(--linebox-gap)
+   / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr var(--linebox-gap);
+}
+
+.linebox--image.linebox--bottomleft::before {
+    grid-row: 1 / -2;
+    grid-column: 2 / -1;
+}
+
+/* bottom right */
+
+.linebox--image.linebox--bottomright {
+    grid-template:
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+        ".   quote .   ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+        ".   img img img" auto
+            ".   img img img" var(--linebox-gap)
+       / var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap)) var(--linebox-gap);
+}
+
+.linebox--image.linebox--bottomright::before {
+    grid-row: 1 / -2;
+    grid-column: 1 / -2;
+}
+
+
+
+
+
+/*---------- COLORTEXT :: ROUNDED BLOCKS ----------*/
+
+.colortext {
+    background: var(--background);
+    border-radius: var(--border-radius-main);
+    padding: var(--colortext-padding);
+    --colortext-padding: var(--gap-inner-big);
+    
+    color: var(--color);
+}
+
+/* colortext scrollbar (make it not bug with border-radius) */
+.colortext::-webkit-scrollbar-button {
+    height: var(--border-radius-main);
+}
+
+.colortext::-webkit-scrollbar-thumb {
+  background: var(--light1);
+}
+
+/* colortext variations (size) */
+.linebox--small .colortext {
+    padding: var(--gap-inner);
+}
+
+.colortext--small {
+    display: inline-block;
+    padding: var(--gap-small1) var(--gap-small3);
+    border-radius: calc(0.8 * var(--border-radius-main));
+}
+
+div.colortext--small {
+    display: block;
+    padding: var(--gap-small3);
+}
+
+/* colortext variations (colors) */
+.colortext--light {
+    --background: var(--light1);
+    --color: var(--dark2);
+}
+
+.colortext--light::selection {
+    background: var(--light3);
+}
+
+.colortext--middle {
+    --background: var(--colored11);
+    --color: var(--light1);
+}
+
+.linebox--small .colortext--small {
+    padding: calc(0.5 * var(--gap-small1)) var(--gap-small2);
+}
+
+/* colortexts for links (mostly used for "read more" links) */
+a.colortext {
+    border: 0 !important;
+}
+
+a.colortext:hover {
+    color: var(--light1) !important;
+}
+
+a.colortext:hover {
+    --background: var(--colored13);
+}
+
+
+
+
+
+/*---------- READMORE BLOCKS----------
+    when link fixed under the block */
+
+.readmore {
+    position: relative;
+    padding-bottom: var(--gap-small3);
+}
+
+.readmore__link {
+    display: inline-block;
+    position: absolute;
+    bottom: calc(-2.5 * var(--gap-small1));
+    left: var(--gap-inner-big);
+    right: unset;
+}
+
+.readmore--right .readmore__link {
+    left: unset;
+    right: var(--gap-inner-big);
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- UTILITY CLASSES -------------------------
+-------------------------------------------------------------------*/
+
+
+
+
+
+/*---------- STYLING ----------*/
+
+ul.unset {
+    list-style-type: none !important;
+    margin: 0;
+    padding: 0;
+}
+
+.sticky {
+    position: sticky !important;
+    z-index: 1000;
+    top: 0;
+}
+
+
+
+
+
+/*---------- FONTS ----------*/
+
+.left-align {
+    text-align: left !important;
+}
+
+.center-align {
+    text-align: center !important;
+}
+
+.right-align {
+    text-align: right !important;
+}
+
+
+
+
+
+/*---------- MARGINS & PADDINGS & HEIGHTS ----------*/
+
+/* margins */
+
+.margin-top {
+    margin-top: var(--gap-section);
+}
+
+.margin-bottom {
+    margin-bottom: var(--gap-section);
+}
+
+.nomargin {
+    margin: 0 !important;
+}
+
+.nomargin-top {
+    margin-top: 0 !important;
+}
+
+.nomargin-bottom {
+    margin-bottom: 0 !important;
+}
+
+/* paddings */
+
+.padding-top {
+    padding-top: var(--gap-container);
+}
+
+.padding-bottom {
+    padding-bottom: var(--gap-container);
+}
+.nopadding {
+    padding: 0 !important;
+}
+
+.nopadding-top {
+    padding-top: 0 !important;
+}
+
+.nopadding-bottom {
+    padding-bottom: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- FONTS -------------------------
+---------------------------------------------------------*/
+
+
+
+/*----- links */
+
+a {
+    color: unset;
+    text-decoration: none;
+    
+    transition: var(--global-trans-property) var(--global-trans-time) var(--global-trans-ease);
+    --global-trans-ease: ease-in-out;
+    --global-trans-time: .25s;
+    --global-trans-property: all;
+}
+
+/* when no border on hover */
+a:not(.unset) {
+    color: var(--color-link);
+    border-bottom: 2px solid transparent;
+    --color-link: var(--colored13);
+    --color-link-highlight: var(--colored23);
+
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+a:not(.unset):hover {
+    color: var(--color-link-highlight);
+
+    border-bottom: 2px solid var(--color-link-highlight);
+}
+
+
+
+/*----- alist (link lists) */
+
+.alist a {
+    border: 0 !important;
+}
+
+.alist a:hover {
+    padding-left: calc(5 / 16 * 1rem);
+}
+
+@media all and (max-width: 1200px) {
+    .alist a {
+        display: block;
+        padding: 0.6rem 0;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .alist a {
+        padding: 1.2rem 0;
+    }
+}
+
+
+
+/*----- tags */
+
+.tag {
+    font-family: var(--fontstack-code);
+    font-weight: 400 !important;
+    font-size: clamp(100%, calc(100% + 0.25vw), 110%);
+}
+
+.tag--hashtag::before {
+    content: '#';
+}
+
+.tag--smallfont {
+    font-size: clamp(100%, calc(100% + 0.15vw), 120%);
+}
+
+
+
+/*----- quote */
+
+.quote {
+    color: var(--colored13);
+    font-weight: bold;
+}
+
+.quote::before {
+    content: '« ';
+}
+
+.quote::after {
+    content: ' »';
+}
+
+
+
+/*----- selection */
+
+::selection {
+    background: var(--light1);
+
+    color: var(--colored21);
+}
+
+
+
+/*----- fancy */
+
+.fancy, .fancy a, a.fancy {
+    color: var(--colored11);
+    text-transform: uppercase;
+}
+
+.fancy--highlight, .fancy--highlight a, a.fancy--highlight {
+    color: var(--colored13);
+}
+
+.section--background .fancy, .section--background .fancy a, .section--background a.fancy {
+    color: var(--light1);
+}
+
+
+
+
+
+/*---------- H1-H2-H3-H4-H5-H6 ----------*/
+
+
+
+/*----- H2 */
+
+h1, h2 {
+    color: var(--color);
+    --color: var(--colored13);
+    --color2: var(--colored23);
+    font-family: var(--fontstack-stroke);
+    font-weight: 900;
+    font-size: var(--font-size);
+    --font-size: clamp(calc(30 / 16 * 1rem), calc(25 / 16 * 1rem + 8vw), calc(120 / 16 * 1rem));
+    letter-spacing: calc(1 / 16 * 1rem);
+    line-height: calc(0.9 * var(--font-size));
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(calc(30 / 16 * 1rem), calc(25 / 16 * 1rem + 8vw), calc(210 / 16 * 1rem));
+    line-height: clamp(calc(30 / 16 * 1rem), calc(30 / 16 * 1rem + 9vw), calc(210 / 16 * 1rem));
+}
+
+/* stroke h2 */
+h1 .stroke, h2 .stroke {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--color2);
+}
+
+h1 .stroke.stroke--basic-color, h2 .stroke.stroke--basic-color {
+    -webkit-text-stroke: 2px var(--color);
+}
+
+h1 .highlight-color {
+    color: var(--color2);
+}
+
+.stroke::selection {
+    -webkit-text-stroke: 0px;
+}
+
+@media all and (max-width: 1200px) {
+    /* passes solid part on 2nd line if not .inline */
+    h2:not(.inline) .main {
+        display: block;
+    }
+}
+
+
+
+/*----- H3 */
+
+h3 {
+    margin: 0 auto var(--gap-inner);
+    position: relative;
+    z-index: 500;
+
+    color: var(--colored13);
+    font-family: var(--fontstack-stroke);
+    font-size: var(--font-size);
+    --font-size: calc(2rem + 0.4vw);
+    letter-spacing: calc(0.5 / 16 * 1rem);
+}
+
+@media all and (max-width: 800px) {
+    h3 {
+        --font-size: 1.4rem;
+    }
+}
+
+/*for every subclass, calculates ::after.height */
+[class*="h3--"] {
+    --height: clamp(calc(4 / 16 * 1rem), calc(4 / 16 * 1rem + 0.4vw), calc(8 / 16 * 1rem));
+}
+
+/* makes ::after the line under h3 */
+.h3--after::after, .h3--longafter .text::after, .h3--leftafter::after {
+    display: block;
+    content: '';
+    height: var(--height);
+    background: var(--light1);
+    border-radius: calc(0.5 * var(--height));
+}
+
+
+
+/*----- h3 after bottom (short)*/
+
+.h3--after::after {
+    width: clamp(0px, var(--gap-big3), var(--gap-big5));
+}
+
+.right-align .h3--after::after, .right-align.h3--after::after {
+    margin-left: auto;
+}
+
+
+
+/*----- h3 after bottom (long, 100%)*/
+
+.h3--longafter .text {
+    display: inline-block;
+    position: relative;
+    padding-bottom: var(--height);
+}
+
+.h3--longafter .text::after {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+/*----- h3 after on the left (h3 becomes flex) */
+
+.h3--leftafter {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    gap: var(--gap-inner);
+}
+
+.h3--leftafter.right-align, .right-align .h3--leftafter {
+    justify-content: flex-end;
+}
+
+.h3--leftafter::after {
+    flex: 0 0 auto;
+    width: clamp(0px, calc(var(--gap-big1) + 4vw), 30%);
+    margin-top: calc(0.5 * var(--font-size) + 0.5 * var(--height));
+    order: -10;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- SECTIONS -------------------------
+    sections and containers
+------------------------------------------------------------*/
+
+
+
+
+
+/*---------- SECTION ----------*/
+
+.section {
+    background: var(--background);
+    --background: var(--background-main);
+    padding: var(--gap-section) 0;
+    margin: 0;
+    position: relative;
+
+    color: var(--color);
+    --color: var(--color-text-main);
+}
+
+/* line between 2 sections of same variation (image background or linear gradient background) */
+.section:not([class*=section--]) + .section:not([class*=section--])::after,
+.section--background + .section--background::after {
+    display: block;
+    content: '';
+    width: var(--width);
+    height: var(--height);
+
+    /* line width */
+    --width: 70vw;
+
+    /* line height */
+    --height: clamp(calc(4 / 16 * 1rem), calc(2 / 16 * 1rem + 0.4vw), calc(6 / 16 * 1rem));
+
+    border-radius: calc(0.5 * var(--height));
+    position: absolute;
+    top: calc(-0.5 * var(--height));
+    left: calc(0.5 * (100vw - var(--width)));
+    background: var(--light1);
+    box-shadow: var(--box-shadow-light-small);
+}
+
+
+
+/*----- linear gradient background */
+
+.section--background {
+    position: relative;
+    --margin-section: var(--gap-big1);
+}
+
+.section--background::before {
+    display: block;
+    content: '';
+    opacity: 0.8;
+    background: var(--linear-gradient1);
+    background-attachment: fixed;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: var(--margin-section);
+    right: var(--margin-section);
+    bottom: 0;
+}
+
+@media all and (max-width: 1200px) {
+    .section--background::before {
+        --margin-section: var(--gap-small3);
+    }
+}
+
+@media all and (max-width: 800px) {
+    .section--background::before {
+        --margin-section: 0;
+        border-radius: 0 !important;
+    }
+}
+
+/* makes rounded first and last background sections of their blocks
+   MUST put by hand the class .section--first and .section--last */
+.section--background.section--first::before {
+    border-top-left-radius: var(--border-radius-main);
+    border-top-right-radius: var(--border-radius-main);
+}
+
+.section--background.section--last::before {
+    border-bottom-left-radius: var(--border-radius-main);
+    border-bottom-right-radius: var(--border-radius-main);
+}
+
+
+
+
+
+/*---------- CONTAINER ----------*/
+
+.container {
+    margin: 0 var(--gap-container);
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- HEADER, BANNER -------------------------
+    first template
+------------------------------------------------------------------*/
+
+
+
+
+
+/*---------- HEADER ----------*/
+
+.header__logo {
+    display: block;
+    width: var(--gap-big1);
+}
+
+
+
+
+
+/*---------- BANNER ----------*/
+
+.banner {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: var(--gap-section);
+    padding: calc(1.2 * var(--gap-section)) var(--gap-container);
+
+    grid-template:
+        "side . main" 1fr
+       / 1fr calc(1.2 * var(--gap-banner)) 3fr;
+    --gap-banner: var(--gap-inner-big);
+}
+
+/* left side disapears */
+@media all and (max-width: 1200px) {
+    .banner {
+        height: 70vh;
+        grid-template: "main" 1fr / 1fr;
+    }
+
+    .banner__side {
+        display: none;
+    }
+}
+
+/* main part simplifies */
+@media all and (max-width: 800px) {
+    .banner {
+        height: clamp(calc(400 / 16 * 1rem), 100vh, calc(800 / 16 * 1rem));
+        grid-template: "main" 1fr / 1fr;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .banner {
+        height: clamp(calc(400 / 16 * 1rem), 100vh, calc(600 / 16 * 1rem));
+    }
+}
+
+.banner__side {
+    grid-area: side;
+}
+
+
+
+/*----- banner side : floating squares */
+
+.linebox--bannerside {
+    grid-template:
+        ". squares squares" calc(0.5 * var(--square))
+        ". squares squares" 3fr
+        ". squares squares" 2fr
+       / 1fr 2fr calc(0.5 * var(--square));
+    --square: calc(var(--linebox-gap) + 2vw);
+    --linebox-gap: var(--gap-inner-big);
+}
+
+.linebox--bannerside::before {
+    z-index: -10;
+    grid-row: 2 / -2;
+    grid-column: 1 / -2;
+}
+
+.banner-side__squares {
+    grid-area: squares;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    gap: 20%;
+}
+
+/* floating square images */
+
+.banner-side__image {
+    width: var(--square);
+    height: var(--square);
+    background: var(--background-body);
+    border-radius: var(--border-radius-main);
+    --gap1: var(--gap-inner);
+    --gap2: var(--gap-inner-big);
+    position: relative;
+}
+
+.banner-side__image:nth-child(3n + 1) {
+    align-self: flex-end;
+}
+
+.banner-side__image:nth-child(3n + 2) {
+    align-self: flex-start;
+}
+
+.banner-side__image:nth-child(3n + 3) {
+    align-self: center;
+}
+
+.banner-side__image::before {
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius-main);
+    position: absolute;
+    z-index: -2;
+}
+
+.banner-side__image:nth-child(3n + 1)::before {
+    background: var(--colored13);
+    bottom: var(--gap1);
+    right: var(--gap1);
+}
+
+.banner-side__image:nth-child(3n + 2)::before {
+    background: var(--colored23);
+    top: var(--gap1);
+    left: var(--gap1);
+}
+
+.banner-side__image:nth-child(3n + 3)::before {
+    background: var(--colored31);
+    top: var(--gap1);
+    right: var(--gap1);
+}
+
+
+
+/*----- MAIN PART */
+
+.banner__main {
+    grid-area: main;
+    margin: 0 !important;
+}
+
+.linebox--banner {
+    grid-template:
+        ".   .   .   .   ." calc(0.2 * var(--linebox-gap))
+        ".   nav nav nav ." auto
+        ".   .   .   .   ." calc(0.2 * var(--linebox-gap))
+        ".   .   .   .   ." var(--linebox-gap)
+        "img img img .   ." 1fr
+        "img img img .   ." var(--linebox-gap)
+        "img img img .   ." var(--linebox-gap)
+       / var(--linebox-gap) 3fr 2fr var(--linebox-gap) var(--linebox-gap);
+    --linebox-gap: var(--gap-banner);
+    position: relative;
+}
+
+/* regular box line */
+
+.linebox--banner::before {
+    grid-row: 1 / -3;
+    grid-column: -4 / -1;
+}
+
+/* adds the fake colored background behind the main image */
+
+.linebox--banner::after {
+    display: block;
+    content: '';
+    background: var(--colored32);
+    border-radius: var(--border-radius-main);
+    grid-row: 4 / -2;
+    grid-column: 2 / -2;
+}
+
+/* gets nav left aligned */
+@media all and (max-width: 1200px) {
+    .linebox--banner {
+        grid-template:
+            ".   .   .   .   ." calc(0.2 * var(--linebox-gap))
+            "nav nav nav nav ." auto
+            ".   .   .   .   ." calc(0.2 * var(--linebox-gap))
+            ".   .   .   .   ." var(--linebox-gap)
+            "img img img .   ." 1fr
+            "img img img .   ." var(--linebox-gap)
+            "img img img .   ." var(--linebox-gap)
+           / var(--linebox-gap) 3fr 2fr var(--linebox-gap) var(--linebox-gap);
+    }
+}
+
+/* nav goes on the top right corner (makes place for the floating absolute title) */
+@media all and (max-width: 800px) {
+    .linebox--banner {
+        grid-template:
+            ".    .   nav" 3fr
+            "img  img .  " var(--linebox-gap)
+            "img  img .  " 1fr
+           / var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap));
+    }
+
+    .linebox--banner::after {
+        content: unset;
+    }
+
+    .linebox--banner::before {
+        grid-row: 1 / -2;
+        grid-column: 2 / -1;
+    }
+}
+
+.banner__character {
+    display: block;
+    max-height: 80%;
+    position: absolute;
+    z-index: 500;
+    bottom: -4vh;
+    left: calc(-2.5 * var(--linebox-gap));
+}
+
+.banner__title {
+    position: absolute;
+    z-index: 600;
+    bottom: -8vh;
+    right: calc(-1 * var(--linebox-gap));
+}
+
+/* navigations
+   both in banner and the sticked floating nav */
+
+.banner__nav, .header__nav {
+    display: flex;
+    grid-area: nav;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row wrap;
+    gap: var(--gap-inner);
+    position: relative;
+    z-index: 600;
+}
+
+.banner__title h1 {
+    margin: 0;
+}
+
+.banner__img {
+    background: var(--background-body);
+    position: relative;
+    z-index: 400;
+}
+
+@media all and (max-width: 1200px) {
+    .banner__character {
+        height: 75vw;
+        left: calc(-0.5 * var(--gap-container));
+    }
+    
+    .banner__title {
+        right: calc(-0.5 * var(--gap-container));
+    }
+}
+
+@media all and (max-width: 800px) {
+    .banner__character {
+        height: 100vw;
+        left: calc(-0.5 * var(--gap-container));
+    }
+    
+    .banner__title {
+        top: calc(1 * var(--gap-container));
+        bottom: unset;
+        left: calc(0.2 * var(--gap-container));
+        right: unset;
+    }
+
+    .banner__nav {
+        flex-flow: column wrap;
+        align-items: flex-end;
+        text-align: right;
+    }
+
+    .banner__nav li {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+/*------------------------- STICKY HEADER -------------------------
+    floating on the right part of the screen (only with JS activated)
+-----------------------------------------------------------------*/
+
+/* stickheader is only the container, it is nor fixed nor absolute
+   with js, it is the element firing the .is-sticked trigger */
+.stickheader {
+    margin: calc(-1 * var(--margin)) auto var(--margin);
+    /* makes stickheader appear banner.bottom - 400px */
+    --margin: 400px;
+    border: 1px solid transparent; 
+    text-align: right;
+}
+
+/* actual stickheader container, the one displayed on screen */
+.stickheader__section {
+    /* margin: var(--margin) auto 0; */
+    display: inline-block !important;
+    margin: var(--margin);
+    --margin: var(--gap-inner-small);
+    width: auto;
+    opacity: 0;
+    --global-trans-ease: ease-in-out;
+    --global-trans-time: .6s;
+}
+
+.is-sticked .stickheader__section {
+    /* width: calc(100% - 2 * var(--margin)); */
+    opacity: 1;
+}
+
+@media all and (max-width: 800px) {
+    .stickheader__section {
+        /* margin: var(--margin) auto 0; */
+        display: block !important;
+        --margin: -1px;
+        border-radius: 0;
+    }
+}
+
+.stickheader__logo {
+    height: calc(0.5 * var(--gap-inner-big));
+    padding-right: var(--gap-inner);
+}
+
+.stickheader__flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: row wrap;
+    column-gap: var(--gap-inner);
+}
+
+.stickheader__section.colortext {
+    --background: var(--light3);
+
+    --color: var(--light1);
+    --color2: var(--colored13);
+}
+
+.stickheader__section .fancy a {
+    color: var(--color);
+}
+
+.stickheader__section a.fancy--highlight {
+    color: var(--color2);
+}
+
+
+
+
+
+
+
+
+/*------------------------- INTRO -------------------------
+------------------------------------------------------------*/
+
+
+
+/*----- general template */
+.intro {
+    display: grid;
+    grid-template:
+        "image text" auto
+        "links text" auto
+        "links     ." auto
+       / 1fr 1fr;
+    grid-gap: var(--gap-inner-big);
+    --intro-gap: var(--gap-inner-big);
+}
+
+@media all and (max-width: 1200px) {
+    .intro {
+        grid-template:
+            "image links" auto
+            "text text" auto
+           / 45vw 1fr;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .intro {
+        grid-template:
+            "image" auto
+            "links" auto
+            "text" auto / 1fr;
+    }
+}
+
+
+
+/*----- image */
+
+.intro__image {
+    grid-area: image;
+}
+
+
+
+/*----- links */
+
+.intro__links {
+    grid-area: links;
+    padding-left: var(--intro-gap);
+}
+
+@media all and (min-width: 1520px) {
+    .intro__links {
+        font-size: calc(100% + 0.4vw);
+    }
+}
+.intro__links .alist {
+    padding-left: calc(0.5 * var(--intro-gap));
+}
+
+@media all and (max-width: 1200px) {
+    .intro__links, .intro__links .alist {
+        padding-left: 0;
+    }
+}
+
+
+
+/*----- text */
+
+.intro__text {
+    grid-area: text;
+}
+
+.linebox--introtext {
+    grid-template:
+        ".     .     ." calc(0.5 * var(--linebox-gap))
+        "title title ." auto
+        ".     .     ." calc(0.2 * var(--linebox-gap))
+        "text  text  ." minmax(calc(1.5 * var(--linebox-gap)), auto)
+        "text  text   ." 1fr
+       / var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap));
+    --linebox-gap: var(--intro-gap);
+}
+
+.linebox--introtext::before {
+    grid-row: 1 / -2;
+    grid-column: 2 / -1;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- NEWS -------------------------
+------------------------------------------------------------*/
+
+
+
+/*----- general template */
+
+.news__grid {
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--gap-inner-big);
+    padding: 0;
+}
+
+.news__grid .linebox {
+    height: calc(500 / 16 * 1rem);
+}
+
+@media all and (min-width: 2100px) {
+    .news__grid .linebox {
+        height: calc(600 / 16 * 1rem);
+    }
+}
+
+@media all and (max-width: 1200px) {
+    .news__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .news__grid .linebox {
+        height: calc(400 / 16 * 1rem);
+    }
+}
+
+@media all and (max-width: 800px) {
+    .news__grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .news__grid .linebox {
+        height: auto;
+    }
+
+    .news__grid .linebox--upperimage {
+        --value-image: 350px;
+    }
+}
+
+
+
+/*----- text */
+
+.news__grid .linebox__text {
+    overflow: auto;
+}
+
+.linebox__readmore {
+    position: absolute;
+    z-index: 510;
+    bottom: calc(0.5 * var(--linebox-gap));
+    right: calc(1.5 * var(--linebox-gap));
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- MONTHLY -------------------------
+-------------------------------------------------------------*/
+
+
+
+/*----- general template */
+
+.monthly {
+    display: grid;
+    --linebox-gap: var(--gap-inner-big);
+    grid-template:
+        "tags main" auto
+        "text main" auto
+        "text .   " 1fr
+       / 2fr  3fr;
+    gap: var(--linebox-gap);
+}
+
+@media all and (max-width: 1200px) {
+    .monthly {
+        grid-template:
+            "main main" auto
+            "text tags" auto
+           / 3fr 2fr;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .monthly {
+        grid-template:
+            "main" auto
+            "tags" auto
+            "text" auto / 1fr;
+    }
+}
+
+/* tags */
+.monthly__tags {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: var(--gap-inner);
+}
+
+.monthly__grouptags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--gap-inner-small);
+}
+
+@media all and (max-width: 1200px) {
+    .monthly__tags {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0;
+    }
+
+    .monthly__grouptags {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        column-gap: var(--gap-inner-small);
+    }
+}
+
+.linebox--righttext.monthly__bio::before {
+    margin: 0;
+}
+
+
+
+/*----- side part : links and bio */
+
+.monthly__links {
+    grid-area: tags;
+}
+
+.monthly__bio {
+    grid-area: text;
+    max-width: calc(600 / 16 * 1rem);
+    margin: auto;
+}
+
+
+
+/*----- main part */
+
+.monthly__main {
+    grid-area: main;
+}
+
+/* main part grid template */
+.linebox--monthlymain {
+    display: grid;
+    grid-template:
+        "desc desc desc desc  desc  desc  desc  ." auto
+        "img  img  .    title title title title ." auto
+        "img  img  .    .    .    .       .     ." calc(0.5 * var(--linebox-gap))
+        "img  img  .    .    .    .       .     ." calc(0.5 * var(--linebox-gap))
+        "img  img  .    .    .    text    .     ." auto
+        "img  img  .    .    .    .       .     ." calc(0.5 * var(--linebox-gap))
+        ".    .    .    .    .    .       .     ." calc(0.5 * var(--linebox-gap))
+       / var(--width-img) var(--linebox-gap) var(--linebox-gap) 1fr calc(0.5 * var(--linebox-gap)) var(--width-text) calc(0.5 * var(--linebox-gap)) var(--linebox-gap);
+       --width-img: minmax(4vw, 4fr);
+       --width-text: minmax(3vw, 4fr);
+}
+
+.linebox__desc {
+    grid-area: desc;
+}
+
+.linebox--monthlymain::before {
+    
+    grid-row: -5 / -1;
+    grid-column: 2 / -2;
+}
+
+/* adds ::after on grid for fake text background */
+.linebox--monthlymain::after {
+    display: block;
+    content: '';
+    background: var(--colored21);
+    border-radius: var(--border-radius-main);
+    grid-row: -6 / -2;
+    grid-column: -5 / -1;
+}
+
+@media all and (max-width: 800px) {
+    .linebox--monthlymain {
+    display: grid;
+    
+    grid-template:
+        "img img img    desc  desc  desc" auto
+        "img img img    title title title" auto
+        ".   .   .    .     .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   .    .     .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   .    .     .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   text text  .     ." auto
+        ".   .   .    .     .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   .    .     .     ." calc(0.5 * var(--linebox-gap))
+      / calc(0.5 * var(--linebox-gap)) calc(0.5 * var(--linebox-gap)) calc(0.5 * var(--linebox-gap)) 1fr calc(0.5 * var(--linebox-gap)) calc(0.5 * var(--linebox-gap));
+       --width-img: minmax(4vw, 4fr);
+       --width-text: minmax(3vw, 4fr);
+    }
+
+    .linebox--monthlymain::before {
+        grid-area: 5 / 1 / -1 / -2;
+    }
+
+    .linebox--monthlymain::after {
+        grid-area: 4 / 2 / -2 / -1;
+    }
+
+    .linebox--monthlymain .linebox__title {
+        padding: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- PLACE -------------------------
+------------------------------------------------------------*/
+
+
+
+/*----- general template */
+
+.place {
+    display: grid;
+    grid-template:
+        "image text" auto
+       / 2fr 3fr;
+    grid-gap: var(--gap-inner-big);
+}
+
+@media all and (max-width: 1200px) {
+    .place {
+        grid-template:
+            "image" auto
+            "text" auto / 1fr;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .images-below__linebox {
+        display: none;
+    }
+
+    .images-below__linebox:nth-child(1), .images-below__linebox:nth-child(2) {
+        display: block;
+    }
+}
+
+
+
+/*----- image */
+
+.place__image {
+    --linebox-gap: var(--gap-inner-big);
+}
+
+.place__subtitle {
+    padding-right: var(--gap-inner-big);
+}
+
+
+
+/*----- IMAGES BELOW TEXT */
+
+/* block container */
+.images-below {
+    --square: clamp(var(--gap-small3), calc(var(--gap-small3) + 6vw), var(--gap-big5));
+    position: relative;
+    margin-bottom: calc(0.5 * var(--square) + var(--gap-inner));
+}
+
+.colortext.images-below {
+    padding-bottom: calc(0.5 * var(--colortext-padding) + 0.5 * var(--square));
+}
+
+/* IMAGES container */
+.images-below__container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: calc(-0.5 * var(--square));
+    width: calc(100% - 2 * var(--colortext-padding));
+    --gap-images: var(--gap-inner);
+    gap: var(--gap-images);
+}
+
+@media all and (max-width: 800px) {
+    .images-below__container {
+        justify-content: space-evenly;
+    }
+}
+
+/* images */
+.images-below__image {
+    display: block;
+    width: var(--square);
+    height: var(--square);
+    position: relative;
+    border-radius: var(--border-radius);
+    position: relative;
+    z-index: 600;
+}
+
+/* linebox images */
+.images-below__linebox {
+    position: relative;
+    --border-radius: calc(0.5 * var(--border-radius-main));
+    margin-right: var(--gap-images);
+}
+
+.images-below__linebox::after {
+    display: block;
+    content: '';
+    width: calc(100% - 2 * var(--border));
+    height: 100%;
+    border-radius: var(--border-radius);
+    border: var(--border) solid var(--light1);
+    --border: 2px;
+    position: absolute;
+    top: var(--gap-images);
+    left: var(--gap-images);
+    z-index: -1;
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- MEDIAS -------------------------
+------------------------------------------------------------*/
+
+
+
+/*----- GENERAL */
+
+.medias .linebox {
+    --linebox-gap: calc(0.7 * var(--gap-inner-big));
+}
+
+.medias__list {
+    column-count: 2;
+    column-gap: var(--gap-inner-big);
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media all and (max-width: 1200px) {
+    .medias__list {
+        column-count: 1;
+    }
+}
+
+.medias__list > * {
+    break-inside: avoid;
+    margin-bottom: var(--gap-inner-big);
+}
+
+.medias__list > *:not(:first-child) {
+    margin-top: var(--gap-inner-big);
+}
+
+
+
+/*----- PLAYLIST */
+
+.linebox--playlist {
+    /* grid-template:
+        "img img img   ." var(--linebox-gap)
+        "img img img   ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+        ".   .   quote ." auto
+        ".   .   .     ." calc(0.5 * var(--linebox-gap))
+       / var(--linebox-gap) calc(0.5 * var(--linebox-gap)) 1fr var(--linebox-gap); */
+
+    grid-template:
+        "title title title ." auto
+        ".     .     .     ." calc(0.5 * var(--linebox-gap))
+        ".     .     text  ." auto
+        ".     .     .     ." calc(0.5 * var(--linebox-gap))
+       / calc(0.5 * var(--square) + var(--linebox-gap)) calc(0.5 * var(--linebox-gap)) auto var(--linebox-gap);
+    --square: var(--gap-big2);
+}
+
+@media all and (max-width: 800px) {
+    .linebox--playlist {
+        --square: var(--gap-big1);
+    }
+
+    div.colortext--small {
+        padding: var(--gap-small2);
+    }
+}
+
+.linebox--playlist::before {
+    margin-top: calc(-0.5 * var(--linebox-gap));
+    grid-row: 2 / -1;
+    grid-column: 2 / -1;
+}
+
+/* playlist title */
+
+.playlist__title {
+    position: relative;
+    margin-left: calc(0.5 * var(--square));
+    padding-left: calc(0.5 * var(--square) + 0.5 * var(--linebox-gap)) !important;
+}
+
+.playlist__title::before {
+    display: block;
+    content: '';
+    width: var(--square);
+    height: var(--square);
+    background: url('../assets/img/player.svg') 50% 50% / cover;
+    position: absolute;
+    z-index: 500;
+    top: calc(50% - 0.5 * var(--square));
+    left: calc(-0.5 * var(--square));
+}
+
+.playlist__list > *:not(:last-child) .song {
+    margin-bottom: var(--gap-inner-small);
+}
+
+/* song */
+
+.song__name {
+    display: inline-block;
+    margin-right: var(--gap-inner-small);
+}
+
+.song__artist {
+    display: inline-block;
+    padding-top: calc(0.5 * 1rem);
+    margin-right: var(--gap-inner-small);
+}
+
+
+
+/*----- IMAGES */
+
+.images__container img {
+    display: block;
+    width: 100%;
+    max-height: clamp(calc(250 / 16 * 1rem), 40vh, 40vh);
+    border-radius: var(--border-radius-main);
+}
+
+
+
+
+
+
+
+
+
+
+/*------------------------- FOOTER -------------------------
+------------------------------------------------------------*/
+
+.footer.section {
+    padding: var(--margin-section) 0;
+}
+
+.footer.section:last-of-type {
+    margin-bottom: var(--margin-section);
+}
+
+@media all and (max-width: 800px) {
+    .footer.section:last-of-type {
+        margin-bottom: 0;
+        overflow: hidden;
+    }
+}
+
+/* when screen too small, breaks mail adress */
+
+.footer__mail {
+    word-break: break-all;
+}
+
+.footer.section--background::after {
+    /* line height */
+    --height: calc(2 / 16 * 1rem);
+    box-shadow: none;
+    position: absolute;
+    top: calc(-0.5 * var(--height));
+    left: calc(0.5 * (100vw - var(--width)));
+    --width: 90%;
+}
+
+.footer h2 {
+    font-size: calc(0.8 * var(--font-size));
+}
+
+.footer h4 {
+    margin: 0;
+}
+
+/* divides navs list */
+
+.footer__list {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(calc(200 / 16 * 1rem), 1fr));
+    gap: 5vw;
+}
+
+.footer__list a {
+    display: block;
+    padding-bottom: var(--gap-inner-small);
+}
+
+/* divides links in a nav list */
+
+.footer__divider {
+    display: grid;
+    grid-template-columns: repeat( auto-fit, minmax(calc(200 / 16 * 1rem), 1fr));
+}
+
+@media all and (max-width: 1200px) {
+    .footer__divider {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(calc(150 / 16 * 1rem), 1fr));
+    }
+}
+
+@media all and (max-width: 800px) {
+    .footer__divider {
+        display: grid;
+        grid-template-columns: repeat( auto-fit, minmax(calc(140 / 16 * 1rem), 1fr));
+    }
+}

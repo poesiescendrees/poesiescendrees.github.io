@@ -1,0 +1,14 @@
+background body image fixed
+blured quand on descend + filter ?
+
+header en "transparence" : objets ou personnages qui bougent sur le background
+
+sliders en sticky rafale sur certains posts
+
+un filter si on se chauffe lolilol
+
+des grids qui s'élargissent au :hover pour lire plus
+
+popups/sides de page pour plus d'infos
+
+vidéos pour personnages ? trailer série ?
